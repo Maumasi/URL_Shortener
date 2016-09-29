@@ -54,6 +54,12 @@ After you have the app up and running there are 3 endpoints currently for the AP
 This AJAX call was made with jQuery
 </br>
 ```javaScript
+
+var $newUrl = $('.newUrl');
+var $oldUrl = $('.oldUrl');
+var $submit = $('.btn-submit');
+var $url = $('input#url');
+
 $submit.on('click', function() {
 
   var url = {
@@ -77,6 +83,7 @@ $submit.on('click', function() {
     },
   });
 });
+
 ```
 </br>
 ___
