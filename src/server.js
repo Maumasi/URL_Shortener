@@ -1,4 +1,6 @@
 
+// import routes from '../routes/api';
+
 var bodyParser = require('body-parser');
 var express = require('express');
 var app = express();
@@ -6,14 +8,11 @@ var app = express();
 const PORT = 3000;
 
 
-// new route
-// app.get('/', (req, res) => {
-//   res.json({helo:'world'});
-// });
-
 
 // from here all routes will start with '/api'
-app.use('/api/v1', require('../routes/api.js')(express));
+app.use('/', require('../routes/api.js')(express));
+
+// app.use('/maumasi-fy', require('../routes/redirects.js')(express));
 
 
 app.listen(PORT, () => {
