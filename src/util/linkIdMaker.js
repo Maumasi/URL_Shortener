@@ -20,14 +20,18 @@ module.exports = () => {
 
 
     // get a random index
-    var upperIndex = _randomIndex(charSets.upperCase);
-    var lowerIndex = _randomIndex(charSets.lowerCase);
+    var upperIndex1 = _randomIndex(charSets.upperCase);
+    var lowerIndex1 = _randomIndex(charSets.lowerCase);
+    var upperIndex2 = _randomIndex(charSets.upperCase);
+    var lowerIndex2 = _randomIndex(charSets.lowerCase);
     var numIndex = _randomIndex(charSets.numbers);
 
     // build string
     randomString += today;
-    randomString += charSets.upperCase[upperIndex];
-    randomString += charSets.lowerCase[lowerIndex];
+    randomString += charSets.upperCase[upperIndex1];
+    randomString += charSets.upperCase[upperIndex2];
+    randomString += charSets.lowerCase[lowerIndex1];
+    randomString += charSets.lowerCase[lowerIndex2];
     randomString += charSets.numbers[numIndex];
 
     // console.log(randomString);

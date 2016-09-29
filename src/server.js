@@ -26,6 +26,8 @@ app.use(bodyParser.urlencoded({
 // from here all routes will start with '/api'
 app.use('/', routes(express));
 
+app.use(express.static('../public'));
+
 // exports.server =
 var server = app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}` );

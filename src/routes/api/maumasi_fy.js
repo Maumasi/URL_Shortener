@@ -16,7 +16,7 @@ module.exports = (express) => {
 
     // redirect to link
     // res.redirect(302, 'https://davidwalsh.name/express-redirect-301');
-    var originalLink = res.redirect(302, originalLink) || null;
+    var originalLink = originalLink || null;
     var err = originalLink ? null : 'Oops, this maumasi.fy link is broken. Please maumasi.fy your link once more.'
 
     var link = {
