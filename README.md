@@ -1,7 +1,7 @@
 
 #Maumasi's Awesome URL Shortener!
 
-##Installation 
+##Installation
 Open your terminal if you're on a Unix or Linus machine if you've not done so already after doing the ``` git pull ``` request. </br>
 Install all the **dependancies** and **dev dependancies** for the app with the all important **npm install**:
 ```bash
@@ -48,7 +48,39 @@ After you have the app up and running there are 3 endpoints currently for the AP
   - The **' *:wild_card* '** will be for the ID of the original URL in the database in **v2** of this API.
 </br>
 </br>
+###Sample AJAX Call to the API
+This AJAX call was made with jQuery
+</br>
+```javaScript
+$submit.on('click', function() {
 
+  var url = {
+    originalUrl: $url.val()
+  }
+
+// AJAX call to our API
+  $.ajax({
+    type: 'POST',
+    url: 'http://localhost:3000/api/v1/url',
+    data: url,
+    success: function(newData) {
+
+      // show user their new maumasi.fy link
+      $oldUrl.html('This URL: ' + newData.originalUrl);
+      $newUrl.html('truned into this URL : ' + newData.maumasi_fied_link);
+
+      $url.val('');
+
+      console.log(newData);
+    },
+    // *** This is causing errors!!! ***
+    // error: function() {
+    // 	alert('API call failed :(');
+    // }
+  });
+});
+```
+</br>
 ___
 
 ##Unit Testing
