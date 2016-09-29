@@ -15,6 +15,9 @@ app.use('/', require('../routes/api.js')(express));
 // app.use('/maumasi-fy', require('../routes/redirects.js')(express));
 
 
-app.listen(PORT, () => {
+var server = app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}` );
 });
+
+
+module.exports = server;

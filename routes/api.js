@@ -25,8 +25,9 @@ module.exports = (express) => {
     // TODO: make a DB search for the linkId
     //      to grab the stored link by ID
 
-    return res.redirect(302, 'https://davidwalsh.name/express-redirect-301');
-    // res.json({link});
+    // redirect to link
+    // return res.redirect(302, 'https://davidwalsh.name/express-redirect-301');
+    res.json({link});
   });
 
   return router;
