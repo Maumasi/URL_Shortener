@@ -73,10 +73,6 @@ $submit.on('click', function() {
 
       console.log(newData);
     },
-    // *** This is causing errors!!! ***
-    // error: function() {
-    // 	alert('API call failed :(');
-    // }
   });
 });
 ```
