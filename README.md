@@ -12,6 +12,6 @@ To run the node.js server you'll have to navigate to the server.js file using th
 ```bash
 $  node src/server.js
 ```
-**\*\* Remember, you'll have to re-run this command every time you want to check file changes in the bowser\*\* ** 
+\*\* **Remember, you'll have to re-run this command every time you want to check file changes in the bowser** \*\*
 
-If you have nodemon installed( ```bash npm i -g nodemon``` ) you can simply use
+If you have nodemon installed( ``` npm i -g nodemon``` ) you can simply use
