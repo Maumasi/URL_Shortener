@@ -10,14 +10,16 @@ $ npm install
 ```
 </br>
 
-To run the node.js server up and running you'll have to navigate to the </br>
-server.js file then use the key word node to tell node.js to run the file:
+To get the node.js server up and running you'll have to navigate to the </br>
+server.js file then use the key word **' *node* '** to tell node.js to run the file:
 ```bash
 $  node src/server.js
 ```
 By default the port is set to 3000, you should also see ``` Server running on port 3000 ``` stated in the terminal </br>
-after you have the server running, if you don't see it something failed and the server should be re-started or you may have </br>
+after you have the server running, if you don't see that, then something failed and the server should be re-started or you may have </br>
 forgotten to run the ``` $ npm install ``` command. </br>
+</br>
+To stop the server press: ``` control + ^C ``` </br>
 \*\* **Remember, you'll have to re-run this command every time you want to check file changes in the bowser** \*\*
 </br>
 </br>
