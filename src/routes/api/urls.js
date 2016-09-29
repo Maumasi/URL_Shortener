@@ -44,9 +44,11 @@ module.exports = (express) => {
       var linkId = randomLinkId();
       var maumasi_fied_link = `${req.get('host')}/maumasi.fy/${linkId}`;
       var originalUrl = req.body.originalUrl || null;
-      // var hello = 'world';
 
-      res.json({maumasi_fied_link, originalUrl});
+      if (originalUrl) {
+        res.json({maumasi_fied_link, originalUrl});
+      }
+
     });
 
 

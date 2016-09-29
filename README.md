@@ -1,3 +1,8 @@
 Maumas's Awesome URL Shortener!
 
-Currently under construction...
+After doing a pull request start out with a npm install:
+
+```bash
+$ cd URL_Shortener
+$ npm install
+```

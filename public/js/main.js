@@ -3,18 +3,9 @@
 $(function(){
 
 	var $newUrl = $('.newUrl');
+	var $oldUrl = $('.oldUrl');
 	var $submit = $('.btn-submit');
 	var $url = $('input#url');
-
-	$.ajax({
-		type: 'GET',
-		url: 'http://localhost:3000/api/v1/url',
-		success: function(data) {
-			$newUrl.html(data.maumasi_fied_link);
-			// console.log(data);
-		}
-	});
-
 
 	$submit.on('click', function() {
 
@@ -22,15 +13,25 @@ $(function(){
 			originalUrl: $url.val()
 		}
 
+// AJAX call to our API
 		$.ajax({
 			type: 'POST',
 			url: 'http://localhost:3000/api/v1/url',
 			data: url,
 			success: function(newData) {
-				$newUrl.html(newData.maumasi_fied_link);
-				// console.log(newData);
-				// console.log(this.data);
-			}
+
+				// show user their new maumasi.fy link
+				$oldUrl.html('This URL: ' + newData.originalUrl);
+				$newUrl.html('truned into this URL : ' + newData.maumasi_fied_link);
+
+				$url.val('');
+
+				console.log(newData);
+			},
+			// *** This is causing errors!!! *** 
+			// error: function() {
+			// 	alert('API call failed :(');
+			// }
 		});
 	});
 
