@@ -2,7 +2,7 @@
 #Maumasi's Awesome URL Shortener!
 
 
-Open your terminal if you're on a Unix or Linus machine if you're not already after doing the pull request. </br>
+Open your terminal if you're on a Unix or Linus machine if you've not done so already after doing the ``` git pull ``` request. </br>
 Install all the **dependancies** and **dev dependancies** for the app with the all important **npm install**:
 ```bash
 $ cd URL_Shortener
@@ -45,7 +45,7 @@ After you have the app up and running there are 3 endpoints currently for the AP
 
 You can also do some unit testing using ``` mocha ```.</br>
 If you did the ``` npm install ``` then it's already in the app, but you'll still need to install it globally on your machine to use it. </br>
-If unit testing is something you like and you don't have ``` mocha ``` installed then just run the folloing command in the terminal:
+If unit testing is something you like and you don't have ``` mocha ``` installed then just run the following command in the terminal:
 ```bash
 $ npm i -g mocha
 ```
