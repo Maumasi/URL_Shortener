@@ -18,23 +18,6 @@ module.exports = (express) => {
 
 
 
-
-
-// Route: /api/v1/newlink
-// Method: get
-// Use: returns a maumasi.fy link
-// Note: ${req.protocol}:// to use http or https
-  // router.get('/url', (req, res) => {
-  //
-  //   var linkId = randomLinkId();
-  //   var maumasi_fied_link = `${req.get('host')}/maumasi.fy/${linkId}`;
-  //   // var hello = 'world';
-  //
-  //   res.json({maumasi_fied_link});
-  // });
-
-
-
   // Route: /api/v1/url
   // Method: post
   // Use: returns a maumasi.fy link

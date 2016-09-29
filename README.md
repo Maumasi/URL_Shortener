@@ -36,4 +36,7 @@ After you have the app up and running there are 3 endpoints currently for the AP
   - This is used to check the status of the API if you need to do some debugging.
 
 2. **/api/v1/url**
-  - This uses the **POST** method to receive the original URL and set a relationship to the new **maumasi.fy** URL. 
+  - This uses the **POST** method to receive the original URL and set a relationship to the new **maumasi.fy** URL.
+
+3. **/maumasi.fy/:wild_card**
+  - The */:wild_card* will be for the ID of the original URL in the database in **v2** of this API.
