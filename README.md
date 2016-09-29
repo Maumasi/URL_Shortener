@@ -1,4 +1,5 @@
-Maumas's Awesome URL Shortener!
+
+#Maumas's Awesome URL Shortener!
 
 After doing a pull request install all the **dependancies** and **dev dependancies** the app with the all important **npm install**:
 ```bash
@@ -18,7 +19,5 @@ If you have nodemon installed( ``` npm i -g nodemon``` ) you can simply use:
 ```bash
 $ nodemon src/server.js
 ```
-</br>
-
 Using ``` nodemon ``` will do a live reload for you every time you save a file in the project... *most of the time*.
 If you do have to manually reload the server just use the ``` $ rs ``` command to 'restart server'. It's kinda awesome.
