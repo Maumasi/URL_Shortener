@@ -1,7 +1,7 @@
 
-#Maumasi's Awesome URL Shortener!
+# Maumasi's Awesome URL Shortener!
 
-##Installation
+## Installation
 Open your terminal if you're on a Unix or Linus machine if you've not done so already after doing the ``` git pull ``` request. </br>
 Install all the **dependancies** and **dev dependancies** for the app with the all important **npm install**:
 ```bash
@@ -33,7 +33,7 @@ If you do have to manually reload the server just use the ``` $ rs ``` command t
 </br>
 ___
 
-##API
+## API
 After you have the app up and running there are 3 endpoints currently for the API:
 
 1. **/api/v1/status**
@@ -48,7 +48,9 @@ After you have the app up and running there are 3 endpoints currently for the AP
   - The **' *:wild_card* '** will be for the ID of the original URL in the database in **v2** of this API.
 </br>
 </br>
-###Sample AJAX Call to the API
+
+### Sample AJAX Call to the API
+
 This AJAX call was made with jQuery
 </br>
 ```javaScript
@@ -79,7 +81,7 @@ $submit.on('click', function() {
 </br>
 ___
 
-##Unit Testing
+## Unit Testing
 You can also do some unit testing using ``` mocha ```.</br>
 If you did the ``` npm install ``` then it's already in the app, but you'll still need to install it globally on your machine to use it. </br>
 If unit testing is something you like and you don't have ``` mocha ``` installed then just run the following command in the terminal:
