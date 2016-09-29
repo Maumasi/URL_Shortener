@@ -39,4 +39,19 @@ After you have the app up and running there are 3 endpoints currently for the AP
   - This uses the **POST** method to receive the original URL and set a relationship to the new **maumasi.fy** URL.
 
 3. **/maumasi.fy/:wild_card**
-  - The **' */:wild_card* '** will be for the ID of the original URL in the database in **v2** of this API.
+  - The **' *:wild_card* '** will be for the ID of the original URL in the database in **v2** of this API.
+</br>
+
+You can also do some unit testing using ``` mocha ```.</br>
+If you did the ``` npm install ``` then it's already in the app, but you'll still need to install it globally on your machine to use it. </br>
+If unit testing is something you like and you don't have ``` mocha ``` installed then just run the folloing command in the terminal:
+```bash
+$ npm i -g mocha
+```
+That's it, now just call ``` mocha ``` just inside the URL_Shortener directory:
+```bash
+$ cd URL_Shortener
+$ mocha
+```
+Using this command ``` mocha ``` will look for the **' *test* '** directory and run any scripts in there. </br>
+Feel free to add your own unit tests!!
