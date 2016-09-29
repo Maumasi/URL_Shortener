@@ -20,7 +20,7 @@ after you have the server running, if you don't see that, then something failed 
 forgotten to run the ``` $ npm install ``` command. </br>
 </br>
 To stop the server press: ``` control + ^C ``` </br>
-\*\* **Remember, you'll have to stop the server and re-run the ``` $  node src/server.js ``` command every time you want to check file changes in the bowser** \*\*
+\*\* **Remember, you'll have to stop the server and re-run the*** ``` $  node src/server.js ``` **command every time you want to check file changes in the bowser** \*\*
 </br>
 </br>
 
