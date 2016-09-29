@@ -23,9 +23,7 @@ describe('API', () => {
   afterEach(() => {
     server.close();
   });
-
-
-
+  
 
   it('API has loaded from URL: /api/v1', (done) => {
     request(server)
@@ -41,7 +39,7 @@ describe('API', () => {
       .get('/maumasi-fy/linkId')
       .set('Accest', 'application/json')
       .expect('Content-Type', /json/)
-      .expect(200, {link: 'linkId'}, done);
+      .expect(200, done);
   });
 
 
