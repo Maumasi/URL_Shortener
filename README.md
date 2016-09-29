@@ -39,4 +39,4 @@ After you have the app up and running there are 3 endpoints currently for the AP
   - This uses the **POST** method to receive the original URL and set a relationship to the new **maumasi.fy** URL.
 
 3. **/maumasi.fy/:wild_card**
-  - The */:wild_card* will be for the ID of the original URL in the database in **v2** of this API.
+  - The **' */:wild_card* '** will be for the ID of the original URL in the database in **v2** of this API.
