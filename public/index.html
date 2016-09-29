@@ -8,27 +8,55 @@
 
 		<link href= "css/main.css" rel= "stylesheet"/>
 
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" media="screen" title="no title">
+
 	</head>
 
 
 	<body>
+			<main class="container">
+				<div class="row">
+					<!-- <header>
+					</header> -->
+					<div class="page-header">
+					  <h1>Maumasi.fy <small>an awesome URL shortener.</small></h1>
+					</div>
 
-		<header>
-		</header>
-		<h1>Maumasi.fy</h1>
-		<p>Demo</p>
+				</div>
 
-    <p class="oldUrl"></p>
-    <p class="newUrl"></p>
+				<div class="row">
 
-    <p><input type="text" name="url" id="url"/></p>
-    <button type="button" class="btn-submit" name="button">Maumasi.fy it!</button>
+					<!-- <form class="" action="" method="post"> -->
+					<label for="basic-url">Maumasi.fy your URL</label>
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon3">URL you want to Maumasi.fy in there <span class="fa fa-arrow-circle-right"></span></span>
+						<input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+					</div>
+				    <button type="submit" class="btn-submit btn btn-success col-xs-4 col-offset-xs-4 col-xs-offset-8" name="button">Maumasi.fy it!</button>
+					<!-- </form> -->
+
+					<p class="oldUrl"></p>
+			    <p class="newUrl"></p>
+
+				</div>
+
+
+
+
+
+			</main>
+
 
 <!-- Notes -->
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="js/jquery-1.11.3.min.js"></script>
 
+		<!-- Boostrap JS -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script src="js/main.js"></script>
 
 	</body>
