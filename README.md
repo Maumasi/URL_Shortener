@@ -31,6 +31,7 @@ $ nodemon src/server.js
 Using ``` nodemon ``` will do a live reload for you every time you save a file in the project... *most of the time*.
 If you do have to manually reload the server just use the ``` $ rs ``` command to 'restart server'. It's kinda awesome.
 </br>
+___
 
 After you have the app up and running there are 3 endpoints currently for the API:
 
