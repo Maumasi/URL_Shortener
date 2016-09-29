@@ -11,7 +11,9 @@ const PORT = 3000;
 //   res.json({helo:'world'});
 // });
 
-app.use('/api', require('../routes/api.js')(express));
+
+// from here all routes will start with '/api'
+app.use('/api/v1', require('../routes/api.js')(express));
 
 
 app.listen(PORT, () => {

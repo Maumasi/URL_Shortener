@@ -3,7 +3,12 @@ module.exports = (express) => {
   var router = express.Router();
 
   router.get('/', (req, res) => {
-    res.json({hello: 'world'});
+
+    // req.get('host') == the current host
+    var host = `http://${req.get('host')}/maumasi-fy`;
+    var hello = 'world';
+
+    res.json({hello, host});
   });
 
   router.get('/status', (req, res) => {
