@@ -33,20 +33,25 @@ If you do have to manually reload the server just use the ``` $ rs ``` command t
 </br>
 ___
 
+##API
 After you have the app up and running there are 3 endpoints currently for the API:
 
 1. **/api/v1/status**
-  - Returns an object with the key *stable* with a boolean value
+  - Returns an object with the key **'stable'** with a boolean value
   - This is used to check the status of the API if you need to do some debugging.
 
 2. **/api/v1/url**
   - This uses the **POST** method to receive the original URL and set a relationship to the new **maumasi.fy** URL.
+  - This is meant for an AJAX call
 
 3. **/maumasi.fy/:wild_card**
   - The **' *:wild_card* '** will be for the ID of the original URL in the database in **v2** of this API.
 </br>
 </br>
 
+___
+
+##Unit Testing
 You can also do some unit testing using ``` mocha ```.</br>
 If you did the ``` npm install ``` then it's already in the app, but you'll still need to install it globally on your machine to use it. </br>
 If unit testing is something you like and you don't have ``` mocha ``` installed then just run the following command in the terminal:
