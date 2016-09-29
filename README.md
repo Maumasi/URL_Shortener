@@ -41,6 +41,7 @@ After you have the app up and running there are 3 endpoints currently for the AP
 3. **/maumasi.fy/:wild_card**
   - The **' *:wild_card* '** will be for the ID of the original URL in the database in **v2** of this API.
 </br>
+</br>
 
 You can also do some unit testing using ``` mocha ```.</br>
 If you did the ``` npm install ``` then it's already in the app, but you'll still need to install it globally on your machine to use it. </br>
@@ -48,10 +49,11 @@ If unit testing is something you like and you don't have ``` mocha ``` installed
 ```bash
 $ npm i -g mocha
 ```
-That's it, now just call ``` mocha ``` just inside the URL_Shortener directory:
+That's it, now just call ``` mocha ``` just inside the **URL_Shortener** directory:
 ```bash
 $ cd URL_Shortener
 $ mocha
 ```
 Using this command ``` mocha ``` will look for the **' *test* '** directory and run any scripts in there. </br>
+Keep in mind that this uses port 3000 and will show a failed test if you try to use it at the same time the app is running on port 3000</br>
 Feel free to add your own unit tests!!
