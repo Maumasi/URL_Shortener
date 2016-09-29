@@ -35,7 +35,7 @@ module.exports = (express) => {
 
 
 
-  // Route: /api/v1/newlink
+  // Route: /api/v1/url
   // Method: post
   // Use: returns a maumasi.fy link
   // Note: ${req.protocol}:// to use http or https
