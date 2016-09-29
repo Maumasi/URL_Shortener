@@ -36,6 +36,7 @@ ___
 After you have the app up and running there are 3 endpoints currently for the API:
 
 1. **/api/v1/status**
+  - Returns an object with the key *stable* with a boolean value
   - This is used to check the status of the API if you need to do some debugging.
 
 2. **/api/v1/url**
