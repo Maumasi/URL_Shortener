@@ -1,7 +1,7 @@
 
 #Maumasi's Awesome URL Shortener!
 
-
+##Installation 
 Open your terminal if you're on a Unix or Linus machine if you've not done so already after doing the ``` git pull ``` request. </br>
 Install all the **dependancies** and **dev dependancies** for the app with the all important **npm install**:
 ```bash
