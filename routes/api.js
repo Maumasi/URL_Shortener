@@ -5,14 +5,14 @@ module.exports = (express) => {
   router.get('/', (req, res) => {
 
     // req.get('host') == the current host
-    var host = `http://${req.get('host')}/maumasi-fy`;
+    var host = `${req.protocol}://${req.get('host')}/maumasi-fy`;
     var hello = 'world';
 
     res.json({hello, host});
   });
 
-  router.get('/status', (req, res) => {
-    res.json({healthy: true});
+  router.get('/status/:id', (req, res) => {
+    res.json({healthy: id});
   });
 
   return router;
