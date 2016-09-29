@@ -2,7 +2,7 @@
 #Maumasi's Awesome URL Shortener!
 
 
-Open your terminal if you're on a Unix or Linus machine if you're not already after doing the pull request.
+Open your terminal if you're on a Unix or Linus machine if you're not already after doing the pull request. </br>
 Install all the **dependancies** and **dev dependancies** for the app with the all important **npm install**:
 ```bash
 $ cd URL_Shortener
@@ -10,7 +10,7 @@ $ npm install
 ```
 </br>
 
-To run the node.js server up and running you'll have to navigate to the
+To run the node.js server up and running you'll have to navigate to the </br>
 server.js file then use the key word node to tell node.js to run the file:
 ```bash
 $  node src/server.js
