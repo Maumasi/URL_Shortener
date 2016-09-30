@@ -3,7 +3,7 @@ const Sequelize = require('sequelize');
 
 // only used in the dev environment
 // require('../../.env');
-require('dotenv').config();
+require('dotenv').config({ path: '../.env' });
 
 // DB_NAME='MaumasiFy'
 // DB_USER='root'
