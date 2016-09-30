@@ -1,8 +1,10 @@
 
-const originalURL = sequelize.define('originalURL', {
+// const db = require('../db');
 
-  originalURL: {
-    type: Sequelize.STRING,
-  }
-
-});
+// const originalURL = db.sequelize.define('originalURL', {
+//
+//   originalURL: {
+//     type: Sequelize.STRING,
+//   }
+//
+// });
