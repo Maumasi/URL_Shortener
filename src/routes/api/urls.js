@@ -1,12 +1,13 @@
 
-module.exports = (express) => {
+const maumasiFy = require('../../models/url_crud');
 
+
+
+
+module.exports = (express) => {
 
   const router = express.Router();
   const randomLinkId = require('../../util/linkIdMaker');
-
-
-
 
 
   // Route: /api/v1/status
@@ -15,7 +16,6 @@ module.exports = (express) => {
   router.use('/status', (req, res) => {
     res.json({stable: true});
   });
-
 
 
   // Route: /api/v1/url
@@ -33,8 +33,6 @@ module.exports = (express) => {
       }
 
     });
-
-
 
   return router;
 }
