@@ -5,7 +5,11 @@ $(function(){
 	var $newUrl = $('.newUrl');
 	var $oldUrl = $('.oldUrl');
 	var $submit = $('.btn-submit');
-	var $url = $('input#url');
+	var $url = $('input.original-url');
+	var $linkWrapper = $('div.link-wrapper');
+
+
+	$linkWrapper.addClass('hidden');
 
 	$submit.on('click', function() {
 
@@ -21,14 +25,20 @@ $(function(){
 			success: function(newData) {
 
 				// show user their new maumasi.fy link
-				$oldUrl.html('This URL: ' + newData.originalUrl);
-				$newUrl.html('truned into this URL : ' + newData.maumasi_fied_link);
+				$oldUrl.html(newData.originalUrl);
+				$newUrl.html(newData.maumasi_fied_link);
+
+				// make link active
+				$oldUrl.attr('href', newData.originalUrl);
+				$newUrl.attr('href', newData.maumasi_fied_link);
+
+				$linkWrapper.removeClass('hidden');
 
 				$url.val('');
 
 				console.log(newData);
 			},
-			// *** This is causing errors!!! *** 
+			// *** This is causing errors!!! ***
 			// error: function() {
 			// 	alert('API call failed :(');
 			// }

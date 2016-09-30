@@ -16,6 +16,7 @@ h1{
 	text-align: center;
 }
 
+div.link-wrapper:first-of-type,
 .btn-submit{
-	margin-top: 1rem;
+	margin-top: 2rem;
 }
