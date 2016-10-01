@@ -46,7 +46,7 @@ $(function(){
 			// error: function() {
 			// 	alert('API call failed :(');
 			// }
-		});
+		});// ajax
 	});
 
 });

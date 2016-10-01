@@ -3,6 +3,7 @@
 
 const bodyParser = require('body-parser');
 const express = require('express');
+const sessions = require('express-session');
 const routes = require('./routes');
 // const routes = require('./routes/api');
 
@@ -15,8 +16,11 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-  extended: true,
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(sessions({
+  secret: 'max',
+  saveUninitialized: false,
+  resave: false
 }));
 
 

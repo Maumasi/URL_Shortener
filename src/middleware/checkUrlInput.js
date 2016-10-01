@@ -1,35 +1,30 @@
 
 const ping = require('ping');
+// const sessions = require('express-session');
 const prep = require('../services/services').services.pingPreper;
 
 // module.exports = (req, res, next) => {
 
 module.exports = (req, res, url) => {
 
+
+  // const url = req.body;
+
   // var host = 'google.com';
-  host = prep(url.originalURL);
-  var t = {};
+  var host = prep(url.originalURL);
 
-  ping.promise.probe(host)
-        .then(function (res) {
-            // console.log(res);
-            t = res;
-            return res;
-        });
+  return ping.promise.probe(host);
+    // .then(function (data) {
+    //     console.log(data);
+    //     // req.Tbody = res.json(res);
+    //     // console.log('inside: '+ req.Tbody);
+    //     pingTest = res.alive;
+    //
+    //     // return data;
+    //
+    // });
 
-  // console.log(t);
-  var cfg = {
-      timeout: 10,
-      // WARNING: -i 2 may not work in other platform like window
-      extra: ["-i 2"],
-  };
+    // return data;
 
-  ping.sys.probe(host, function(isAlive){
-      var msg = isAlive ? 'host ' + host + ' is alive' : 'host ' + host + ' is dead';
-      // console.log(msg);
-      req.param.msg = msg;
-  }, cfg)
 
-      console.log(req.param.msg);
-  return req.param.msg;
 }

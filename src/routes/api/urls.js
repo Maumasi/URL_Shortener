@@ -1,4 +1,6 @@
 
+// const sessions = require('express-session');
+
 const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
 const originalURL = require('../../models/db_crud').table('originalURL');
 
@@ -41,10 +43,6 @@ module.exports = (express) => {
   });
 
 
-
-
-
-
 // ==========================================   Middleware: sanitize user input
 
 
@@ -54,70 +52,77 @@ module.exports = (express) => {
 
 
 
-
-  // ==========================================   submit to database
+// ==========================================   submit to database
   // Route: /api/v1/url
   // Method: post
   // Use: creates records in the database and returns the user input URL and a maumasi.fy link for that link
   // Note: ${req.protocol}:// to use http or https
-    router.post('/url', (req, res) => {
+    router.post('/url', (req, res, next) => {
 
       var original_ID;
       var linkKey = services.randomKey();
 
+      // req.param.msg = false;
+
       var maumasiFy_link = `${req.protocol}://${req.get('host')}/maumasi.fy/${linkKey}`;
       var submitedURL = req.body || null;
 
+      // pingTest = false;
+      req.pingTest = urlChecker(req, res, submitedURL);
 
-      async.parallel(urlChecker(req, res, submitedURL), function(err, result) {
-          /* this code will run after all calls finished the job or
-             when any of the calls passes an error */
-          if (err)
-              return console.log(err);
-          console.log(result);
-      });
+      req.pingTest.then((data) => {
 
+        // console.log(data);
 
-      if (false) {
+        req.urlBody = data;
 
-        // submit to DB
-        originalURL.create(
-          submitedURL,
+        console.log('req.urlBody: '+ req.urlBody.alive);
 
-          (err) => {
-            res.status(500).json(err);
-            console.log('Error ' + err);
-          },
+        if (data.alive) {
 
-          (submitedURL) => {
-
-            // add maumasi.fy link to obj before sending back a response
-            submitedURL.dataValues.maumasi_fied_link = maumasiFy_link;
-            res.status(200).json(submitedURL);
-            original_ID = submitedURL.dataValues.id;
-          });// originalURL.create
-
-        // wait for the code above to finish before try to create a maumasiFyURL record
-        res.on('finish', () => {
-          maumasiFyURL.create(
-            {
-              maumasiFyKey: linkKey,
-              originalURL_ID: original_ID,
-            },
+          // submit to DB
+          originalURL.create(
+            submitedURL,
 
             (err) => {
               res.status(500).json(err);
               console.log('Error ' + err);
             },
-            () => {
-              console.log('New record created');
-            }
-          );// maumasiFyURL.create
-        });// res.finish
 
-      // }else{
-      //   console.log('link failed');
-      }// if
+            (submitedURL) => {
+
+              // add maumasi.fy link to obj before sending back a response
+              submitedURL.dataValues.maumasi_fied_link = maumasiFy_link;
+
+              res.status(200).json(submitedURL);
+              original_ID = submitedURL.dataValues.id;
+            });// originalURL.create
+
+          // wait for the code above to finish before try to create a maumasiFyURL record
+          res.on('finish', () => {
+            maumasiFyURL.create(
+              {
+                maumasiFyKey: linkKey,
+                originalURL_ID: original_ID,
+              },
+
+              (err) => {
+                res.status(500).json(err);
+                console.log('Error ' + err);
+              },
+              () => {
+                console.log('New record created');
+              }
+            );// maumasiFyURL.create
+          });// res.finish
+
+        }else{
+          console.log('link failed: ' + req.body.originalURL);
+
+
+        }// if
+      });// then
+
     });// router.post
 
   return router;
