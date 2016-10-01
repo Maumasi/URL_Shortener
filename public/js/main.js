@@ -14,7 +14,7 @@ $(function(){
 	$submit.on('click', function() {
 
 		var url = {
-			originalUrl: $url.val()
+			originalURL: $url.val()
 		}
 
 // AJAX call to our API
@@ -24,12 +24,16 @@ $(function(){
 			data: url,
 			success: function(newData) {
 
+				// console.log(this.data);
+
 				// show user their new maumasi.fy link
-				$oldUrl.html(newData.originalUrl);
+				$oldUrl.html(newData.originalURL);
 				$newUrl.html(newData.maumasi_fied_link);
 
 				// make link active
-				$oldUrl.attr('href', newData.originalUrl);
+
+				console.log($oldUrl.attr('href'));
+				$oldUrl.attr('href', newData.originalURL);
 				$newUrl.attr('href', newData.maumasi_fied_link);
 
 				$linkWrapper.removeClass('hidden');

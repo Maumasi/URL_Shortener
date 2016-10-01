@@ -6,21 +6,19 @@ const express = require('express');
 const routes = require('./routes');
 // const routes = require('./routes/api');
 
-// const process = require('dotenv');
+require('dotenv').config({ path: '../.env' });
 const app = express();
 
 
 // const PORT = process.PORT;
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true,
 }));
 
-
-// console.log(route(express));
 
 
 // from here all routes will start with '/api'

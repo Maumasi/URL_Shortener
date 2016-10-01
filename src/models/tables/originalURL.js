@@ -1,10 +1,13 @@
 
-// const db = require('../db');
+module.exports = (Sequelize, sequelize) => {
 
-// const originalURL = db.sequelize.define('originalURL', {
-//
-//   originalURL: {
-//     type: Sequelize.STRING,
-//   }
-//
-// });
+  const originalURL = sequelize.define('originalURL', {
+
+    originalURL: {
+      type: Sequelize.STRING,
+    }
+
+  });
+
+  return originalURL;
+}

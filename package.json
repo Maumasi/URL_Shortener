@@ -17,10 +17,12 @@
   },
   "homepage": "https://github.com/Maumasi/maumasi-url-shortener#readme",
   "dependencies": {
+    "async": "^2.0.1",
     "body-parser": "^1.15.2",
     "dotenv": "^2.0.0",
     "express": "^4.14.0",
     "mysql": "^2.11.1",
+    "ping": "^0.2.0",
     "sequelize": "^3.24.3"
   },
   "devDependencies": {

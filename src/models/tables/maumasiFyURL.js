@@ -1,8 +1,13 @@
 
-// const maumasiFyURL = sequelize.define('maumasiFyURL', {
-//
-//   maumasiFyURL: {
-//     type: Sequelize.STRING,
-//   }
-//
-// });
+module.exports = (Sequelize, sequelize) => {
+
+  const maumasiFyURL = sequelize.define('maumasiFyURL', {
+
+  maumasiFyKey: {
+    type: Sequelize.STRING,
+  }
+
+});
+
+  return maumasiFyURL;
+}
