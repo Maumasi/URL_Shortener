@@ -5,7 +5,7 @@ const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
 module.exports = (express) => {
   const router = express.Router();
 
-  // Route: /maumasi.fy/:wild_card
+  // Route: /maumasi.fy/:linkKey
   // Method: get
   // Use: retrevie link from the DB
   router.get('/:linkKey', (req, res) => {

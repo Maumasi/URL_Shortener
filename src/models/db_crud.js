@@ -9,7 +9,7 @@ const tables = {
 
 
 exports.table = (table) => {
-  const careateRecord = {
+  const dbInteractions = {
 
 // ==========================================   CREATE
     // same as create: () => {...}
@@ -43,6 +43,7 @@ exports.table = (table) => {
       }).then(success).catch(err);
     },
 
+  // ==========================================   READ
     findByOriginalUrlId(payload, err, success) {
       tables[table].find({
         where: {
@@ -57,8 +58,15 @@ exports.table = (table) => {
   // ==========================================   UPDATE
 
   // ==========================================   DELETE
+    destroy(payload, err, success) {
+      console.log(payload);
+      tables[table].destroy({
+        where: {
+          id: payload.id,
+        },
+      }).then(success).catch(err);
+    },
+  };// dbInteractions obj
 
-  };// careateRecord obj
-
-  return careateRecord;
+  return dbInteractions;
 };// exports.careateRecord

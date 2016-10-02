@@ -1,5 +1,5 @@
 
-// console.log('DB script reached');
+console.log('DB script reached');
 
 const Sequelize = require('sequelize');
 
