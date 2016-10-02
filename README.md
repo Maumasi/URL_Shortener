@@ -1,6 +1,7 @@
 
 # Maumasi's Awesome URL Shortener!
-
+`version: 1.1.0`
+</br>
 ## Installation
 Open your terminal if you're on a Unix or Linus machine if you've not done so already after doing the ``` git pull ``` request. </br>
 Install all the **dependancies** and **dev dependancies** for the app with the all important **npm install**:
@@ -20,7 +21,7 @@ after you have the server running, if you don't see that, then something failed 
 forgotten to run the ``` $ npm install ``` command. </br>
 </br>
 To stop the server press: ``` control + ^C ``` </br>
-\*\* **Remember, you'll have to stop the server and re-run the*** ``` $  node src/server.js ``` **command every time you want to check file changes in the bowser** \*\*
+\*\* **Remember, you'll have to stop the server and re-run the** ``` $  node src/server.js ``` **command every time you want to check file changes in the bowser** \*\*
 </br>
 </br>
 
@@ -34,22 +35,92 @@ If you do have to manually reload the server just use the ``` $ rs ``` command t
 ___
 
 ## API
-After you have the app up and running there are 3 endpoints currently for the API:
+After you have the app up and running there are 5 endpoints for the API. The first 3 endpoints require an AJAX call. The 4th is a API status checkup and can be used with an AJAX call if you need to watch for status changes for the API's stability. The 5th is a 301 redirect, no AJAX call needed for this endpoint.
 
-1. **/api/v1/status**
-  - Returns an object with the key **'stable'** with a boolean value
+1. **/maumasi.fy/v1.1.0/shorten-url**
+  - Creates a short link.
+
+  - This uses the **POST** method to receive the original URL and set a relationship to the new **maumasi.fy** short link.
+
+  - This will generate a new short link or return an existing short link if the exact URL submitted happens to be in the database already.
+  - The root URL destination will be pinged. If it fails it will logged it in the console. If it passes it will return the following JSON:
+    ```javaScript
+  {
+    'originalURL' : ['URL submitted'],
+    'maumasi_fied_link' : ['generated short link']
+  }
+  ```
+  </br>
+  </br>
+
+2. **/maumasi.fy/v1.1.0/update-url**
+  - Updates a short link.
+
+  - This uses the **POST** method to receive the new URL and set a relationship to the **maumasi.fy** short link to be reassinged that should be submited with the new URL.
+
+  - This endpoint expects JSON:
+  ```javaScript
+  {
+    'maumasiFyKey': ['your full short link'],
+    'updatelURL': ['a new URL for this short link']
+  }
+  ```
+
+  - This reassigns the short link to a new URL destination.
+
+  - Returns JSON:
+  ```javaScript
+  {
+    'originalURL' : ['new URL submited'],
+    'maumasi_fied_link' : ['short link submitted with new URL']
+  }
+  ```
+  </br>
+  </br>
+
+3. **/maumasi.fy/v1.1.0/remove-url**
+  - Deletes a short link and it's assigned URL from the database.
+
+  - This uses the **POST** method to completely remove the short link and it's assigned URL from the database.
+
+  - This endpoint expects JSON:
+  ```javaScript
+  {
+    'maumasiFyKey': ['your full short link']
+  }
+  ```
+  </br>
+  </br>
+
+4. **/maumasi.fy/v1.1.0/status**
+  - Check the status of the API.
+
+  - This uses the **GET** method.
+
   - This is used to check the status of the API if you need to do some debugging.
 
-2. **/api/v1/url**
-  - This uses the **POST** method to receive the original URL and set a relationship to the new **maumasi.fy** URL.
-  - This is meant for an AJAX call
+  - Returns JSON:
+  ```javaScript
+  {
+    'stable' : [boolean]
+  }
+  ```
+  </br>
+  </br>
 
-3. **/maumasi.fy/:wild_card**
-  - The **' *:wild_card* '** will be for the ID of the original URL in the database in **v2** of this API.
+5. **/maumasi.fy/:shortKey**
+  - Redirects to stored URL when a short link is used.
+
+  - This uses the **GET** method to redirect the route to the assigned URL in the database using a **301 redirect**.
+
+  - The **' *:shortKey* '** is the **key** assigned to the stored URL in the database.
+
+  - This is handled by the API, no AJAX call is needed for this endpoint.
 </br>
 </br>
+</br>
 
-### Sample AJAX Call to the API
+### Sample AJAX call to the API
 
 This AJAX call was made with jQuery
 </br>
@@ -62,15 +133,15 @@ var $url = $('input#url');
 
 $submit.on('click', function() {
 
-  var url = {
+  var formData = {
     originalUrl: $url.val()
   }
 
 // AJAX call to our API
   $.ajax({
     type: 'POST',
-    url: 'http://localhost:3000/api/v1/url',
-    data: url,
+    url: 'http://localhost:3000/maumasi.fy/v1.1.0/shorten-url',
+    data: formData,
     success: function(newData) {
 
       // show user their new maumasi.fy link
@@ -87,7 +158,9 @@ $submit.on('click', function() {
 ```
 </br>
 ___
-
+## Testing in the browser
+The API ships with an example site on how the API can be implamented. It is set up to preform full CRUD using AJAX calls. Just type ``` localhost:3000 ``` in the browser URL after you get the server.js running and you can start going bananas!
+___
 ## Unit Testing
 You can also do some unit testing using ``` mocha ```.</br>
 If you did the ``` npm install ``` then it's already in the app, but you'll still need to install it globally on your machine to use it. </br>
