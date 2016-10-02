@@ -2,16 +2,14 @@
 const db = require('./db');
 
 // obj of tables in the DB
-var tables = {
-  'maumasiFyURL': db.maumasiFyURL,
-  'originalURL': db.originalURL,
-}
+const tables = {
+  maumasiFyURL: db.maumasiFyURL,
+  originalURL: db.originalURL,
+};
 
 
 exports.table = (table) => {
-
-  // console.log(tables[table]);
-  var careateRecord = {
+  const careateRecord = {
 
 // ==========================================   CREATE
     // same as create: () => {...}
@@ -23,20 +21,44 @@ exports.table = (table) => {
     findByLinkKey(payload, err, success) {
       tables[table].find({
         where: {
-          maumasiFyKey: payload.maumasiFyKey
+          maumasiFyKey: payload.maumasiFyKey,
         },
         include: [{
           all: true,
-          nested: true
-        }]
+          nested: true,
+        }],
       }).then(success).catch(err);
     },
 
+  // ==========================================   READ
+    findByUrl(payload, err, success) {
+      tables[table].find({
+        where: {
+          originalURL: payload.originalURL,
+        },
+        include: [{
+          all: true,
+          nested: true,
+        }],
+      }).then(success).catch(err);
+    },
+
+    findByOriginalUrlId(payload, err, success) {
+      tables[table].find({
+        where: {
+          originalURL_ID: payload.id,
+        },
+        include: [{
+          all: true,
+          nested: true,
+        }],
+      }).then(success).catch(err);
+    },
   // ==========================================   UPDATE
 
   // ==========================================   DELETE
 
-  }// careateRecord obj
+  };// careateRecord obj
 
   return careateRecord;
-}// exports.careateRecord
+};// exports.careateRecord

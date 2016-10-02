@@ -20,13 +20,12 @@ $(function(){
 // AJAX call to our API
 		$.ajax({
 			type: 'POST',
-			url: 'http://localhost:3000/api/v1/url',
+			url: 'http://localhost:3000/maumasi.fy-url/v1.1.0/shorten',
 			data: url,
-			success: function(newData) {
-
+			success: function (newData) {
 				// console.log(this.data);
 
-				// show user their new maumasi.fy link
+				// show user their new maumasi.fy link and old link
 				$oldUrl.html(newData.originalURL);
 				$newUrl.html(newData.maumasi_fied_link);
 
@@ -48,5 +47,4 @@ $(function(){
 			// }
 		});// ajax
 	});
-
 });

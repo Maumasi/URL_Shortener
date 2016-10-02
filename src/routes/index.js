@@ -1,13 +1,10 @@
 
 module.exports = (express) => {
-
-  var router = express.Router();
-
+  const router = express.Router();
 
 // Route sources
-  router.use('/api/v1',     require('./api/urls')(express));
-  router.use('/maumasi.fy', require('./api/maumasi_fy')(express));
-
+  router.use('/maumasi.fy-url/v1.1.0', require('./apiEndPoints/shortenUrl')(express));
+  router.use('/maumasi.fy', require('./apiEndPoints/keyRedirect')(express));
 
   return router;
-}
+};
