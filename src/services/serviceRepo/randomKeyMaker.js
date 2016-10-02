@@ -1,4 +1,6 @@
 
+// const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
+
 // private func that produces a random index of the array arg
 var randomIndex = (array) => {
   return Math.floor(Math.random() * (array.length));
@@ -19,7 +21,7 @@ module.exports = () => {
   };
 
   // fill charSets.upperCase with uppercase letters
-  for (const letter of charSets.lowerCase) {
+  for (var letter of charSets.lowerCase) {
     charSets.upperCase.push(letter.toUpperCase());
   }
 
@@ -39,6 +41,5 @@ module.exports = () => {
   randomString += charSets.numbers[numIndex];
 
   // console.log(randomString);
-
   return randomString;
 };
