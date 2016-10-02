@@ -25,10 +25,10 @@
 						<nav>
 							<ul>
 								<li><p>
-									<a href="./edit.html">Edit</a>
+									<a href="./index.html">Home</a>
 								</p></li>
 								<li><p>
-									<a href="./delete.html">Delete Short Link</a>
+									<a href="./edit.html">Edit</a>
 								</p></li>
 							</ul>
 						</nav>
@@ -41,28 +41,23 @@
 				</div>
 
 				<div class="row">
+					<h2>Delete a short link you no longer need</h2>
 
 					<!-- <form class="" action="/api/v1/url" method="post"> -->
-					<label for="basic-url">Maumasi.fy your URL</label>
+					<label for="delete-short-link">Delete short link</label>
 					<div class="input-group">
-						<span class="input-group-addon" id="basic-addon3">URL you want to Maumasi.fy in there <span class="fa fa-arrow-circle-right"></span></span>
-						<input type="text" class="form-control original-url" id="basic-url" aria-describedby="basic-addon3">
+						<span class="input-group-addon" id="basic-addon3">Short link you want to delete <span class="fa fa-arrow-circle-right"></span></span>
+						<input type="text" class="form-control original-url" id="delete-short-link" aria-describedby="basic-addon3">
 					</div>
-				    <button type="button" class="btn-shorten-url-submit btn btn-success col-xs-4 col-offset-xs-4 col-xs-offset-4" name="button">Maumasi.fy it!</button>
+				    <button type="button" class="btn-delete-submit btn btn-success col-xs-4 col-offset-xs-4 col-xs-offset-4" name="button">Delete it forever!</button>
 					<!-- </form> -->
 				</div>
 
 				<div class="row">
 
-					<div class="link-wrapper alert alert-info" role="alert">
-					  <p class="">
-							Original URL:  <a href="advadsv" class=" oldUrl alert-link">...</a>
-					  </p>
-					</div>
 
-					<div class="link-wrapper alert alert-success" role="alert">
-					  <p class="">
-							Maumasi.fy URL: <a href="" class=" newUrl alert-link">...</a>
+					<div class="link-wrapper alert alert-warning" role="alert">
+					  <p class="deleted-short-link">
 					  </p>
 					</div>
 

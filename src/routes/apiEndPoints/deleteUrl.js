@@ -1,6 +1,7 @@
 
 const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
 const originalURL = require('../../models/db_crud').table('originalURL');
+const shortKeyExtractor = require('../../services/services').services.shortKeyExtractor;
 
 module.exports = (express) => {
   const router = express.Router();
@@ -8,12 +9,12 @@ module.exports = (express) => {
   // Route: /maumasi.fy/remove-url/:linkKey
   // Method: get
   // Use: delete record from DB
-  router.get('/:linkKey', (req, res) => {
+  router.post('/', (req, res) => {
     var keyId;
     var urlId;
 
     const deleteRequest = {
-      maumasiFyKey: req.params.linkKey,
+      maumasiFyKey: shortKeyExtractor(req.body.maumasiFyKey),
     };
 
     maumasiFyURL.findByLinkKey(

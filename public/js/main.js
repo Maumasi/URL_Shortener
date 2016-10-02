@@ -2,16 +2,23 @@
 
 $(function(){
 
+	// create handles
 	var $newUrl = $('.newUrl');
 	var $oldUrl = $('.oldUrl');
 	var $shortenUrlSubmit = $('.btn-shorten-url-submit');
 	var $url = $('input.original-url');
 
+	// update handlers
 	var $updatedUrl = $('.updatedUrl');
 	var $shortLinkUsed = $('.short-link-used');
 	var $shortLink = $('#short-link');
 	var $editUrl = $('#edit-url');
 	var $editUrlSubmit = $('.btn-edit-short-link');
+
+	// delete handlers
+	var $deleteInput = $('#delete-short-link');
+	var $deleteSubmit = $('.btn-delete-submit');
+	var $deleteResponse = $('.deleted-short-link');
 
 	var $linkWrapper = $('div.link-wrapper');
 
@@ -87,6 +94,37 @@ $(function(){
 
 				$shortLink.val('');
 				$editUrl.val('');
+			},
+			// *** This is causing errors!!! ***
+			// error: function() {
+			// 	alert('API call failed :(');
+			// }
+		});// ajax
+	});// onClick
+
+
+
+	$deleteSubmit.on('click', function() {
+
+		var deleteShortLink = {
+			maumasiFyKey: $deleteInput.val(),
+		}
+
+		console.log('test delete btn');
+
+// AJAX call to our API
+		$.ajax({
+			type: 'POST',
+			url: 'http://localhost:3000/maumasi.fy/v1.1.0/remove-url',
+			data: deleteShortLink,
+			success: function (deleteReturn) {
+
+				// show user their new maumasi.fy link and old link
+				$deleteResponse.html("<span class=\" \">'" + deleteShortLink.maumasiFyKey + "'</span>" + ' has been removed forever until the end of time, or until it makes the rounds again. Thanks for recycling!');
+
+				$linkWrapper.removeClass('hidden');
+
+				$deleteInput.val('');
 			},
 			// *** This is causing errors!!! ***
 			// error: function() {

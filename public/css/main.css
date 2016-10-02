@@ -16,6 +16,7 @@ h1{
 
 div.link-wrapper:first-of-type,
 .btn-edit-short-link,
+.btn-delete-submit,
 .btn-shorten-url-submit{
 	margin-top: 2rem;
 }
