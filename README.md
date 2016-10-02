@@ -44,7 +44,7 @@ After you have the app up and running there are 5 endpoints for the API. The fir
 
   - This will generate a new short link or return an existing short link if the exact URL submitted happens to be in the database already.
   - The root URL destination will be pinged. If it fails it will logged it in the console. If it passes it will return the following JSON:
-    ```javaScript
+  ```javaScript
   {
     'originalURL' : ['URL submitted'],
     'maumasi_fied_link' : ['generated short link']
