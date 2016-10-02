@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang= "en">
+	<head>
+		<meta charset= "utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title>URL Shortener</title>
+
+		<link href= "css/main.css" rel= "stylesheet"/>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" media="screen" title="no title">
+
+	</head>
+
+	<body>
+		<main class="container">
+
+			<div class="row">
+
+				<header>
+					<nav>
+						<p>
+							<a href="./index.html">Home</a>
+						</p>
+					</nav>
+				</header>
+
+				<div class="page-header">
+					<h1>Maumasi.fy <small>an awesome URL shortener.</small></h1>
+				</div>
+
+			</div>
+
+			<div class="row">
+				<h2>Edit your existing short link to go some where new!</h2>
+
+				<!-- <form class="" action="/api/v1/url" method="post"> -->
+				<label for="short-link">Your Maumasi.fy short link</label>
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon3">Your short link <span class="fa fa-arrow-circle-right"></span></span>
+					<input type="text" class="form-control original-url" id="short-link" aria-describedby="basic-addon3">
+				</div>
+
+				<label for="edit-url">New URL for short link</label>
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon3">New URL <span class="fa fa-arrow-circle-right"></span></span>
+					<input type="text" class="form-control original-url" id="edit-url" aria-describedby="basic-addon3">
+				</div>
+
+
+					<button type="button" class="btn-edit-short-link btn btn-success col-xs-4 col-offset-xs-4 col-xs-offset-4" name="button">Maumasi.fy update!</button>
+				<!-- </form> -->
+			</div>
+
+			<div class="row">
+
+				<div class="link-wrapper alert alert-info" role="alert">
+					<p class="">
+						New URL:  <a href="" class=" updatedUrl alert-link">...</a>
+					</p>
+				</div>
+
+				<div class="link-wrapper alert alert-success" role="alert">
+					<p class="">
+						Maumasi.fy short link: <a href="" class=" short-link-used alert-link">...</a>
+					</p>
+				</div>
+
+
+				<!-- <p class="oldUrl label label-warning"></p> -->
+				<!-- <p class="newUrl"></p> -->
+			</div>
+
+		</main>
+
+<!-- Notes -->
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="js/jquery-1.11.3.min.js"></script>
+
+		<!-- Boostrap JS -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="js/main.js"></script>
+
+	</body>
+</html>

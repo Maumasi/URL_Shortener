@@ -1,6 +1,7 @@
 
 const db = require('./db');
 
+
 // obj of tables in the DB
 const tables = {
   maumasiFyURL: db.maumasiFyURL,
@@ -63,8 +64,16 @@ exports.table = (table) => {
           maumasiFyKey: payload.maumasiFyKey,
         },
       })
-      .then((currentUrl) => {
-        currentUrl.updateAttributes(payload.urlUpdate).then(success).catch(err);
+      .then((shortKeyJoinUrl) => {
+        tables.originalURL.find({
+          where: {
+            id: shortKeyJoinUrl.originalURL_ID,
+          },
+        }).then((currentUrl) => {
+          // console.log(payload.urlUpdate);
+          currentUrl.updateAttributes(payload.urlUpdate).then(success).catch(err);
+          // console.log('pass');
+        }).catch(err);
       }).catch(err);
     },
 

@@ -15,6 +15,11 @@ h1{
 }
 
 div.link-wrapper:first-of-type,
-.btn-submit{
+.btn-edit-short-link,
+.btn-shorten-url-submit{
+	margin-top: 2rem;
+}
+
+label:last-of-type{
 	margin-top: 2rem;
 }

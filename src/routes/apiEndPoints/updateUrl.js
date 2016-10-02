@@ -13,9 +13,15 @@ module.exports = (express) => {
 
     // console.log(update);
 
-    const key = { maumasiFyKey: shortKeyExtractor(update.maumasiFyKey) };
-    console.log(key);
-    key.urlUpdate.originalURL = update.updatelURL;
+    var key = {
+      maumasiFyKey: shortKeyExtractor(update.maumasiFyKey),
+      urlUpdate: {
+        originalURL: update.updatelURL,
+      },
+    };
+
+    // console.log(key);
+    // key.urlUpdate.originalURL = update.updatelURL;
 
     maumasiFyURL.updateUrlByShortKey(
       key,
@@ -24,7 +30,15 @@ module.exports = (express) => {
         console.log(err);
       },
 
-      () => {
+      (updatedUrlInfo) => {
+
+        const updateRespose = {
+          originalURL: updatedUrlInfo.originalURL,
+          maumasi_fied_link: update.maumasiFyKey,
+        };
+
+        // console.log(updatedUrlInfo);
+        res.status(200).json(updateRespose);
         console.log('url updated');
       });
   });
