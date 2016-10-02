@@ -1,6 +1,9 @@
 const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
 // const originalURL = require('../../models/db_crud').table('originalURL');
-const shortKeyExtractor = require('../../services/services').services.shortKeyExtractor;
+
+const services = require('../../services/services').services;
+const urlChecker = services.checkUrlInput;
+const shortKeyExtractor = services.shortKeyExtractor;
 
 module.exports = (express) => {
   const router = express.Router();
@@ -20,27 +23,37 @@ module.exports = (express) => {
       },
     };
 
-    // console.log(key);
-    // key.urlUpdate.originalURL = update.updatelURL;
+    console.log('url update check: ' + update.updatelURL);
+    // pingTest is a promise func;
+    const pingTest = urlChecker(req, res, update.updatelURL);
 
-    maumasiFyURL.updateUrlByShortKey(
-      key,
+    pingTest.then((pingResponse) => {
+      if (pingResponse.alive) {
+        maumasiFyURL.updateUrlByShortKey(
+          key,
 
+          (err) => {
+            console.log(err);
+          },
+
+          (updatedUrlInfo) => {
+            const updateRespose = {
+              originalURL: updatedUrlInfo.originalURL,
+              maumasi_fied_link: update.maumasiFyKey,
+            };
+
+            // console.log(updatedUrlInfo);
+            res.status(200).json(updateRespose);
+            console.log('url updated');
+          });// updateUrlByShortKey
+      } else {
+        console.log(`${update.updatelURL} is not a live web URL`);
+      }// if
+    }).catch(
       (err) => {
         console.log(err);
-      },
-
-      (updatedUrlInfo) => {
-
-        const updateRespose = {
-          originalURL: updatedUrlInfo.originalURL,
-          maumasi_fied_link: update.maumasiFyKey,
-        };
-
-        // console.log(updatedUrlInfo);
-        res.status(200).json(updateRespose);
-        console.log('url updated');
-      });
+      }
+    );
   });
 
   return router;

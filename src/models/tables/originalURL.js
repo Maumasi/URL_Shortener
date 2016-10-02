@@ -5,7 +5,7 @@ module.exports = (Sequelize, sequelize) => {
     originalURL: {
       type: Sequelize.STRING,
       validate: {
-        isUrl: true,
+        // isUrl: true,  <----- this check is causing good URLs to be rejected
       },
     },
 
