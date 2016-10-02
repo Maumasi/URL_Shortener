@@ -11,7 +11,7 @@ module.exports = (express) => {
   const router = express.Router();
 
 // ==========================================   API status
-  // Route: /api/v1/status
+  // Route: /maumasi.fy/v1.1.0/status
   // Method: get
   // Use: get current status of the API
   router.use('/status', (req, res) => {
@@ -19,12 +19,12 @@ module.exports = (express) => {
   });
 
 // ==========================================   submit to database
-  // Route: /api/v1/url
+  // Route: /maumasi.fy/v1.1.0/shorten
   // Method: post
   // Use: creates records in the database and returns the user input
   //      URL and a maumasi.fy link for that link
   // Note: ${req.protocol}:// to use http or https
-  router.post('/shorten', (req, res) => {
+  router.post('/shorten-url', (req, res) => {
     var originalId;
     const linkKey = randomKey();
 
@@ -112,5 +112,13 @@ module.exports = (express) => {
     });// then
   });// router.post
 
+
+  // Routes also under the '/maumasi.fy/v1.1.0' prefixed route
+
+  // update existing URL from using short link key
+  router.use('/update-url', require('./updateUrl')(express));
+
+  // delete a record
+  router.use('/remove-url', require('./deleteUrl')(express));
   return router;
 };

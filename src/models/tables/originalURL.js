@@ -4,6 +4,9 @@ module.exports = (Sequelize, sequelize) => {
 
     originalURL: {
       type: Sequelize.STRING,
+      validate: {
+        isUrl: true,
+      },
     },
 
   });

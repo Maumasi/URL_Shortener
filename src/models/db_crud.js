@@ -17,7 +17,7 @@ exports.table = (table) => {
       tables[table].create(payload).then(success).catch(err);
     },
 
-  // ==========================================   READ
+  // ==========================================   READ: find by short link key
     findByLinkKey(payload, err, success) {
       tables[table].find({
         where: {
@@ -30,7 +30,7 @@ exports.table = (table) => {
       }).then(success).catch(err);
     },
 
-  // ==========================================   READ
+  // ==========================================   READ: find by full URL
     findByUrl(payload, err, success) {
       tables[table].find({
         where: {
@@ -43,7 +43,7 @@ exports.table = (table) => {
       }).then(success).catch(err);
     },
 
-  // ==========================================   READ
+  // ==========================================   READ: find by originalURL ID
     findByOriginalUrlId(payload, err, success) {
       tables[table].find({
         where: {
@@ -55,11 +55,21 @@ exports.table = (table) => {
         }],
       }).then(success).catch(err);
     },
+
   // ==========================================   UPDATE
+    updateUrlByShortKey(payload, err, success) {
+      tables[table].find({
+        where: {
+          maumasiFyKey: payload.maumasiFyKey,
+        },
+      })
+      .then((currentUrl) => {
+        currentUrl.updateAttributes(payload.urlUpdate).then(success).catch(err);
+      }).catch(err);
+    },
 
   // ==========================================   DELETE
     destroy(payload, err, success) {
-      console.log(payload);
       tables[table].destroy({
         where: {
           id: payload.id,
