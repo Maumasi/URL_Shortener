@@ -172,7 +172,7 @@ $submit.on('click', function() {
 // AJAX call to our API
   $.ajax({
     type: 'POST',
-    url: 'http://localhost:3000/maumasi.fy/v1.1.0/shorten-url',
+    url: 'http://localhost:3000/maumasi.fy/v1.1.1/shorten-url',
     data: formData,
     success: function(newData) {
 
