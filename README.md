@@ -75,6 +75,8 @@ After you have the app up and running there are 5 endpoints for the API. The fir
     'maumasi_fied_link' : ['short link submitted with new URL']
   }
   ```
+- **Important:** Some browsers like *Chrome* will cache URLs used and will refer to their own cache history to remember where the short link's last destination was. So, after updating your short link you may have to clear your browser's cache/history for the new short link's destination to take place.
+
   </br>
   </br>
 

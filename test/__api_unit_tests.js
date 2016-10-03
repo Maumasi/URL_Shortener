@@ -10,12 +10,11 @@
 //   });
 // });
 
-var expect = require('expect');
+const expect = require('expect');
 var server = require('../src/server.js');
-var request = require('supertest');
+const request = require('supertest');
 
 describe('API', () => {
-
   beforeEach(() => {
     server = require('../src/server.js');
   });
@@ -23,11 +22,11 @@ describe('API', () => {
   afterEach(() => {
     server.close();
   });
-  
 
-  it('API has loaded from URL: /api/v1', (done) => {
+
+  it('Test shorten url route: /maumasi.fy/v1.1.0/shorten-url', (done) => {
     request(server)
-      .get('/api/v1')
+      .get('/maumasi.fy/v1.1.0/shorten-url')
       .set('Accest', 'application/json')
       .expect('Content-Type', /json/)
       .expect(200, done);
@@ -36,11 +35,9 @@ describe('API', () => {
 
   it('API responce is given from URL: /maumasi-fy/:linkId', (done) => {
     request(server)
-      .get('/maumasi-fy/linkId')
+      .get('/maumasi-fy/shortKey')
       .set('Accest', 'application/json')
       .expect('Content-Type', /json/)
       .expect(200, done);
   });
-
-
 });
