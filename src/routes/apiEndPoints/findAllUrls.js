@@ -16,7 +16,7 @@ module.exports = (express) => {
 
     // Success func
     (data) => {
-      console.log(data[0].originalURL);
+      // console.log(data[0].originalURL);
       res.status(200).json(data);
     }
     );
