@@ -190,8 +190,8 @@ Keep in mind that this uses port 3000 and will show a failed test if you try to 
 
  ```javaScript
 
- 9 // require('dotenv').config({ path: '.env' }); // <--------- for running unit tests with mocha
- 10 require('dotenv').config({ path: '../.env' }); // <--- for running app
+ // require('dotenv').config({ path: '.env' }); // <--------- for running unit tests with mocha
+ require('dotenv').config({ path: '../.env' }); // <--- for running app
 
  ```
 </br>
