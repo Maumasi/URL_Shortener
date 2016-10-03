@@ -41,7 +41,12 @@ After you have the app up and running there are 5 endpoints for the API. The fir
   - Creates a short link.
 
   - This uses the **POST** method to receive the original URL and set a relationship to the new **maumasi.fy** short link.
-
+  - - This endpoint expects JSON:
+  ```javaScript
+  {
+    'originalURL': ['submitted URL']
+  }
+  ```
   - This will generate a new short link or return an existing short link if the exact URL submitted happens to be in the database already.
   - The root URL destination will be pinged. If it fails it will logged it in the console. If it passes it will return the following JSON:
   ```javaScript
@@ -175,5 +180,20 @@ $ cd URL_Shortener
 $ mocha
 ```
 Using this command ``` mocha ``` will look for the **' *test* '** directory and run any scripts in there. </br>
-Keep in mind that this uses port 3000 and will show a failed test if you try to use it at the same time the app is running on port 3000</br>
+Keep in mind that this uses port 3000 and will show a failed test if you try to use it at the same time the app is running on port 3000
+</br>
+
+### Notes for unit testing:
+ - To connect to the database when unit testing the is a ``` require(...) ``` line you will have to un-comment and comment out another ``` require(...) ``` line that is used for funning the app. Just remember to change them back after testing.
+ </br>
+ They are in ``` URL_Shortener/src/server.js ``` lines 9 and 10:
+ ```javaScript
+ // require('dotenv').config({ path: '.env' }); // <--------- for running unit tests with mocha
+ require('dotenv').config({ path: '../.env' }); // <--- for running app
+ ```
+</br>
+</br>
+ - Currently there are 5 unit tests. Each endpoint is tested. Keep in mind that the ``` /maumasi.fy/v1.1.0/update-url ``` and ``` /maumasi.fy/v1.1.0/remove-url ``` endpoints will accutally update and delete recoreds in the database. Becasue ``` update-url ``` and ``` remove-url ``` are dependant on real records in the database they will only pass their tests once if their test values aren't updated in the ``` URL_Shortener/test/__api_unit_test.js ``` file.
+
+
 Feel free to add your own unit tests!!
