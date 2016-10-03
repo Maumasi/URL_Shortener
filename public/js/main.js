@@ -20,6 +20,8 @@ $(function(){
 	var $deleteSubmit = $('.btn-delete-submit');
 	var $deleteResponse = $('.deleted-short-link');
 
+	var $urlRepoWrapper = $('.url-repo-wrapper');
+
 	var $linkWrapper = $('div.link-wrapper');
 
 
@@ -34,7 +36,7 @@ $(function(){
 // AJAX call to our API
 		$.ajax({
 			type: 'POST',
-			url: 'http://localhost:3000/maumasi.fy/v1.1.0/shorten-url',
+			url: 'http://localhost:3000/maumasi.fy/v1.1.1/shorten-url',
 			data: url,
 			success: function (newData) {
 				// console.log(this.data);
@@ -75,7 +77,7 @@ $(function(){
 // AJAX call to our API
 		$.ajax({
 			type: 'POST',
-			url: 'http://localhost:3000/maumasi.fy/v1.1.0/update-url',
+			url: 'http://localhost:3000/maumasi.fy/v1.1.1/update-url',
 			data: editUrl,
 			success: function (updatedData) {
 				console.log(this.data);
@@ -115,7 +117,7 @@ $(function(){
 // AJAX call to our API
 		$.ajax({
 			type: 'POST',
-			url: 'http://localhost:3000/maumasi.fy/v1.1.0/remove-url',
+			url: 'http://localhost:3000/maumasi.fy/v1.1.1/remove-url',
 			data: deleteShortLink,
 			success: function (deleteReturn) {
 
@@ -132,4 +134,35 @@ $(function(){
 			// }
 		});// ajax
 	});// onClick
+
+
+// show all DB records
+	$.ajax({
+		type: 'GET',
+		url: 'http://localhost:3000/maumasi.fy/v1.1.1/all-urls',
+		// data: url,
+		success: function (AllShortLinkRecords) {
+
+			AllShortLinkRecords.forEach(function(urlData){
+
+				$urlRepoWrapper
+					.append(
+						"<div class='panel panel-default'>" +
+						  "<div class='panel-heading'>" +
+						    "<h3 class='panel-title'><a href='http://localhost:3000/maumasi.fy/" + urlData.maumasiFyKey + "'>Short link: http://localhost:3000/maumasi.fy/" + urlData.maumasiFyKey + "</a></h3>" +
+						  "</div>" +
+						  "<div class='panel-body'>" +
+						    "Mapped URL: <a href='"+ urlData.originalURL.originalURL +"'>" + urlData.originalURL.originalURL + "</a>" +
+						  "</div>" +
+						"</div>"
+					);
+			});// forEach
+
+			console.log(AllShortLinkRecords);
+		},
+		// *** This is causing errors!!! ***
+		// error: function() {
+		// 	alert('API call failed :(');
+		// }
+	});// ajax
 });

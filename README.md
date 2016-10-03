@@ -1,6 +1,6 @@
 
 # Maumasi's Awesome URL Shortener!
-`version: 1.1.0`
+`version: 1.1.1`
 </br>
 ## Installation
 Open your terminal if you're on a Unix or Linus machine if you've not done so already after doing the ``` git pull ``` request. </br>
@@ -35,9 +35,9 @@ If you do have to manually reload the server just use the ``` $ rs ``` command t
 ___
 
 ## API
-After you have the app up and running there are 5 endpoints for the API. The first 3 endpoints require an AJAX call. The 4th is a API status checkup and can be used with an AJAX call if you need to watch for status changes for the API's stability. The 5th is a 301 redirect, no AJAX call needed for this endpoint.
+After you have the app up and running there are 6 endpoints for the API. The first 3 endpoints require an AJAX call. The 4th is a API status checkup and can be used with an AJAX call if you need to watch for status changes for the API's stability. The 5th is a 301 redirect, no AJAX call needed for this endpoint. The 6th endpoint is used to display all record pairs in the database.
 
-1. **/maumasi.fy/v1.1.0/shorten-url**
+1. **/maumasi.fy/v1.1.1/shorten-url**
   - Creates a short link.
 
   - This uses the **POST** method to receive the original URL and set a relationship to the new **maumasi.fy** short link.
@@ -58,7 +58,7 @@ After you have the app up and running there are 5 endpoints for the API. The fir
   </br>
   </br>
 
-2. **/maumasi.fy/v1.1.0/update-url**
+2. **/maumasi.fy/v1.1.1/update-url**
   - Updates a short link.
 
   - This uses the **POST** method to receive the new URL and set a relationship to the **maumasi.fy** short link to be reassinged that should be submited with the new URL.
@@ -84,7 +84,7 @@ After you have the app up and running there are 5 endpoints for the API. The fir
   </br>
   </br>
 
-3. **/maumasi.fy/v1.1.0/remove-url**
+3. **/maumasi.fy/v1.1.1/remove-url**
   - Deletes a short link and it's assigned URL from the database.
 
   - This uses the **POST** method to completely remove the short link and it's assigned URL from the database.
@@ -98,7 +98,7 @@ After you have the app up and running there are 5 endpoints for the API. The fir
   </br>
   </br>
 
-4. **/maumasi.fy/v1.1.0/status**
+4. **/maumasi.fy/v1.1.1/status**
   - Check the status of the API.
 
   - This uses the **GET** method.
@@ -123,6 +123,32 @@ After you have the app up and running there are 5 endpoints for the API. The fir
 
   - This is handled by the API, no AJAX call is needed for this endpoint.
 </br>
+</br>
+
+6. **/maumasi.fy/v1.1.1/all-urls**
+  - Returns an array of all record pairs as one pbject per pair.
+
+  - This uses the **GET** method.
+
+  - Returns:
+  ```javaScript
+
+  [
+    { id: 34,
+       maumasiFyKey: '3GFom0',
+       createdAt: Mon Oct 03 2016 06:25:32 GMT-0400,
+       updatedAt: Mon Oct 03 2016 06:25:32 GMT-0400,
+       originalURL_ID: 34,
+       originalURL: {
+         id: 34,
+         originalURL: 'https://www.google.com/search?q=sfb%20fgsb&rct=j',
+         createdAt: Sun Oct 02 2016 20:55:42 GMT-0400,
+         updatedAt: Sun Oct 02 2016 20:55:42 GMT-0400
+       }
+     }
+   ]
+
+  ```
 </br>
 </br>
 
@@ -195,6 +221,6 @@ Keep in mind that this uses port 3000 and will show a failed test if you try to 
 
  ```
 </br>
- - Currently there are 5 unit tests. Each endpoint is tested. Keep in mind that the ``` /maumasi.fy/v1.1.0/update-url ``` and ``` /maumasi.fy/v1.1.0/remove-url ``` endpoints will accutally update and delete recoreds in the database. Becasue ``` update-url ``` and ``` remove-url ``` are dependant on real records in the database they will only pass their tests once if their test values aren't updated in the ``` URL_Shortener/test/__api_unit_test.js ``` file.
+ - Currently there are 5 unit tests. Each endpoint is tested. Keep in mind that the ``` /maumasi.fy/v1.1.1/update-url ``` and ``` /maumasi.fy/v1.1.1/remove-url ``` endpoints will accutally update and delete recoreds in the database. Becasue ``` update-url ``` and ``` remove-url ``` are dependant on real records in the database they will only pass their tests once if their test values aren't updated in the ``` URL_Shortener/test/__api_unit_test.js ``` file.
 
  Feel free to add your own unit tests!!
