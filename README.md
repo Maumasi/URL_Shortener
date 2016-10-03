@@ -130,7 +130,7 @@ After you have the app up and running there are 6 endpoints for the API. The fir
 
   - This uses the **GET** method.
 
-  - Returns:
+  - Return example:
   ```javaScript
 
   [
