@@ -184,15 +184,15 @@ Keep in mind that this uses port 3000 and will show a failed test if you try to 
 </br>
 
 ### Notes for unit testing:
- - To connect to the database when unit testing the is a ``` require(...) ``` line you will have to un-comment and comment out another ``` require(...) ``` line that is used for funning the app. Just remember to change them back after testing.
+ - To connect to the database when running unit test you'll have to change ``` require(...) ``` lines for the .env file. You will have to un-comment one ``` require(...) ``` line for testing and comment out another ``` require(...) ``` line that is used for running the app. Just remember to change them back after testing.
  </br>
  They are in ``` URL_Shortener/src/server.js ``` lines 9 and 10: </br>
 
  ```javaScript
 
- // require('dotenv').config({ path: '.env' }); // <--------- for running unit tests with mocha
- require('dotenv').config({ path: '../.env' }); // <--- for running app
- 
+ 9 // require('dotenv').config({ path: '.env' }); // <--------- for running unit tests with mocha
+ 10 require('dotenv').config({ path: '../.env' }); // <--- for running app
+
  ```
 </br>
 </br>
