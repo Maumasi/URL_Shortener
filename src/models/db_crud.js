@@ -57,6 +57,16 @@ exports.table = (table) => {
       }).then(success).catch(err);
     },
 
+  // ==========================================   READ: find all records in DB
+    findAllRecords(err, success) {
+      tables[table].findAll({
+        include: [{
+          all: true,
+          nested: true,
+        }],
+      }).then(success).catch(err);
+    },
+
   // ==========================================   UPDATE
     updateUrlByShortKey(payload, err, success) {
       tables[table].find({

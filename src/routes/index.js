@@ -10,8 +10,15 @@ module.exports = (express) => {
   // redirect to URL address when short link comes in
   router.use('/maumasi.fy', require('./apiEndPoints/keyRedirect')(express));
 
+  // IMORTANT NOTE:
   // the following routes are now being called in the
   // short link create route: './apiEndPoints/shortenUrl'
+
+  // return all records from DB
+  // router.use('/maumasi.fy/v1.1.0/remove-url', require('./apiEndPoints/deleteUrl')(express));
+
+  // delete short link and URL from DB
+  // router.use('/maumasi.fy/v1.1.0/remove-url', require('./apiEndPoints/deleteUrl')(express));
 
   // delete short link and URL from DB
   // router.use('/maumasi.fy/v1.1.0/remove-url', require('./apiEndPoints/deleteUrl')(express));

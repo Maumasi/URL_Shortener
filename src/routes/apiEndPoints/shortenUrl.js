@@ -116,9 +116,13 @@ module.exports = (express) => {
   // Routes also under the '/maumasi.fy/v1.1.0' prefixed route
 
   // update existing URL from using short link key
+  router.use('/all-urls', require('./findAllUrls')(express));
+
+  // update existing URL from using short link key
   router.use('/update-url', require('./updateUrl')(express));
 
   // delete a record
   router.use('/remove-url', require('./deleteUrl')(express));
+
   return router;
 };
