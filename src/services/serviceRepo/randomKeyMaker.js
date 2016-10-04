@@ -1,5 +1,6 @@
 
 // const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
+// Fine, here's a commnet!
 const lengthOfGen = 6;
 // private func that produces a random index of the array arg
 var randomIndex = (array) => {
