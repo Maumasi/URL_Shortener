@@ -32,6 +32,23 @@ $ nodemon src/server.js
 Using ``` nodemon ``` will do a live reload for you every time you save a file in the project... *most of the time*.
 If you do have to manually reload the server just use the ``` $ rs ``` command to 'restart server'. It's kinda awesome.
 </br>
+
+### Environmental Variables
+In the root directory there is an env.dist file, ``` URL_Shortener/env.dist ```. This file contains the environmental variables used in the app. The variables are:
+``` bash
+
+PORT=3000
+DB_NAME=
+DB_USER=
+DB_PW=
+DB_HOST=
+DB_SCHEMA=
+DB_PORT=
+
+```
+
+This file is for distribution only and should be renamed to ``` .env ``` for the app to run. </br>
+Hold on! You're not done yet, you have to fill in you database credentials to connect to your database. If you don't have a database already created make sure to do that first before trying to run this app or it will crash if there's no database to connect to.
 ___
 
 ## API
