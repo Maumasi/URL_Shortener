@@ -46,7 +46,7 @@ DB_SCHEMA=
 DB_PORT=
 
 ```
-
+** **IMPORTANT** **
 This file is for distribution only and should be renamed to ``` .env ``` for the app to run. </br>
 Hold on! You're not done yet, you have to fill in you database credentials to connect to your database. If you don't have a database already created make sure to do that first before trying to run this app or it will crash if there's no database to connect to.
 ___
