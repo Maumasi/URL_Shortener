@@ -34,7 +34,7 @@ If you do have to manually reload the server just use the ``` $ rs ``` command t
 </br>
 
 ### Environmental Variables
-In the root directory there is an env.dist file, ``` URL_Shortener/env.dist ```. This file contains the environmental variables used in the app. The variables are:
+In the root directory there is an ``` env.dist file ```, ``` URL_Shortener/env.dist ```. This file contains the environmental variables used in the app. The variables are:
 ``` bash
 
 PORT=3000
