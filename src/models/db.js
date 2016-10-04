@@ -5,7 +5,7 @@ const Sequelize = require('sequelize');
 
 // only used in the dev environment
 // require('../../.env');
-require('dotenv').config({ path: '../.env' });
+require('dotenv').config({ path: '.env' });
 
 // connect to the db
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW, {
