@@ -126,7 +126,7 @@ After you have the app up and running there are 6 endpoints for the API. The fir
 </br>
 
 6. **/maumasi.fy/v1.1.1/all-urls**
-  - Returns an array of all record pairs as one pbject per pair.
+  - Returns an array of all record pairs as one object per pair.
 
   - This uses the **GET** method.
 
@@ -166,7 +166,7 @@ var $url = $('input#url');
 $submit.on('click', function() {
 
   var formData = {
-    originalUrl: $url.val()
+    originalURL: $url.val()
   }
 
 // AJAX call to our API
