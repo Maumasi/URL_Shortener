@@ -219,7 +219,7 @@ $ npm i -g mocha
 ```
 That's it, now just call ``` mocha ``` just inside the **URL_Shortener** directory:
 ```bash
-$ cd URL_Shortener
+$ cd URL_Shortener/
 $ mocha
 ```
 Using this command ``` mocha ``` will look for the **' *test* '** directory and run any scripts in there. </br>
