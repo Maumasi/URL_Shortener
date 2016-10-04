@@ -5,7 +5,7 @@ module.exports = (express) => {
 // Route sources
 
   // create or retreave existing short link
-  router.use('/maumasi.fy/v1.1.1', require('./apiEndPoints/shortenUrl')(express));
+  router.use('/v1', require('./apiEndPoints/shortenUrl')(express));
 
   // redirect to URL address when short link comes in
   router.use('/maumasi.fy', require('./apiEndPoints/keyRedirect')(express));
