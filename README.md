@@ -58,7 +58,7 @@ After you have the app up and running there are 6 endpoints for the API. The fir
   - Creates a short link.
 
   - This uses the **POST** method to receive the original URL and set a relationship to the new **maumasi.fy** short link.
-  - - This endpoint expects JSON:
+  - This endpoint expects JSON:
   ```javaScript
   {
     'originalURL': ['submitted URL']
