@@ -1,6 +1,4 @@
 
-// const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
-
 // private func that produces a random index of the array arg
 var randomIndex = (array) => {
   return Math.floor(Math.random() * (array.length));

@@ -2,6 +2,7 @@
 const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
 const originalURL = require('../../models/db_crud').table('originalURL');
 
+
 // services
 const services = require('../../services/services').services;
 const urlChecker = services.checkUrlInput;
@@ -15,7 +16,24 @@ module.exports = (express) => {
   // Method: get
   // Use: get current status of the API
   router.use('/status', (req, res) => {
-    res.json({ stable: true });
+
+const request = require('request');
+function handler(req, res) {
+  request('http://www.google.com', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      console.log("URL is OK") // Print the google web page.
+      res.writeHead(200, {'Content-Type': 'text/html'});
+      res.end('URL is OK');
+    } else {
+      res.writeHead(500, {'Content-Type': 'text/html'});
+      res.end('URL broke:'+JSON.stringify(response, null, 2));
+    }
+  })
+};
+
+require('http').createServer(handler).listen(4000);
+
+    // res.json({ stable: true });
   });
 
 // ==========================================   submit to database
@@ -31,6 +49,7 @@ module.exports = (express) => {
     const maumasiFyLink = `${req.protocol}://${req.get('host')}/maumasi.fy/${linkKey}`;
     const submitedURL = req.body || null;
 
+    // TODO: needs to be changed to a curl request test
     // pingTest is a promise func;
     const pingTest = urlChecker(req, res, submitedURL);
 

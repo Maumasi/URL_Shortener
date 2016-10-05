@@ -5,7 +5,6 @@ const sessions = require('express-session');
 const routes = require('./routes');
 // const routes = require('./routes/api');
 
-
 // require('dotenv').config({ path: '.env' }); // <--------- for running unit tests with mocha
 require('dotenv').config({ path: '../.env' }); // <--- for running app
 

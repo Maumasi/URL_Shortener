@@ -33,15 +33,15 @@ const originalURL = require('./tables/originalURL')(Sequelize, sequelize);
 const maumasiFyURL = require('./tables/maumasiFyURL')(Sequelize, sequelize);
 
 // ==========================   relationships
-
 // connect the two tables
 maumasiFyURL.belongsTo(originalURL, {
   foreignKey: 'originalURL_ID',
 });
 
-// The following line should only be ran when changes to the DB are made and DB
+// The following "sequelize.sync({ force: true });" line should only be ran when changes to the DB are made and DB
 // records are safely stored some where because this will truncate all tables
 // every time the server is started up!!!
+// Use to update tables EXACLY as they're defined
 
 // sequelize.sync({ force: true });
 

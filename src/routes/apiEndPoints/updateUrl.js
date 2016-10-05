@@ -14,8 +14,7 @@ module.exports = (express) => {
   router.post('/', (req, res) => {
     const update = req.body;
 
-    // console.log(update);
-
+    // build object with keys that the update method will be looking for
     var key = {
       maumasiFyKey: shortKeyExtractor(update.maumasiFyKey),
       urlUpdate: {
@@ -23,6 +22,7 @@ module.exports = (express) => {
       },
     };
 
+    // TODO: change this ping test a a curl URL test
     console.log('url update check: ' + update.updatelURL);
     // pingTest is a promise func;
     const pingTest = urlChecker(req, res, update.updatelURL);

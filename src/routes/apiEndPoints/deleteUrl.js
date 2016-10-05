@@ -18,40 +18,56 @@ module.exports = (express) => {
     };
 
     maumasiFyURL.findByLinkKey(
+
+      // object identifier
       deleteRequest,
+
+      // errors
       (err) => {
         console.log('Error: ' + err);
       },
 
+      // success
       (urlToBeRemoved) => {
+        // assign key ID and URL ID to vars to find this record for deletion
         keyId = urlToBeRemoved.dataValues.id;
         urlId = urlToBeRemoved.dataValues.originalURL_ID;
+
         console.log('URL to be removed: ');
         // console.log(urlToBeRemoved.dataValues);
         console.log('key ID: ' + keyId);
         console.log('URL ID: ' + urlId);
 
         maumasiFyURL.destroy(
-          // Send to DB
+
+          // object identifier
           { id: keyId },
-          // Error handling
+
+          // error handling
           (err) => {
             // console.log('Failed to redirect. Error: ' + err);
             res.status(500).json(err);
           },
-          // Success func
+
+          // success func
           () => {
+            // if this key is deleted then delete the original URL
             originalURL.destroy(
-              // Send to DB
+
+              // object identifier
               { id: urlId },
-              // Error handling
+
+              // error handling
               (err) => {
                 // console.log('Failed to redirect. Error: ' + err);
                 res.status(500).json(err);
               },
-              // Success func
+
+              // success func
               () => {
-                console.log('records deleted');
+                console.log('record deleted');
+
+                // redirect back to the home page
                 res.redirect(301, '/');
               });// originalURL.destroy
           });// maumasiFyURL.destroy

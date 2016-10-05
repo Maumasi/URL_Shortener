@@ -9,17 +9,18 @@ module.exports = (express) => {
   // Method: get
   // Use: retrevie all records from the DB
   router.get('/', (req, res) => {
-    maumasiFyURL.findAllRecords((err) => {
+    maumasiFyURL.findAllRecords(
+      // error resopnse
+      (err) => {
       // console.log('Failed to redirect. Error: ' + err);
-      res.status(500).json(err);
-    },
+        res.status(500).json(err);
+      },
 
     // Success func
     (data) => {
       // console.log(data[0].originalURL);
       res.status(200).json(data);
-    }
-    );
+    });
   });
 
   return router;

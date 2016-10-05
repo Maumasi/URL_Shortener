@@ -13,7 +13,7 @@ exports.table = (table) => {
   const dbInteractions = {
 
 // ==========================================   CREATE
-    // same as create: () => {...}
+    // same as create: () => {...} this is short hand for annonimus functions in an object
     create(payload, err, success) {
       tables[table].create(payload).then(success).catch(err);
     },
@@ -31,7 +31,7 @@ exports.table = (table) => {
       }).then(success).catch(err);
     },
 
-  // ==========================================   READ: find by full URL
+  // ==========================================   READ: find by full original URL
     findByUrl(payload, err, success) {
       tables[table].find({
         where: {
@@ -44,7 +44,7 @@ exports.table = (table) => {
       }).then(success).catch(err);
     },
 
-  // ==========================================   READ: find by originalURL ID
+  // ==========================================   READ: find by originalURL table ID
     findByOriginalUrlId(payload, err, success) {
       tables[table].find({
         where: {
@@ -75,16 +75,15 @@ exports.table = (table) => {
         },
       })
       .then((shortKeyJoinUrl) => {
+        // if success, update the URL in DB
         tables.originalURL.find({
           where: {
             id: shortKeyJoinUrl.originalURL_ID,
           },
         }).then((currentUrl) => {
-          // console.log(payload.urlUpdate);
           currentUrl.updateAttributes(payload.urlUpdate).then(success).catch(err);
-          // console.log('pass');
-        }).catch(err);
-      }).catch(err);
+        }).catch(err);// tables.originalURL.find
+      }).catch(err);// tables[table].find
     },
 
   // ==========================================   DELETE

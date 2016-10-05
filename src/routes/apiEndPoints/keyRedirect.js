@@ -26,8 +26,7 @@ module.exports = (express) => {
       // Success func
       (data) => {
         res.redirect(301, data.originalURL.originalURL);
-      }
-    );
+      });
   });
 
   return router;

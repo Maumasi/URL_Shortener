@@ -1,7 +1,7 @@
 // const ping = require('ping');
 
 module.exports = (url) => {
-    // remove chars before host
+  // remove chars before host
   var beforeHost = url.search('www.') + 4;
 
   if (beforeHost >= 4 || beforeHost < 13) {
