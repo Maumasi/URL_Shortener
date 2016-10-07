@@ -2,7 +2,7 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const sessions = require('express-session');
-const routes = require('./src/routes');
+const routes = require('./src/routes/');
 
 require('dotenv').config();
 
@@ -20,7 +20,7 @@ app.use(sessions({
 // from here all routes will start with '/api'
 app.use('/', routes(express));
 
-app.use(express.static('../public'));
+app.use(express.static('./public'));
 
 // exports.server =
 const server = app.listen(PORT, () => {

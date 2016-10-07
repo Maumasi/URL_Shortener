@@ -30,7 +30,7 @@ module.exports = (express) => {
     let originalId;
     const linkKey = randomKey();
 
-    const maumasiFyLink = `${req.protocol}://${req.get('host')}/maumasi.fy/${linkKey}`;
+    const maumasiFyLink = `${req.protocol}://${req.get('host')}/${linkKey}`;
     const submitedURL = req.body || null;
 
     rootUrlExists(submitedURL, (isReachable) => {
@@ -61,7 +61,7 @@ module.exports = (express) => {
 
                 if (shortenKey) {
                   const key = shortenKey.maumasiFyKey;
-                  const existingShortLink = `${req.protocol}://${req.get('host')}/maumasi.fy/${key}`;
+                  const existingShortLink = `${req.protocol}://${req.get('host')}/${key}`;
                   submitedURL.maumasi_fied_link = existingShortLink;
                   res.status(200).json(submitedURL);
                 }

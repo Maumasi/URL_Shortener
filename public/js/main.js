@@ -46,8 +46,7 @@ $(function(){
 				$newUrl.html(newData.maumasi_fied_link);
 
 				// make link active
-
-				console.log($oldUrl.attr('href'));
+				console.log(newData);
 				$oldUrl.attr('href', newData.originalURL);
 				$newUrl.attr('href', newData.maumasi_fied_link);
 
@@ -144,7 +143,7 @@ $(function(){
 		success: function (AllShortLinkRecords) {
 
 			AllShortLinkRecords.forEach(function(urlData){
-
+				// console.log(urlData);
 				$urlRepoWrapper
 					.append(
 						"<div class='panel panel-default'>" +
