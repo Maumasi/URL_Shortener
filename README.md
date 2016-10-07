@@ -15,7 +15,7 @@ $ npm install
 To get the node.js server up and running you'll have to navigate to the </br>
 server.js file then use the key word **' *node* '** to tell node.js to run the file:
 ```bash
-$  node src/server.js
+$  node server.js
 ```
 By default the port is set to 3000, you should also see ``` Server running on port 3000 ``` stated in the terminal </br>
 after you have the server running, if you don't see that, then something failed and the server should be re-started or you may have
@@ -28,7 +28,7 @@ To stop the server press: ``` control + ^C ``` </br>
 
 If you have **nodemon** installed, ``` npm i -g nodemon```, you can simply use:
 ```bash
-$ nodemon src/server.js
+$ nodemon server.js
 ```
 Using ``` nodemon ``` will do a live reload for you every time you save a file in the project... *most of the time*.
 If you do have to manually reload the server just use the ``` $ rs ``` command to 'restart server'. It's kinda awesome.
@@ -50,12 +50,15 @@ DB_PORT=
 ** **IMPORTANT** ** </br>
 This file is for distribution only and should be renamed to ``` .env ``` for the app to run. </br>
 Hold on! You're not done yet, you have to fill in your database credentials to connect to your database. If you don't have a database already created make sure to do that first before trying to run this app or it will crash if there's no database to connect to.
+
 ___
+## Run it in the browser after server is running
+The API ships with an example site on how the API can be implemented. It is set up to preform full CRUD using AJAX calls. Just type ``` localhost:3000 ``` in the browser URL after you get the server.js running and you can start going bananas!
 
 ## API
 After you have the app up and running there are 6 endpoints for the API. The first 3 endpoints require an AJAX call. The 4th is a API status checkup and can be used with an AJAX call if you need to watch for status changes for the API's stability. The 5th is a 301 redirect, no AJAX call needed for this endpoint. The 6th endpoint is used to display all record pairs in the database.
 
-1. **/maumasi.fy/v1.1.1/shorten-url**
+1. **/v1/shorten-url**
   - Creates a short link.
 
   - This uses the **POST** method to receive the original URL and set a relationship to the new **maumasi.fy** short link.
@@ -76,7 +79,7 @@ After you have the app up and running there are 6 endpoints for the API. The fir
   </br>
   </br>
 
-2. **/maumasi.fy/v1.1.1/update-url**
+2. **/v1/update-url**
   - Updates a short link.
 
   - This uses the **POST** method to receive the new URL and set a relationship to the **maumasi.fy** short link to be reassinged that should be submited with the new URL.
@@ -102,7 +105,7 @@ After you have the app up and running there are 6 endpoints for the API. The fir
   </br>
   </br>
 
-3. **/maumasi.fy/v1.1.1/remove-url**
+3. **/v1/remove-url**
   - Deletes a short link and it's assigned URL from the database.
 
   - This uses the **POST** method to completely remove the short link and it's assigned URL from the database.
@@ -116,7 +119,7 @@ After you have the app up and running there are 6 endpoints for the API. The fir
   </br>
   </br>
 
-4. **/maumasi.fy/v1.1.1/status**
+4. **/v1/status**
   - Check the status of the API.
 
   - This uses the **GET** method.
@@ -132,7 +135,7 @@ After you have the app up and running there are 6 endpoints for the API. The fir
   </br>
   </br>
 
-5. **/maumasi.fy/:shortKey**
+5. **/:shortKey**
   - Redirects to stored URL when a short link is used.
 
   - This uses the **GET** method to redirect the route to the assigned URL in the database using a **301 redirect**.
@@ -143,7 +146,7 @@ After you have the app up and running there are 6 endpoints for the API. The fir
 </br>
 </br>
 
-6. **/maumasi.fy/v1.1.1/all-urls**
+6. **/v1/all-urls**
   - Returns an array of all record pairs as one object per pair.
 
   - This uses the **GET** method.
@@ -190,7 +193,7 @@ $submit.on('click', function() {
 // AJAX call to our API
   $.ajax({
     type: 'POST',
-    url: 'http://localhost:3000/maumasi.fy/v1.1.1/shorten-url',
+    url: 'http://localhost:3000/v1/shorten-url',
     data: formData,
     success: function(newData) {
 
@@ -207,9 +210,7 @@ $submit.on('click', function() {
 
 ```
 </br>
-___
-## Testing in the browser
-The API ships with an example site on how the API can be implamented. It is set up to preform full CRUD using AJAX calls. Just type ``` localhost:3000 ``` in the browser URL after you get the server.js running and you can start going bananas!
+
 ___
 ## Unit Testing
 You can also do some unit testing using ``` mocha ```.</br>
@@ -227,18 +228,6 @@ Using this command ``` mocha ``` will look for the **' *test* '** directory and 
 Keep in mind that this uses port 3000 and will show a failed test if you try to use it at the same time the app is running on port 3000
 </br>
 
-### Notes for unit testing:
- - To connect to the database when running unit test you'll have to change ``` require(...) ``` lines for the .env file. You will have to un-comment one ``` require(...) ``` line for testing and comment out another ``` require(...) ``` line that is used for running the app. Just remember to change them back after testing.
- </br>
- They are in ``` URL_Shortener/src/server.js ``` lines 9 and 10: </br>
-
- ```javaScript
-
- // require('dotenv').config({ path: '.env' }); // <--------- for running unit tests with mocha
- require('dotenv').config({ path: '../.env' }); // <--- for running app
-
- ```
-</br>
- - Currently there are 6 unit tests. Each endpoint is tested. Keep in mind that the ``` /maumasi.fy/v1.1.1/update-url ``` and ``` /maumasi.fy/v1.1.1/remove-url ``` endpoints will accutally update and delete recoreds in the database. Becasue ``` update-url ``` and ``` remove-url ``` are dependant on real records in the database they will only pass their tests once if their test values aren't updated in the ``` URL_Shortener/test/__api_unit_test.js ``` file.
+ - Currently there are 6 unit tests. Each endpoint is tested. Keep in mind that the ``` /v1/update-url ``` and ``` /v1/remove-url ``` endpoints will accutally update and delete recoreds in the database. Becasue ``` update-url ``` and ``` remove-url ``` are dependant on real records in the database they will only pass their tests once if their test values aren't updated in the ``` URL_Shortener/test/__api_unit_test.js ``` file.
 
  Feel free to add your own unit tests!!

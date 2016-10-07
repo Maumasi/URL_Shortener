@@ -15,7 +15,7 @@ module.exports = (express) => {
     const update = req.body;
 
     // build object with keys that the update method will be looking for
-    var key = {
+    const key = {
       maumasiFyKey: shortKeyExtractor(update.maumasiFyKey),
       urlUpdate: {
         originalURL: update.updatelURL,

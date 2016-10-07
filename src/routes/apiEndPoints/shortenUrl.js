@@ -1,11 +1,13 @@
 
 const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
 const originalURL = require('../../models/db_crud').table('originalURL');
+// const response = require('response');
 
 
 // services
 const services = require('../../services/services').services;
-const urlChecker = services.checkUrlInput;
+// const urlChecker = services.checkUrlInput;
+const rootUrlExists = services.rootUrlExists;
 const randomKey = services.randomKey;
 
 module.exports = (express) => {
@@ -16,46 +18,25 @@ module.exports = (express) => {
   // Method: get
   // Use: get current status of the API
   router.use('/status', (req, res) => {
-
-const request = require('request');
-function handler(req, res) {
-  request('http://www.google.com', function (error, response, body) {
-    if (!error && response.statusCode == 200) {
-      console.log("URL is OK") // Print the google web page.
-      res.writeHead(200, {'Content-Type': 'text/html'});
-      res.end('URL is OK');
-    } else {
-      res.writeHead(500, {'Content-Type': 'text/html'});
-      res.end('URL broke:'+JSON.stringify(response, null, 2));
-    }
-  })
-};
-
-require('http').createServer(handler).listen(4000);
-
-    // res.json({ stable: true });
+    res.json({ stable: true });
   });
 
 // ==========================================   submit to database
   // Route: /maumasi.fy/v1.1.0/shorten
   // Method: post
   // Use: creates records in the database and returns the user input
-  //      URL and a maumasi.fy link for that link
-  // Note: ${req.protocol}:// to use http or https
+  //      URL and a short url for the original URL
   router.post('/shorten-url', (req, res) => {
-    var originalId;
+    let originalId;
     const linkKey = randomKey();
 
     const maumasiFyLink = `${req.protocol}://${req.get('host')}/maumasi.fy/${linkKey}`;
     const submitedURL = req.body || null;
 
-    // TODO: needs to be changed to a curl request test
-    // pingTest is a promise func;
-    const pingTest = urlChecker(req, res, submitedURL);
+    rootUrlExists(submitedURL, (isReachable) => {
+      console.log('Test if URL is reachable: ' + isReachable);
 
-    pingTest.then((data) => {
-      // console.log(data);
-
+      // check if URL already exists in the DB
       originalURL.findByUrl(
         submitedURL,
 
@@ -64,7 +45,7 @@ require('http').createServer(handler).listen(4000);
           console.log('Error ' + err);
         },
         (urlData) => {
-          // if the submited url already exist in DB return that short url to the user
+          // if the submited url already exist in DB return the associated short url to the user
           if (urlData) {
             maumasiFyURL.findByOriginalUrlId(
               urlData.dataValues,
@@ -85,10 +66,10 @@ require('http').createServer(handler).listen(4000);
                   res.status(200).json(submitedURL);
                 }
               });
+          // if url is not found in DB create a record for it
           } else {
-            // if the submitted url returns a ping responce create a short link to it
-            if (data.alive) {
-              // submit to DB
+            // check is the url is reachable first
+            if (isReachable) {
               originalURL.create(
                 submitedURL,
 
@@ -97,15 +78,20 @@ require('http').createServer(handler).listen(4000);
                   console.log('Error ' + err);
                 },
 
-                (submitedURL) => {
+                (newUrlRecord) => {
                   // add maumasi.fy link to obj before sending back a response
-                  submitedURL.dataValues.maumasi_fied_link = maumasiFyLink;
-
-                  res.status(200).json(submitedURL);
-                  originalId = submitedURL.dataValues.id;
+                  const newUrlInfo = {
+                    maumasi_fied_link: maumasiFyLink,
+                    originalURL: newUrlRecord.dataValues.originalURL,
+                  };
+                  // newUrlRecord.dataValues.maumasi_fied_link = maumasiFyLink;
+                  console.log(newUrlInfo);
+                  res.status(200).json(newUrlInfo);
+                  originalId = newUrlRecord.dataValues.id;
                 });// originalURL.create
 
-              // wait for the code above to finish before try to create a maumasiFyURL record
+              // wait for the code above to finish before trying to
+              // create a maumasiFyURL record so the ID can be found
               res.on('finish', () => {
                 maumasiFyURL.create(
                   {
@@ -115,25 +101,25 @@ require('http').createServer(handler).listen(4000);
 
                   (err) => {
                     res.status(500).json(err);
-                    console.log('Error ' + err);
+                    console.log('Error ' + __dirname + ': ' + err);
                   },
                   () => {
                     console.log('New record created');
                   }
                 );// maumasiFyURL.create
               });// res.finish
+
+            // if url is not reachable then respond with an error
             } else {
               // how to handle errors and what to respond with
               console.log('link failed: ' + req.body.originalURL);
-            }// if
+            }// child if
           }// parnt if
         });// originalURL table search
-    });// then
+    });
   });// router.post
 
-
-  // Routes also under the '/maumasi.fy/v1.1.0' prefixed route
-
+  // NOTE: Routes also under the '/v1' prefixed route
   // update existing URL from using short link key
   router.use('/all-urls', require('./findAllUrls')(express));
 

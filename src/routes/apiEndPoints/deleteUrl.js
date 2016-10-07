@@ -10,8 +10,8 @@ module.exports = (express) => {
   // Method: get
   // Use: delete record from DB
   router.post('/', (req, res) => {
-    var keyId;
-    var urlId;
+    let keyId;
+    let urlId;
 
     const deleteRequest = {
       maumasiFyKey: shortKeyExtractor(req.body.maumasiFyKey),

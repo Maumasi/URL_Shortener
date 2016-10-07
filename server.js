@@ -2,11 +2,9 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const sessions = require('express-session');
-const routes = require('./routes');
-// const routes = require('./routes/api');
+const routes = require('./src/routes');
 
-// require('dotenv').config({ path: '.env' }); // <--------- for running unit tests with mocha
-require('dotenv').config({ path: '../.env' }); // <--- for running app
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;

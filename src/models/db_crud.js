@@ -8,17 +8,16 @@ const tables = {
   originalURL: db.originalURL,
 };
 
-
 exports.table = (table) => {
   const dbInteractions = {
 
-// ==========================================   CREATE
+    // ==========================================   CREATE
     // same as create: () => {...} this is short hand for annonimus functions in an object
     create(payload, err, success) {
       tables[table].create(payload).then(success).catch(err);
     },
 
-  // ==========================================   READ: find by short link key
+    // ==========================================   READ: find by short link key
     findByLinkKey(payload, err, success) {
       tables[table].find({
         where: {
@@ -31,7 +30,7 @@ exports.table = (table) => {
       }).then(success).catch(err);
     },
 
-  // ==========================================   READ: find by full original URL
+    // ==========================================   READ: find by full original URL
     findByUrl(payload, err, success) {
       tables[table].find({
         where: {
@@ -44,7 +43,7 @@ exports.table = (table) => {
       }).then(success).catch(err);
     },
 
-  // ==========================================   READ: find by originalURL table ID
+    // ==========================================   READ: find by originalURL table ID
     findByOriginalUrlId(payload, err, success) {
       tables[table].find({
         where: {
@@ -57,7 +56,7 @@ exports.table = (table) => {
       }).then(success).catch(err);
     },
 
-  // ==========================================   READ: find all records in DB
+    // ==========================================   READ: find all records in DB
     findAllRecords(err, success) {
       tables[table].findAll({
         include: [{
@@ -67,7 +66,7 @@ exports.table = (table) => {
       }).then(success).catch(err);
     },
 
-  // ==========================================   UPDATE
+    // ==========================================   UPDATE
     updateUrlByShortKey(payload, err, success) {
       tables[table].find({
         where: {
@@ -86,7 +85,7 @@ exports.table = (table) => {
       }).catch(err);// tables[table].find
     },
 
-  // ==========================================   DELETE
+    // ==========================================   DELETE
     destroy(payload, err, success) {
       tables[table].destroy({
         where: {

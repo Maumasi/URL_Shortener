@@ -2,7 +2,8 @@
 
 module.exports = (url) => {
   // remove chars before host
-  var beforeHost = url.search('www.') + 4;
+  console.log('prep: ' + url);
+  let beforeHost = url.search('www.') + 4;
 
   if (beforeHost >= 4 || beforeHost < 13) {
     beforeHost = url.search('/') + 2;

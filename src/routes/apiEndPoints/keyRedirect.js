@@ -9,13 +9,14 @@ module.exports = (express) => {
   // Method: get
   // Use: retrevie link from the DB
   router.get('/:linkKey', (req, res) => {
-    req.body.maumasiFyKey = req.params.linkKey;
-
-    const linkKey = req.body;
+    const postBody = req.body;
+    postBody.maumasiFyKey = req.params.linkKey;
+    // req.body.maumasiFyKey = req.params.linkKey;
+    // const linkKey = req.body;
 
     maumasiFyURL.findByLinkKey(
       // Send to DB
-      linkKey,
+      postBody,
 
       // Error handling
       (err) => {

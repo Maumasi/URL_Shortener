@@ -1,12 +1,12 @@
 
 // private func that produces a random index of the array arg
-var randomIndex = (array) => {
+function randomIndex(array) {
   return Math.floor(Math.random() * (array.length));
-};
+}
 
 module.exports = () => {
   // will bemoce a string of random charSets 5 char long
-  var randomString = '';
+  let randomString = '';
 
   // get today's 'day of the month' date
   const today = new Date().getDate();
@@ -19,7 +19,8 @@ module.exports = () => {
   };
 
   // fill charSets.upperCase with uppercase letters
-  for (var letter of charSets.lowerCase) {
+  let letter;
+  for (letter of charSets.lowerCase) {
     charSets.upperCase.push(letter.toUpperCase());
   }
 

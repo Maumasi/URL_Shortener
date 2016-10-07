@@ -3,7 +3,7 @@ const ping = require('ping');
 const prep = require('./pingPreper');
 
 module.exports = (req, res, url) => {
-  var host;
+  let host;
   if (url.originalURL) {
     host = prep(url.originalURL);
   } else {
