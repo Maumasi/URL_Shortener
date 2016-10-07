@@ -30,7 +30,7 @@ module.exports = (express) => {
     let originalId;
     const linkKey = randomKey();
 
-    const maumasiFyLink = `${req.protocol}://${req.get('host')}/${linkKey}`;
+    const maumasiFyLink = `${req.protocol}://${req.get('host')}/go/${linkKey}`;
     const submitedURL = req.body || null;
 
     rootUrlExists(submitedURL, (isReachable) => {
@@ -61,7 +61,7 @@ module.exports = (express) => {
 
                 if (shortenKey) {
                   const key = shortenKey.maumasiFyKey;
-                  const existingShortLink = `${req.protocol}://${req.get('host')}/${key}`;
+                  const existingShortLink = `${req.protocol}://${req.get('host')}/go/${key}`;
                   submitedURL.maumasi_fied_link = existingShortLink;
                   res.status(200).json(submitedURL);
                 }
@@ -84,8 +84,6 @@ module.exports = (express) => {
                     maumasi_fied_link: maumasiFyLink,
                     originalURL: newUrlRecord.dataValues.originalURL,
                   };
-                  // newUrlRecord.dataValues.maumasi_fied_link = maumasiFyLink;
-                  console.log(newUrlInfo);
                   res.status(200).json(newUrlInfo);
                   originalId = newUrlRecord.dataValues.id;
                 });// originalURL.create
@@ -105,8 +103,7 @@ module.exports = (express) => {
                   },
                   () => {
                     console.log('New record created');
-                  }
-                );// maumasiFyURL.create
+                  });// maumasiFyURL.create
               });// res.finish
 
             // if url is not reachable then respond with an error

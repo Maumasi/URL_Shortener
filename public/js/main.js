@@ -148,7 +148,7 @@ $(function(){
 					.append(
 						"<div class='panel panel-default'>" +
 						  "<div class='panel-heading'>" +
-						    "<h3 class='panel-title'><a href='http://localhost:3000/" + urlData.maumasiFyKey + "'>Short link: http://localhost:3000/" + urlData.maumasiFyKey + "</a></h3>" +
+						    "<h3 class='panel-title'><a href='http://localhost:3000/go/" + urlData.maumasiFyKey + "'>Short link: http://localhost:3000/go/" + urlData.maumasiFyKey + "</a></h3>" +
 						  "</div>" +
 						  "<div class='panel-body'>" +
 						    "Mapped URL: <a href='"+ urlData.originalURL.originalURL +"'>" + urlData.originalURL.originalURL + "</a>" +

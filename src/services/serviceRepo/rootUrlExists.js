@@ -10,7 +10,7 @@ module.exports = (url, callback) => {
   function evaluateUrl(error, response) {
     let isActive;
     if (!error && response.statusCode <= 308) {
-      console.log(response.statusCode);
+      // console.log(response.statusCode);
       isActive = true;
     } else {
       console.log('URL is unreachable');

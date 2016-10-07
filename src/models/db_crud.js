@@ -75,6 +75,8 @@ exports.table = (table) => {
       })
       .then((shortKeyJoinUrl) => {
         // if success, update the URL in DB
+        // console.log(__dirname + 'Line 78');
+        // console.log(shortKeyJoinUrl);
         tables.originalURL.find({
           where: {
             id: shortKeyJoinUrl.originalURL_ID,

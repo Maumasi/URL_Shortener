@@ -2,13 +2,13 @@ const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
 // const originalURL = require('../../models/db_crud').table('originalURL');
 
 const services = require('../../services/services').services;
-const urlChecker = services.checkUrlInput;
 const shortKeyExtractor = services.shortKeyExtractor;
+const rootUrlExists = services.rootUrlExists;
 
 module.exports = (express) => {
   const router = express.Router();
 
-  // Route: /maumasi.fy/v1.1.0/update-url
+  // Route: /v1/update-url
   // Method: get
   // Use: retrevie link from the DB
   router.post('/', (req, res) => {
@@ -22,13 +22,11 @@ module.exports = (express) => {
       },
     };
 
-    // TODO: change this ping test a a curl URL test
-    console.log('url update check: ' + update.updatelURL);
-    // pingTest is a promise func;
-    const pingTest = urlChecker(req, res, update.updatelURL);
+    // console.log('Is this a short key?');
+    // console.log('url update check: ' + update.updatelURL);
 
-    pingTest.then((pingResponse) => {
-      if (pingResponse.alive) {
+    rootUrlExists(key.urlUpdate, (isReachable) => {
+      if (isReachable) {
         maumasiFyURL.updateUrlByShortKey(
           key,
 
@@ -49,11 +47,7 @@ module.exports = (express) => {
       } else {
         console.log(`${update.updatelURL} is not a live web URL`);
       }// if
-    }).catch(
-      (err) => {
-        console.log(err);
-      }
-    );
+    });
   });
 
   return router;

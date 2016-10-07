@@ -8,7 +8,7 @@ module.exports = (express) => {
   router.use('/v1', require('./apiEndPoints/shortenUrl')(express));
 
   // redirect to URL address when short link comes in
-  router.use('/', require('./apiEndPoints/keyRedirect')(express));
+  router.use('/go', require('./apiEndPoints/keyRedirect')(express));
 
   // IMORTANT NOTE:
   // the following routes are now being called in the
