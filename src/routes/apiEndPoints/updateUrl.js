@@ -13,7 +13,6 @@ module.exports = (express) => {
   // Use: retrevie link from the DB
   router.post('/', (req, res) => {
     const update = req.body;
-
     // build object with keys that the update method will be looking for
     const key = {
       maumasiFyKey: shortKeyExtractor(update.maumasiFyKey),
@@ -42,6 +41,7 @@ module.exports = (express) => {
 
             // console.log(updatedUrlInfo);
             res.status(200).json(updateRespose);
+
             console.log('url updated');
           });// updateUrlByShortKey
       } else {

@@ -1,7 +1,8 @@
 
 const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
 const originalURL = require('../../models/db_crud').table('originalURL');
-// const response = require('response');
+// const util = require('util');
+const log = require('../../../utility/util').logger;
 
 
 // services
@@ -19,6 +20,9 @@ module.exports = (express) => {
   // Use: get current status of the API
   router.use('/status', (req, res) => {
     res.json({ stable: true });
+    const e = new Error;
+    // console.log(e);
+    console.log(log(e, __filename));
   });
 
 // ==========================================   submit to database
@@ -42,7 +46,7 @@ module.exports = (express) => {
 
         (err) => {
           res.status(500).json(err);
-          console.log('Error ' + err);
+          // console.log('Error ' + err);
         },
         (urlData) => {
           // if the submited url already exist in DB return the associated short url to the user
