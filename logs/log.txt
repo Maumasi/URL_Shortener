@@ -1,4 +1,158 @@
-createdAt: Sat Oct 08 2016 04:41:15 GMT-0400 (EDT)
+createdAt: Sat Oct 08 2016 07:05:59 GMT-0400 (EDT)
+reportType: Error
+customMessage: none
+filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
+stackTrace: Error
+    at router.use (/Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js:23:15)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+
+createdAt: Sat Oct 08 2016 07:05:23 GMT-0400 (EDT)
+reportType: Error
+customMessage: none
+filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
+stackTrace: Error
+    at router.use (/Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js:23:15)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+
+createdAt: Sat Oct 08 2016 07:04:47 GMT-0400 (EDT)
+reportType: Error
+customMessage: none
+filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
+stackTrace: Error
+    at router.use (/Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js:23:15)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+
+createdAt: Sat Oct 08 2016 07:04:11 GMT-0400 (EDT)
+reportType: Error
+customMessage: none
+filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
+stackTrace: Error
+    at router.use (/Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js:23:15)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+
+createdAt: Sat Oct 08 2016 07:02:11 GMT-0400 (EDT)
+reportType: Error
+customMessage: none
+filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
+stackTrace: Error
+    at router.use (/Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js:23:15)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+
+createdAt: Sat Oct 08 2016 06:55:38 GMT-0400 (EDT)
+reportType: Error
+customMessage: none
+filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
+stackTrace: Error
+    at router.use (/Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js:23:15)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+
+createdAt: Sat Oct 08 2016 06:54:14 GMT-0400 (EDT)
+reportType: Error
+customMessage: none
+filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
+stackTrace: Error
+    at router.use (/Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js:23:15)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+
+createdAt: Sat Oct 08 2016 06:52:10 GMT-0400 (EDT)
 reportType: Error
 customMessage: none
 filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
@@ -21,7 +175,7 @@ stackTrace: Error
     at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
     at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
 
-createdAt: Sat Oct 08 2016 04:40:13 GMT-0400 (EDT)
+createdAt: Sat Oct 08 2016 06:51:20 GMT-0400 (EDT)
 reportType: Error
 customMessage: none
 filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
@@ -44,7 +198,7 @@ stackTrace: Error
     at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
     at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
 
-createdAt: Sat Oct 08 2016 04:39:37 GMT-0400 (EDT)
+createdAt: Sat Oct 08 2016 06:49:16 GMT-0400 (EDT)
 reportType: Error
 customMessage: none
 filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
@@ -67,21 +221,7 @@ stackTrace: Error
     at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
     at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
 
-createdAt: Sat Oct 08 2016 04:39:09 GMT-0400 (EDT)
-reportType: Info
-customMessage: none
-filePath: /Users/liumaumasi/Desktop/url-shortener-main/utility/util.js
-extraInfo: none
-stackTrace: undefined
-
-createdAt: Sat Oct 08 2016 04:38:45 GMT-0400 (EDT)
-reportType: Info
-customMessage: none
-filePath: /Users/liumaumasi/Desktop/url-shortener-main/utility/util.js
-extraInfo: none
-stackTrace: undefined
-
-createdAt: Sat Oct 08 2016 04:36:37 GMT-0400 (EDT)
+createdAt: Sat Oct 08 2016 06:48:36 GMT-0400 (EDT)
 reportType: Error
 customMessage: none
 filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
@@ -104,7 +244,7 @@ stackTrace: Error
     at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
     at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
 
-createdAt: Sat Oct 08 2016 04:36:08 GMT-0400 (EDT)
+createdAt: Sat Oct 08 2016 06:47:56 GMT-0400 (EDT)
 reportType: Error
 customMessage: none
 filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
@@ -127,7 +267,7 @@ stackTrace: Error
     at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
     at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
 
-createdAt: Sat Oct 08 2016 04:35:46 GMT-0400 (EDT)
+createdAt: Sat Oct 08 2016 06:47:15 GMT-0400 (EDT)
 reportType: Error
 customMessage: none
 filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
@@ -150,7 +290,7 @@ stackTrace: Error
     at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
     at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
 
-createdAt: Sat Oct 08 2016 04:35:07 GMT-0400 (EDT)
+createdAt: Sat Oct 08 2016 06:45:11 GMT-0400 (EDT)
 reportType: Error
 customMessage: none
 filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
@@ -173,7 +313,7 @@ stackTrace: Error
     at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
     at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
 
-createdAt: Sat Oct 08 2016 04:34:55 GMT-0400 (EDT)
+createdAt: Sat Oct 08 2016 06:42:43 GMT-0400 (EDT)
 reportType: Error
 customMessage: none
 filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
@@ -196,7 +336,7 @@ stackTrace: Error
     at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
     at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
 
-createdAt: Sat Oct 08 2016 04:34:08 GMT-0400 (EDT)
+createdAt: Sat Oct 08 2016 06:38:14 GMT-0400 (EDT)
 reportType: Error
 customMessage: none
 filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
@@ -219,7 +359,7 @@ stackTrace: Error
     at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
     at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
 
-createdAt: Sat Oct 08 2016 04:28:37 GMT-0400 (EDT)
+createdAt: Sat Oct 08 2016 06:37:47 GMT-0400 (EDT)
 reportType: Error
 customMessage: none
 filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
@@ -242,7 +382,7 @@ stackTrace: Error
     at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
     at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
 
-createdAt: Sat Oct 08 2016 04:09:19 GMT-0400 (EDT)
+createdAt: Sat Oct 08 2016 06:36:14 GMT-0400 (EDT)
 reportType: Error
 customMessage: none
 filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
@@ -265,7 +405,7 @@ stackTrace: Error
     at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
     at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
 
-createdAt: Sat Oct 08 2016 04:09:09 GMT-0400 (EDT)
+createdAt: Sat Oct 08 2016 06:34:29 GMT-0400 (EDT)
 reportType: Error
 customMessage: none
 filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
@@ -288,7 +428,7 @@ stackTrace: Error
     at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
     at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
 
-createdAt: Sat Oct 08 2016 04:08:40 GMT-0400 (EDT)
+createdAt: Sat Oct 08 2016 06:33:25 GMT-0400 (EDT)
 reportType: Error
 customMessage: none
 filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
@@ -311,8 +451,7 @@ stackTrace: Error
     at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
     at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
 
-
-createdAt: Sat Oct 08 2016 04:07:00 GMT-0400 (EDT)
+createdAt: Sat Oct 08 2016 06:33:04 GMT-0400 (EDT)
 reportType: Error
 customMessage: none
 filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
@@ -335,7 +474,7 @@ stackTrace: Error
     at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
     at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
 
-createdAt: Sat Oct 08 2016 04:05:58 GMT-0400 (EDT)
+createdAt: Sat Oct 08 2016 06:31:45 GMT-0400 (EDT)
 reportType: Error
 customMessage: none
 filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
@@ -358,7 +497,7 @@ stackTrace: Error
     at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
     at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
 
-createdAt: Sat Oct 08 2016 04:03:15 GMT-0400 (EDT)
+createdAt: Sat Oct 08 2016 06:31:04 GMT-0400 (EDT)
 reportType: Error
 customMessage: none
 filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
@@ -381,7 +520,7 @@ stackTrace: Error
     at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
     at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
 
-createdAt: Sat Oct 08 2016 03:55:54 GMT-0400 (EDT)
+createdAt: Sat Oct 08 2016 06:30:40 GMT-0400 (EDT)
 reportType: Error
 customMessage: none
 filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
@@ -404,29 +543,7 @@ stackTrace: Error
     at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
     at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
 
-createdAt: Sat Oct 08 2016 03:55:13 GMT-0400 (EDT)
-reportType: Error
-customMessage: none
-filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
-extraInfo: none
-stackTrace: Error
-    at router.use (/Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js:23:15)
-    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
-    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
-    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
-    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
-    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
-    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
-    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
-    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
-    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
-    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
-    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
-    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
-    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
-    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
-    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
-createdAt: Sat Oct 08 2016 03:54:58 GMT-0400 (EDT)
+createdAt: Sat Oct 08 2016 06:29:01 GMT-0400 (EDT)
 reportType: Error
 customMessage: none
 filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
@@ -449,7 +566,7 @@ stackTrace: Error
     at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
     at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
 
-createdAt: Sat Oct 08 2016 03:54:30 GMT-0400 (EDT)
+createdAt: Sat Oct 08 2016 06:26:42 GMT-0400 (EDT)
 reportType: Error
 customMessage: none
 filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
@@ -472,7 +589,7 @@ stackTrace: Error
     at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
     at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
 
-createdAt: Sat Oct 08 2016 03:54:26 GMT-0400 (EDT)
+createdAt: Sat Oct 08 2016 06:24:58 GMT-0400 (EDT)
 reportType: Error
 customMessage: none
 filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
@@ -495,7 +612,7 @@ stackTrace: Error
     at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
     at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
 
-createdAt: Sat Oct 08 2016 03:50:51 GMT-0400 (EDT)
+createdAt: Sat Oct 08 2016 06:22:00 GMT-0400 (EDT)
 reportType: Error
 customMessage: none
 filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
@@ -518,7 +635,7 @@ stackTrace: Error
     at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
     at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
 
-createdAt: Sat Oct 08 2016 03:50:43 GMT-0400 (EDT)
+createdAt: Sat Oct 08 2016 06:21:13 GMT-0400 (EDT)
 reportType: Error
 customMessage: none
 filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
@@ -541,7 +658,214 @@ stackTrace: Error
     at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
     at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
 
-createdAt: Sat Oct 08 2016 03:46:19 GMT-0400 (EDT)
+createdAt: Sat Oct 08 2016 06:20:44 GMT-0400 (EDT)
+reportType: Error
+customMessage: none
+filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
+extraInfo: none
+stackTrace: Error
+    at router.use (/Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js:23:15)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+
+createdAt: Sat Oct 08 2016 05:18:45 GMT-0400 (EDT)
+reportType: Error
+customMessage: none
+filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
+extraInfo: none
+stackTrace: Error
+    at router.use (/Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js:23:15)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+
+createdAt: Sat Oct 08 2016 05:18:07 GMT-0400 (EDT)
+reportType: Error
+customMessage: none
+filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
+extraInfo: none
+stackTrace: Error
+    at router.use (/Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js:23:15)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+
+createdAt: Sat Oct 08 2016 05:17:48 GMT-0400 (EDT)
+reportType: Error
+customMessage: none
+filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
+extraInfo: none
+stackTrace: Error
+    at router.use (/Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js:23:15)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+
+createdAt: Sat Oct 08 2016 05:12:28 GMT-0400 (EDT)
+reportType: Error
+customMessage: none
+filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
+extraInfo: none
+stackTrace: Error
+    at router.use (/Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js:23:15)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+
+createdAt: Sat Oct 08 2016 05:03:40 GMT-0400 (EDT)
+reportType: Error
+customMessage: none
+filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
+extraInfo: none
+stackTrace: Error
+    at router.use (/Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js:23:15)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+
+createdAt: Sat Oct 08 2016 05:03:30 GMT-0400 (EDT)
+reportType: Error
+customMessage: none
+filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
+extraInfo: none
+stackTrace: Error
+    at router.use (/Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js:23:15)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+
+createdAt: Sat Oct 08 2016 05:01:32 GMT-0400 (EDT)
+reportType: Error
+customMessage: none
+filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
+extraInfo: none
+stackTrace: Error
+    at router.use (/Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js:23:15)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+
+createdAt: Sat Oct 08 2016 05:00:17 GMT-0400 (EDT)
+reportType: Error
+customMessage: none
+filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
+extraInfo: none
+stackTrace: Error
+    at router.use (/Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js:23:15)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:312:13)
+    at /Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:280:7
+    at Function.process_params (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/index.js:46:12)
+    at Layer.handle [as handle_request] (/Users/liumaumasi/Desktop/url-shortener-main/node_modules/express/lib/router/layer.js:95:5)
+
+createdAt: Sat Oct 08 2016 04:53:51 GMT-0400 (EDT)
 reportType: Error
 customMessage: none
 filePath: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js

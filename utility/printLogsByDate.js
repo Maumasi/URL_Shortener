@@ -1,5 +1,5 @@
 require('dotenv');
-const logs = require('./logs/log.js');
+const logs = require('../logs/log.js');
 // const jsonLogs = JSON.parse(logs);
 
 

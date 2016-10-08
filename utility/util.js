@@ -1,13 +1,13 @@
 
 const util = require('util');
 const fs = require('fs');
+const clc = require('cli-color');
 
-const logger = (
+module.exports = (
   error,
   filePath = __filename,
   reportLevel = 0,
-  customMessage = 'none',
-  extraInfo = 'none'
+  customMessage = 'none'
 ) => {
   const reportType = ['Info', 'Warning', 'Error'];
 
@@ -16,7 +16,7 @@ const logger = (
     rpLevel = reportType[2];
   }
 
-  const file = './utility/logs/log.txt';
+  const file = './logs/log.txt';
   const data = fs.readFileSync(file);// hold existing contents into data
   const fd = fs.openSync(file, 'w+');
 
@@ -25,7 +25,6 @@ const logger = (
 reportType: ${rpLevel}
 customMessage: ${customMessage}
 filePath: ${filePath}
-extraInfo: ${extraInfo}
 stackTrace: ${util.inspect(error) || null}
 \n`);
 
@@ -34,19 +33,50 @@ stackTrace: ${util.inspect(error) || null}
   fs.writeSync(fd, data, 0, data.length);// append old data
   fs.close(fd);
 
-  this.reportInfo = {
-    error,
-    filePath,
-    rpLevel,
-    customMessage,
-    extraInfo,
-  };
-};
+  // build console version of log report
 
-logger.prototype.debug = () => {
+  // log header
+  const logHeadColor = (error) ? clc.xterm(9).bgXterm(7) : clc.xterm(48);
+  const logHeadTxt = (error) ? clc.blink(`Log Report: ${rpLevel}`) : `Log Report: ${rpLevel}`;
+  const logHead = clc.bold(clc.underline(logHeadColor(logHeadTxt)));
+
+  // created at
+  const createdAtColor = `${clc.bold('created at')}: ${clc.cyan(new Date())}`;
+
+  // custom message
+  const customMessageColor = `${clc.bold('custom message')}: ${clc.cyan(customMessage)}`;
+
+  // report type
+  let reportTypeTxt;
+  switch (rpLevel) {
+    case 'Info':
+      reportTypeTxt = clc.bold(clc.greenBright(rpLevel));
+      break;
+    case 'Warning':
+      reportTypeTxt = clc.bold(clc.yellowBright(rpLevel));
+      break;
+    default:
+      reportTypeTxt = clc.bold(logHeadColor(rpLevel));
+  }
+  const reportTypeColor = `${clc.bold('reportType')}: ${reportTypeTxt}`;
+
+  // file path
+  const filePathColor = `${clc.bold('file path')}: ${clc.magentaBright(filePath)}`;
+
+  // stackTrace
+  const stackTraceColor = `${clc.bold('stack trace')}: ${util.inspect(error) || null}`;
+
+  const stream = process.stdout;
   if (process.env.DEBUG) {
-    console.log('test debugger');
+    stream.write(
+`\n
+${logHead}
+${createdAtColor}
+${reportTypeColor}
+${customMessageColor}
+${filePathColor}
+${stackTraceColor}
+\n`
+    );
   }
 };
-
-exports.logger = logger;

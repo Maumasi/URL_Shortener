@@ -2,7 +2,7 @@
 const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
 const originalURL = require('../../models/db_crud').table('originalURL');
 // const util = require('util');
-const log = require('../../../utility/util').logger;
+const log = require('../../../utility/util');
 
 
 // services

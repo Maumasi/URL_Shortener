@@ -1,6 +1,6 @@
 
 const db = require('./db');
-const log = require('../../utility/util');
+// const log = require('../../utility/util');
 
 
 // obj of tables in the DB
@@ -41,9 +41,7 @@ exports.table = (table) => {
           all: true,
           nested: true,
         }],
-      }).then(success).catch((err) => {
-        log(err, 1, 'test');
-      });
+      }).then(success).catch(err);
     },
 
     // ==========================================   READ: find by originalURL table ID
