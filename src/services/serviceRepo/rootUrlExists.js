@@ -8,14 +8,13 @@ module.exports = (url, callback) => {
 
   function evaluateUrl(error, response) {
     let isActive;
-    if (!error && response.statusCode <= 308) {
-      // console.log(response.statusCode);
+    const status = response.statusCode;
+    if (!error && status <= 308) {
       isActive = true;
     } else {
-      log(null, __filename,
+      log(error, __filename,
         'Service: rootUrlExists',
-        'URL is unreachable');
-
+        `URL is unreachable with status code of: ${status}`);
       isActive = false;
     }
     callback(isActive);

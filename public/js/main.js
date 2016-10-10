@@ -156,8 +156,6 @@ $(function(){
 						"</div>"
 					);
 			});// forEach
-
-			console.log(AllShortLinkRecords);
 		},
 		// *** This is causing errors!!! ***
 		// error: function() {
