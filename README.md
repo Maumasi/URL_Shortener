@@ -7,7 +7,7 @@
 - [Installation] (Installation)
 - [Unit Testing] []
 
-## Installation
+## Installation ##
 ##### Note: This project was written in ``` node v6.7.0 ```
 </br>
 Open your terminal if you're on a Unix or Linus machine if you've not done so already after doing the ``` git pull ``` request. </br>
@@ -40,7 +40,7 @@ Using ``` nodemon ``` will do a live reload for you every time you save a file i
 If you do have to manually reload the server just use the ``` $ rs ``` command to 'restart server'. It's kinda awesome.
 </br>
 
-### Environmental Variables
+### Environmental Variables ###
 In the root directory there is an ``` env.dist ``` file, ``` URL_Shortener/env.dist ```. This file contains the environmental variables used in the app. The variables are:
 ``` bash
 
@@ -58,7 +58,7 @@ This file is for distribution only and should be renamed to ``` .env ``` for the
 Hold on! You're not done yet, you have to fill in your database credentials to connect to your database. If you don't have a database already created make sure to do that first before trying to run this app or it will crash if there's no database to connect to.
 </br>
 
-### Database Config
+### Database Config ###
 This API utilizes a RDBMS. At this time this API has only been tested with MySQL and mariaDB.
 *[RDBMS]: Relational Database Management System
 
@@ -83,11 +83,11 @@ $ mysql.server start
 Keep in mind that your database should **NOT** be running on the same port as the API.
 </br>
 ___
-## Run it in the browser!
+## Run it in the browser! ##
 This API ships with an example site on how the API can be implemented. It is set up to preform full CRUD using AJAX calls. Just type ``` localhost:3000 ``` in the browser URL after you get the server.js running and you can start going bananas!
 </br>
 ___
-## API
+## API ##
 After you have the app up and running there are 6 endpoints for the API. The first 3 endpoints require an AJAX call. The 4th is a API status checkup and can be used with an AJAX call if you need to watch for status changes for the API's stability. The 5th is a 301 redirect, no AJAX call needed for this endpoint. The 6th endpoint is used to display all record pairs in the database.
 
 1. **/v1/shorten-url**
@@ -205,7 +205,7 @@ After you have the app up and running there are 6 endpoints for the API. The fir
 </br>
 </br>
 
-### Sample AJAX call to the API
+### Sample AJAX call to the API ###
 
 This AJAX call was made with jQuery
 </br>
@@ -244,7 +244,7 @@ $submit.on('click', function() {
 </br>
 
 ___
-## Unit Testing
+## Unit Testing ##
 You can also do some unit testing using ``` mocha ```.</br>
 If you did the ``` npm install ``` then it's already in the app, but you'll still need to install it globally on your machine to use it. </br>
 If unit testing is something you like and you don't have ``` mocha ``` installed then just run the following command in the terminal:
