@@ -90,6 +90,14 @@ $ cd URL_Shortener/
 $ mysql.server start
 
 ```
+
+To stop the database server:
+```bash
+
+$ cd URL_Shortener/
+$ mysql.server stop
+
+```
 Keep in mind that your database should **NOT** be running on the same port as the API.
 </br>
 ___
