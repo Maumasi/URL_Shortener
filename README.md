@@ -61,6 +61,7 @@ To install MariaDB on:
 - [**OSX** follow these instructions] (https://mariadb.com/kb/en/mariadb/building-mariadb-on-mac-os-x-using-homebrew/)</br>
 - [**Windows 10** follow these instructions] (https://mariadb.com/kb/en/mariadb/installing-mariadb-msi-packages-on-windows/)</br>
 - [**Linux** follow these instructions] (https://downloads.mariadb.org/mariadb/repositories/#mirror=limestone)</br>
+</br>
 
 To install MySQL on:
 - [**OSX follow** these instructions] (https://dev.mysql.com/doc/refman/5.6/en/osx-installation-pkg.html)</br>
@@ -77,9 +78,10 @@ $ mysql.server start
 Keep in mind that your database should **NOT** be running on the same port as the API.
 </br>
 ___
-## Run it in the browser after server is running
-The API ships with an example site on how the API can be implemented. It is set up to preform full CRUD using AJAX calls. Just type ``` localhost:3000 ``` in the browser URL after you get the server.js running and you can start going bananas!
-
+## Run it in the browser!
+This API ships with an example site on how the API can be implemented. It is set up to preform full CRUD using AJAX calls. Just type ``` localhost:3000 ``` in the browser URL after you get the server.js running and you can start going bananas!
+</br>
+___
 ## API
 After you have the app up and running there are 6 endpoints for the API. The first 3 endpoints require an AJAX call. The 4th is a API status checkup and can be used with an AJAX call if you need to watch for status changes for the API's stability. The 5th is a 301 redirect, no AJAX call needed for this endpoint. The 6th endpoint is used to display all record pairs in the database.
 
