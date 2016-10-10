@@ -7,7 +7,7 @@
 - [Installation] (#user-content-installation)
 - [Run it in the browser] (#user-content-run-it-in-the-browser)
 - [API Endpoints] (#user-content-api-endpoints)
-- [Run in **DEBUG** mode] (#user-content-run-in-debug-mode)
+- [Run in DEBUG mode] (#user-content-run-in-debug-mode)
 - [Unit Testing] (#user-content-unit-testing)
 </br>
 
@@ -294,7 +294,5 @@ $ mocha
 Using this command ``` mocha ``` will look for the **' *test* '** directory and run any scripts in there. </br>
 Keep in mind that this uses port 3000 and will show a failed test if you try to use it at the same time the app is running on port 3000
 </br>
-
- - Currently there are 6 unit tests. Each endpoint is tested. Keep in mind that the ``` /v1/update-url ``` and ``` /v1/remove-url ``` endpoints will actually update and delete records in the database. Because ``` update-url ``` and ``` remove-url ``` are dependent on real records in the database they will only pass their tests once if their test values aren't updated in the ``` URL_Shortener/test/__api_unit_test.js ``` file.
 
  Feel free to add your own unit tests!!

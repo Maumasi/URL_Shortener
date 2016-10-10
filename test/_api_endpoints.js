@@ -2,8 +2,8 @@
 let server = require('../server.js');
 const request = require('supertest');
 const log = require('../utility/util');
-const dummy = require('./stubs/_dummyData');
-const testKey = dummy();
+const dummyRecord = require('./dummyData/dummyRecord');
+const testKey = dummyRecord();
 
 log(null, __filename,
   'Unit Tests',
