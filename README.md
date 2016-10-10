@@ -5,7 +5,7 @@
 
 ## Table of contents
 - [Installation] (#user-content-installation)
-- [Run it in the browser] (#user-content-run-it-in-the-browser!)
+- [Run it in the browser] (#user-content-run-it-in-the-browser)
 - [API Endpoints] (#user-content-api-endpoints)
 - [Unit Testing] (#user-content-unit-testing)
 </br>
