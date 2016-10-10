@@ -4,10 +4,10 @@
 </br>
 
 # Table of contents
-- [Installation] (#Installation)
-- [Unit Testing] (#Unit Testing)
+- [Installation] (Installation)
+- [Unit Testing] (#Unit-Testing)
 
-## #Installation
+## Installation
 ##### Note: This project was written in ``` node v6.7.0 ```
 </br>
 Open your terminal if you're on a Unix or Linus machine if you've not done so already after doing the ``` git pull ``` request. </br>
@@ -244,7 +244,7 @@ $submit.on('click', function() {
 </br>
 
 ___
-## #Unit Testing
+## Unit Testing
 You can also do some unit testing using ``` mocha ```.</br>
 If you did the ``` npm install ``` then it's already in the app, but you'll still need to install it globally on your machine to use it. </br>
 If unit testing is something you like and you don't have ``` mocha ``` installed then just run the following command in the terminal:
