@@ -1,9 +1,13 @@
 
-// const expect = require('expect');
 let server = require('../server.js');
 const request = require('supertest');
+const log = require('../utility/util');
 const dummy = require('./stubs/_dummyData');
 const testKey = dummy();
+
+log(null, __filename,
+  'Unit Tests',
+  'Unit test executed.');
 
 describe('Test API Endpoints...', () => {
   beforeEach(() => {

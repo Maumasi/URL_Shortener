@@ -1,30 +1,32 @@
 
 const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
-// const originalURL = require('../../models/db_crud').table('originalURL');
+const log = require('../../../utility/util');
 
 module.exports = (express) => {
   const router = express.Router();
 
-  // Route: /maumasi.fy/:linkKey
+  // Route: /go/:linkKey
   // Method: get
   // Use: retrevie link from the DB
   router.get('/:linkKey', (req, res) => {
     const postBody = req.body;
     postBody.maumasiFyKey = req.params.linkKey;
-    // req.body.maumasiFyKey = req.params.linkKey;
-    // const linkKey = req.body;
 
     maumasiFyURL.findByLinkKey(
-      // Send to DB
+
+      // maumasiFyURL.findByLinkKey: payload
       postBody,
 
-      // Error handling
+      // maumasiFyURL.findByLinkKey: error function
       (err) => {
-        // console.log('Failed to redirect. Error: ' + err);
         res.status(500).json(err);
+
+        log(err, __filename,
+          'Route: /go/:linkKey',
+          `Failed to redirect using link key: ${req.params.linkKey}`);
       },
 
-      // Success func
+      // maumasiFyURL.findByLinkKey: success function
       (data) => {
         res.redirect(301, data.originalURL.originalURL);
       });

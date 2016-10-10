@@ -1,7 +1,6 @@
 
 const db = require('./db');
-// const log = require('../../utility/util');
-
+const log = require('../../utility/util');
 
 // obj of tables in the DB
 const tables = {
@@ -16,6 +15,10 @@ exports.table = (table) => {
     // same as create: () => {...} this is short hand for annonimus functions in an object
     create(payload, err, success) {
       tables[table].create(payload).then(success).catch(err);
+
+      log(null, __filename,
+        'Model CRUD',
+        'Record created');
     },
 
     // ==========================================   READ: find by short link key
@@ -29,6 +32,10 @@ exports.table = (table) => {
           nested: true,
         }],
       }).then(success).catch(err);
+
+      log(null, __filename,
+        'Model CRUD',
+        'Search by link key');
     },
 
     // ==========================================   READ: find by full original URL
@@ -42,6 +49,10 @@ exports.table = (table) => {
           nested: true,
         }],
       }).then(success).catch(err);
+
+      log(null, __filename,
+        'Model CRUD',
+        'Search by URL');
     },
 
     // ==========================================   READ: find by originalURL table ID
@@ -55,6 +66,10 @@ exports.table = (table) => {
           nested: true,
         }],
       }).then(success).catch(err);
+
+      log(null, __filename,
+        'Model CRUD',
+        'Search by original URL ID');
     },
 
     // ==========================================   READ: find all records in DB
@@ -65,6 +80,10 @@ exports.table = (table) => {
           nested: true,
         }],
       }).then(success).catch(err);
+
+      log(null, __filename,
+        'Model CRUD',
+        'Find all records');
     },
 
     // ==========================================   UPDATE
@@ -86,6 +105,10 @@ exports.table = (table) => {
           currentUrl.updateAttributes(payload.urlUpdate).then(success).catch(err);
         }).catch(err);// tables.originalURL.find
       }).catch(err);// tables[table].find
+
+      log(null, __filename,
+        'Model CRUD',
+        'Full update using DB relationships');
     },
 
     // ==========================================   DELETE
@@ -95,6 +118,10 @@ exports.table = (table) => {
           id: payload.id,
         },
       }).then(success).catch(err);
+
+      log(null, __filename,
+        'Model CRUD',
+        'Deleted a record');
     },
   };// dbInteractions obj
 

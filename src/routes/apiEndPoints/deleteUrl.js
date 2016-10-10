@@ -25,6 +25,8 @@ module.exports = (express) => {
 
       // maumasiFyURL.findByLinkKey: error function
       (err) => {
+        res.status(500).json(err);
+
         log(err, __filename,
           'Route: /v1/remove-url/:linkKey',
           'Find by link key failed.');
@@ -43,32 +45,40 @@ module.exports = (express) => {
 
         maumasiFyURL.destroy(
 
-          // object identifier
+          // maumasiFyURL.destroy: payload
           { id: keyId },
 
-          // error handling
+          // maumasiFyURL.destroy: error function
           (err) => {
-            // console.log('Failed to redirect. Error: ' + err);
             res.status(500).json(err);
+
+            log(err, __filename,
+              'Route: /v1/remove-url/:linkKey',
+              `Failed to remove record by link key ID: ${keyId}`);
           },
 
-          // success func
+          // maumasiFyURL.destroy: success function
           () => {
             // if this key is deleted then delete the original URL
             originalURL.destroy(
 
-              // object identifier
+              // originalURL.destroy: payload
               { id: urlId },
 
-              // error handling
+              // originalURL.destroy: error function
               (err) => {
-                // console.log('Failed to redirect. Error: ' + err);
                 res.status(500).json(err);
+
+                log(err, __filename,
+                  'Route: /v1/remove-url/:linkKey',
+                  `Failed to remove record by originalURL_ID: ${urlId}`);
               },
 
-              // success func
+              // originalURL.destroy: success function
               () => {
-                console.log('record deleted');
+                log(null, __filename,
+                  'Route: /v1/remove-url/:linkKey',
+                  `Records deleted at:\noriginalURL_ID: ${urlId} and\n link key ID: ${keyId}`);
 
                 // redirect back to the home page
                 res.redirect(301, '/');

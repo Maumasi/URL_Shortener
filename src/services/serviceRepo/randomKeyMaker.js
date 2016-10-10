@@ -1,4 +1,6 @@
 
+const log = require('../../../utility/util');
+
 // private func that produces a random index of the array arg
 function randomIndex(array) {
   return Math.floor(Math.random() * (array.length));
@@ -39,6 +41,9 @@ module.exports = () => {
   randomString += charSets.lowerCase[lowerIndex2];
   randomString += charSets.numbers[numIndex];
 
-  // console.log(randomString);
+  log(null, __filename,
+    'Service: randomKeyMaker',
+    'randomKeyMaker executed');
+
   return randomString;
 };

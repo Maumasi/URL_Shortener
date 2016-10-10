@@ -1,5 +1,4 @@
-
-// const extractRootUrl = require('./pingPreper');
+const log = require('../../../utility/util');
 const request = require('request');
 
 module.exports = (url, callback) => {
@@ -13,11 +12,18 @@ module.exports = (url, callback) => {
       // console.log(response.statusCode);
       isActive = true;
     } else {
-      console.log('URL is unreachable');
+      log(null, __filename,
+        'Service: rootUrlExists',
+        'URL is unreachable');
+
       isActive = false;
     }
     callback(isActive);
   }
+
+  log(null, __filename,
+    'Service: rootUrlExists',
+    'rootUrlExists executed');
 
   request(options, evaluateUrl);
 };

@@ -1,11 +1,11 @@
 
 const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
-// const originalURL = require('../../models/db_crud').table('originalURL');
+const log = require('../../../utility/util');
 
 module.exports = (express) => {
   const router = express.Router();
 
-  // Route: /maumasi.fy/v1.1.0/all-urls
+  // Route: /v1/all-urls
   // Method: get
   // Use: retrevie all records from the DB
   router.get('/', (req, res) => {
@@ -14,6 +14,10 @@ module.exports = (express) => {
       (err) => {
       // console.log('Failed to redirect. Error: ' + err);
         res.status(500).json(err);
+
+        log(err, __filename,
+          'Route: /v1/all-urls',
+          'Could not find DB records.');
       },
 
     // Success func

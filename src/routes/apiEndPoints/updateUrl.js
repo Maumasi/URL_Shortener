@@ -1,5 +1,5 @@
 const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
-// const originalURL = require('../../models/db_crud').table('originalURL');
+const log = require('../../../utility/util');
 
 const services = require('../../services/services').services;
 const shortKeyExtractor = services.shortKeyExtractor;
@@ -13,6 +13,7 @@ module.exports = (express) => {
   // Use: retrevie link from the DB
   router.post('/', (req, res) => {
     const update = req.body;
+
     // build object with keys that the update method will be looking for
     const key = {
       maumasiFyKey: shortKeyExtractor(update.maumasiFyKey),
@@ -21,34 +22,44 @@ module.exports = (express) => {
       },
     };
 
-    // console.log('Is this a short key?');
-    // console.log('url update check: ' + update.updatelURL);
-
     rootUrlExists(key.urlUpdate, (isReachable) => {
       if (isReachable) {
         maumasiFyURL.updateUrlByShortKey(
+
+          // maumasiFyURL.updateUrlByShortKey: payload
           key,
 
+          // maumasiFyURL.updateUrlByShortKey: error function
           (err) => {
-            console.log(err);
+            res.status(500).json(err);
+
+            log(err, __filename,
+              'Route: /v1/update-url',
+              'Failed to update short key in DB.');
           },
 
+          // maumasiFyURL.updateUrlByShortKey: success function
           (updatedUrlInfo) => {
             const updateRespose = {
               originalURL: updatedUrlInfo.originalURL,
               maumasi_fied_link: update.maumasiFyKey,
             };
 
-            // console.log(updatedUrlInfo);
             res.status(200).json(updateRespose);
 
-            console.log('url updated');
+            log(null, __filename,
+              'Route: /v1/update-url',
+              'Updated short key: ${update.maumasiFyKey}');
           });// updateUrlByShortKey
       } else {
-        console.log(`${update.updatelURL} is not a live web URL`);
+        res.status(200).json({ maumasiFyKey: 'URL was unreachable.', originalURL: '' });
+
+        log(null, __filename,
+          'Route: /v1/update-url',
+          'URL to be updated to was unreachable.');
       }// if
-    });
-  });
+    });// rootUrlExists
+  });// route
 
   return router;
 };

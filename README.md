@@ -1,6 +1,6 @@
 
 # Maumasi's Awesome URL Shortener!
-`version: 1.1.1`
+`version: 1.2.0`
 </br>
 
 ## Installation
@@ -52,7 +52,30 @@ DB_PORT=
 ** **IMPORTANT** ** </br>
 This file is for distribution only and should be renamed to ``` .env ``` for the app to run. </br>
 Hold on! You're not done yet, you have to fill in your database credentials to connect to your database. If you don't have a database already created make sure to do that first before trying to run this app or it will crash if there's no database to connect to.
+</br>
 
+### Database Config
+This API utilizes a RDBMS. At this time this API has only been tested with MySQL and mariaDB.
+
+To install MariaDB on:
+- [**OSX** follow these instructions] (https://mariadb.com/kb/en/mariadb/building-mariadb-on-mac-os-x-using-homebrew/)</br>
+- [**Windows 10** follow these instructions] (https://mariadb.com/kb/en/mariadb/installing-mariadb-msi-packages-on-windows/)</br>
+- [**Linux** follow these instructions] (https://downloads.mariadb.org/mariadb/repositories/#mirror=limestone)</br>
+
+To install MySQL on:
+- [**OSX follow** these instructions] (https://dev.mysql.com/doc/refman/5.6/en/osx-installation-pkg.html)</br>
+- [**Windows 10** follow these instructions] (https://dev.mysql.com/doc/refman/5.5/en/windows-installation.html)</br>
+- [**Linux** follow these instructions] (http://dev.mysql.com/doc/refman/5.7/en/linux-installation.html)</br>
+
+After filling in your credentials in the newly renamed ``` .env ``` file start up your database.
+```bash
+
+$ cd URL_Shortener/
+$ mysql.server start
+
+```
+Keep in mind that your database should **NOT** be running on the same port as the API.
+</br>
 ___
 ## Run it in the browser after server is running
 The API ships with an example site on how the API can be implemented. It is set up to preform full CRUD using AJAX calls. Just type ``` localhost:3000 ``` in the browser URL after you get the server.js running and you can start going bananas!

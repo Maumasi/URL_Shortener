@@ -1,13 +1,11 @@
 
 const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
 const originalURL = require('../../models/db_crud').table('originalURL');
-// const util = require('util');
 const log = require('../../../utility/util');
 
 
 // services
 const services = require('../../services/services').services;
-// const urlChecker = services.checkUrlInput;
 const rootUrlExists = services.rootUrlExists;
 const randomKey = services.randomKey;
 
@@ -15,7 +13,7 @@ module.exports = (express) => {
   const router = express.Router();
 
 // ==========================================   API status
-  // Route: /maumasi.fy/v1.1.0/status
+  // Route: /v1/status
   // Method: get
   // Use: get current status of the API
   router.use('/status', (req, res) => {
@@ -27,7 +25,7 @@ module.exports = (express) => {
   });
 
 // ==========================================   submit to database
-  // Route: /maumasi.fy/v1.1.0/shorten
+  // Route: /v1/shorten
   // Method: post
   // Use: creates records in the database and returns the user input
   //      URL and a short url for the original URL
@@ -161,7 +159,9 @@ module.exports = (express) => {
     });
   });// router.post
 
-  // NOTE: Routes also under the '/v1' prefixed route
+
+  // NOTE: Routes also under the '/v1' prefixed route:
+
   // update existing URL from using short link key
   router.use('/all-urls', require('./findAllUrls')(express));
 
