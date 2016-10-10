@@ -6,8 +6,9 @@ const clc = require('cli-color');
 module.exports = (
   error,
   filePath = __filename,
-  reportLevel = 0,
-  customMessage = 'none'
+  customMessage = 'none',
+  customDescription = 'none',
+  reportLevel = 0
 ) => {
   const reportType = ['Info', 'Warning', 'Error'];
 
@@ -21,11 +22,12 @@ module.exports = (
   const fd = fs.openSync(file, 'w+');
 
   const logData = new Buffer(
-`createdAt: ${new Date()}
-reportType: ${rpLevel}
-customMessage: ${customMessage}
-filePath: ${filePath}
-stackTrace: ${util.inspect(error) || null}
+`created at: ${new Date()}
+report type: ${rpLevel}
+custom message: ${customMessage}
+custom description: ${customDescription}
+file path: ${filePath}
+stack trace: ${util.inspect(error) || null}
 \n`);
 
   fs.writeSync(fd, logData, 0, logData.length);// write new data
@@ -36,15 +38,30 @@ stackTrace: ${util.inspect(error) || null}
   // build console version of log report
 
   // log header
-  const logHeadColor = (error) ? clc.xterm(9).bgXterm(7) : clc.xterm(48);
-  const logHeadTxt = (error) ? clc.blink(`Log Report: ${rpLevel}`) : `Log Report: ${rpLevel}`;
+  let logHeadColor;
+  let logHeadTxt;
+
+  if (error) {
+    logHeadColor = clc.xterm(9).bgXterm(7);
+    logHeadTxt = clc.blink(`Log Report: ${rpLevel}`);
+  } else {
+    logHeadColor = clc.xterm(48);
+    logHeadTxt = `Log Report: ${rpLevel}`;
+  }
+
   const logHead = clc.bold(clc.underline(logHeadColor(logHeadTxt)));
 
   // created at
-  const createdAtColor = `${clc.bold('created at')}: ${clc.cyan(new Date())}`;
+  const createdAtColor =
+  `${clc.bold('created at')}: ${clc.cyan(new Date())}`;
 
   // custom message
-  const customMessageColor = `${clc.bold('custom message')}: ${clc.cyan(customMessage)}`;
+  const customMessageColor =
+  `${clc.bold('custom message')}: ${clc.cyan(customMessage)}`;
+
+  // customDescription
+  const customDescriptionColor =
+  `${clc.bold('custom description')}: ${clc.cyan(customDescription)}`;
 
   // report type
   let reportTypeTxt;
@@ -58,13 +75,16 @@ stackTrace: ${util.inspect(error) || null}
     default:
       reportTypeTxt = clc.bold(logHeadColor(rpLevel));
   }
-  const reportTypeColor = `${clc.bold('reportType')}: ${reportTypeTxt}`;
+  const reportTypeColor =
+  `${clc.bold('report type')}: ${reportTypeTxt}`;
 
   // file path
-  const filePathColor = `${clc.bold('file path')}: ${clc.magentaBright(filePath)}`;
+  const filePathColor =
+  `${clc.bold('file path')}: ${clc.magentaBright(filePath)}`;
 
   // stackTrace
-  const stackTraceColor = `${clc.bold('stack trace')}: ${util.inspect(error) || null}`;
+  const stackTraceColor =
+  `${clc.bold('stack trace')}: ${util.inspect(error) || null}`;
 
   const stream = process.stdout;
   if (process.env.DEBUG) {
@@ -74,6 +94,7 @@ ${logHead}
 ${createdAtColor}
 ${reportTypeColor}
 ${customMessageColor}
+${customDescriptionColor}
 ${filePathColor}
 ${stackTraceColor}
 \n`

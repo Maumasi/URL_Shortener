@@ -2,11 +2,12 @@
 const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
 const originalURL = require('../../models/db_crud').table('originalURL');
 const shortKeyExtractor = require('../../services/services').services.shortKeyExtractor;
+const log = require('../../../utility/util');
 
 module.exports = (express) => {
   const router = express.Router();
 
-  // Route: /maumasi.fy/remove-url/:linkKey
+  // Route: /v1/remove-url/:linkKey
   // Method: get
   // Use: delete record from DB
   router.post('/', (req, res) => {
@@ -19,24 +20,26 @@ module.exports = (express) => {
 
     maumasiFyURL.findByLinkKey(
 
-      // object identifier
+      // maumasiFyURL.findByLinkKey: payload
       deleteRequest,
 
-      // errors
+      // maumasiFyURL.findByLinkKey: error function
       (err) => {
-        console.log('Error: ' + err);
+        log(err, __filename,
+          'Route: /v1/remove-url/:linkKey',
+          'Find by link key failed.');
       },
 
-      // success
+      // maumasiFyURL.findByLinkKey: success function
       (urlToBeRemoved) => {
         // assign key ID and URL ID to vars to find this record for deletion
         keyId = urlToBeRemoved.dataValues.id;
         urlId = urlToBeRemoved.dataValues.originalURL_ID;
 
-        console.log('URL to be removed: ');
-        // console.log(urlToBeRemoved.dataValues);
-        console.log('key ID: ' + keyId);
-        console.log('URL ID: ' + urlId);
+        log(null, __filename,
+          'Route: /v1/remove-url/:linkKey',
+          `Link key removed by ID: ${keyId}\n
+          URL delete by ID: ${urlId}`);
 
         maumasiFyURL.destroy(
 
