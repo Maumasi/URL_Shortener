@@ -23,11 +23,14 @@ $ npm install
 ```
 </br>
 
-To get the node.js server up and running you'll have to navigate to the </br>
-server.js file then use the key word **' *node* '** to tell node.js to run the file:
+To get the node.js server up and running just navigate into the root directory ` URL_Shortener/ ` and enter:
 ```bash
-$  node server.js
+
+$ cd URL_Shortener/
+$  npm start
+
 ```
+
 By default the port is set to 3000, you should also see ``` Server running on port 3000 ``` stated in the terminal </br>
 after you have the server running, if you don't see that, then something failed and the server should be re-started or you may have
 forgotten to run the ``` $ npm install ``` command. </br>
@@ -39,6 +42,7 @@ To stop the server press: ``` control + ^C ``` </br>
 
 If you have **nodemon** installed, ``` npm i -g nodemon```, you can simply use:
 ```bash
+$ cd URL_Shortener/
 $ nodemon server.js
 ```
 Using ``` nodemon ``` will do a live reload for you every time you save a file in the project... *most of the time*.
@@ -101,17 +105,21 @@ After you have the app up and running there are 6 endpoints for the API. The fir
   - This uses the **POST** method to receive the original URL and set a relationship to the new **maumasi.fy** short link.
   - This endpoint expects JSON:
   ```javaScript
+
   {
     'originalURL': ['submitted URL']
   }
+
   ```
   - This will generate a new short link or return an existing short link if the exact URL submitted happens to be in the database already.
   - The root URL destination will be pinged. If it fails it will logged it in the console. If it passes it will return the following JSON:
   ```javaScript
+
   {
     'originalURL' : ['URL submitted'],
     'maumasi_fied_link' : ['generated short link']
   }
+
   ```
   </br>
   </br>
@@ -119,24 +127,28 @@ After you have the app up and running there are 6 endpoints for the API. The fir
 2. **/v1/update-url**
   - Updates a short link.
 
-  - This uses the **POST** method to receive the new URL and set a relationship to the **maumasi.fy** short link to be reassinged that should be submited with the new URL.
+  - This uses the **POST** method to receive the new URL and set a relationship to the **maumasi.fy** short link to be reassigned that should be submited with the new URL.
 
   - This endpoint expects JSON:
   ```javaScript
+
   {
     'maumasiFyKey': ['your full short link'],
     'updatelURL': ['a new URL for this short link']
   }
+
   ```
 
   - This reassigns the short link to a new URL destination.
 
   - Returns JSON:
   ```javaScript
+
   {
     'originalURL' : ['new URL submited'],
     'maumasi_fied_link' : ['short link submitted with new URL']
   }
+
   ```
   - **Important:** Some browsers like *Chrome* will cache URLs and will refer to their own cache history to remember where the short link's last destination was. So, after updating your short link you may have to clear your browser's cache/history for the new short link's destination to take place.
   </br>
@@ -149,9 +161,11 @@ After you have the app up and running there are 6 endpoints for the API. The fir
 
   - This endpoint expects JSON:
   ```javaScript
+
   {
     'maumasiFyKey': ['your full short link']
   }
+
   ```
   </br>
   </br>
@@ -165,9 +179,11 @@ After you have the app up and running there are 6 endpoints for the API. The fir
 
   - Returns JSON:
   ```javaScript
+
   {
     'stable' : [boolean]
   }
+
   ```
   </br>
   </br>
@@ -249,6 +265,17 @@ $submit.on('click', function() {
 </br>
 
 ___
+
+## Run in **DEBUG** mode
+To run this API in debug mode follow enter the commands below in the terminal:
+
+```bash
+
+$ cd URL_Shortener/
+$ DEBUG=true node server.js
+
+```
+___
 ## Unit Testing
 You can also do some unit testing using ``` mocha ```.</br>
 If you did the ``` npm install ``` then it's already in the app, but you'll still need to install it globally on your machine to use it. </br>
@@ -258,13 +285,15 @@ $ npm i -g mocha
 ```
 That's it, now just call ``` mocha ``` just inside the **URL_Shortener** directory:
 ```bash
+
 $ cd URL_Shortener/
 $ mocha
+
 ```
 Using this command ``` mocha ``` will look for the **' *test* '** directory and run any scripts in there. </br>
 Keep in mind that this uses port 3000 and will show a failed test if you try to use it at the same time the app is running on port 3000
 </br>
 
- - Currently there are 6 unit tests. Each endpoint is tested. Keep in mind that the ``` /v1/update-url ``` and ``` /v1/remove-url ``` endpoints will accutally update and delete recoreds in the database. Becasue ``` update-url ``` and ``` remove-url ``` are dependant on real records in the database they will only pass their tests once if their test values aren't updated in the ``` URL_Shortener/test/__api_unit_test.js ``` file.
+ - Currently there are 6 unit tests. Each endpoint is tested. Keep in mind that the ``` /v1/update-url ``` and ``` /v1/remove-url ``` endpoints will actually update and delete records in the database. Because ``` update-url ``` and ``` remove-url ``` are dependent on real records in the database they will only pass their tests once if their test values aren't updated in the ``` URL_Shortener/test/__api_unit_test.js ``` file.
 
  Feel free to add your own unit tests!!
