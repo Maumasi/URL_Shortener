@@ -3,9 +3,12 @@
 `version: 1.2.0`
 </br>
 
-# Table of contents
-- [Installation] (Installation)
+## Table of contents
+- [Installation] (#user-content-installation)
+- [Run it in the browser] (#user-content-run-it-in-the-browser!)
+- [API Endpoints] (#user-content-api-endpoints)
 - [Unit Testing] (#user-content-unit-testing)
+</br>
 
 ## Installation
 ##### Note: This project was written in ``` node v6.7.0 ```
@@ -87,7 +90,7 @@ ___
 This API ships with an example site on how the API can be implemented. It is set up to preform full CRUD using AJAX calls. Just type ``` localhost:3000 ``` in the browser URL after you get the server.js running and you can start going bananas!
 </br>
 ___
-## API
+## API Endpoints
 After you have the app up and running there are 6 endpoints for the API. The first 3 endpoints require an AJAX call. The 4th is a API status checkup and can be used with an AJAX call if you need to watch for status changes for the API's stability. The 5th is a 301 redirect, no AJAX call needed for this endpoint. The 6th endpoint is used to display all record pairs in the database.
 
 1. **/v1/shorten-url**
