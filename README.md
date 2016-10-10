@@ -7,6 +7,7 @@
 - [Installation] (#user-content-installation)
 - [Run it in the browser] (#user-content-run-it-in-the-browser)
 - [API Endpoints] (#user-content-api-endpoints)
+- [Run in **DEBUG** mode] (#user-content-run-in-debug-mode)
 - [Unit Testing] (#user-content-unit-testing)
 </br>
 
