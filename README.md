@@ -303,7 +303,6 @@ You can enter the following commands in the terminal to run the API normally:
 ```bash
 
 $ cd URL_Shortener/
-$
 $ npm start
 
 ```
