@@ -286,6 +286,29 @@ $ cd URL_Shortener/
 $ DEBUG=true node server.js
 
 ```
+</br>
+
+### Exit DEBUG mode
+To exit DEBUG mode you'll have to stop the server and start up normally, without setting the environmental variable ``` DEBUG ```.
+</br>
+```bash
+
+$ cd URL_Shortener/
+
+```
+</br>
+To stop the server type ``` control + ^C ```
+</br>
+
+You can enter the following commands in the terminal to run the API normally:
+```bash
+
+$ cd URL_Shortener/
+$
+$ npm start
+
+```
+</br>
 ___
 ## Unit Testing
 You can also do some unit testing using ``` mocha ```.</br>
