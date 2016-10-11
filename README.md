@@ -298,7 +298,7 @@ ___
 ## Usage
 
 ### Run in **DEBUG** mode
-To run this API in debug mode follow enter the commands below in the terminal:
+To run this API in debug mode enter the commands below in the terminal:
 
 ```bash
 
