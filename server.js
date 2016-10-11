@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const sessions = require('express-session');
 const routes = require('./src/routes/');
+const log = require('./utility/util');
 
 require('dotenv').config();
 
@@ -24,6 +25,8 @@ app.use(express.static('./public'));
 
 // exports.server =
 const server = app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  log(null, __filename,
+    'Server Active',
+    'Server running on port ${PORT}');
 });
 module.exports = server;
