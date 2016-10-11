@@ -1,6 +1,6 @@
 
 # Maumasi's Awesome URL Shortener!
-`version: 1.2.0`
+`version: 1.3.0`
 </br>
 
 ## Table of contents
@@ -284,8 +284,30 @@ $ cd URL_Shortener/
 $ DEBUG=true node server.js
 
 ```
-___
-## Unit Testing
+</br>
+
+To exit DEBUG mode you'll have to stop the server and start up normally, without setting the environmental variable ``` DEBUG ```.
+</br>
+```bash
+
+$ cd URL_Shortener/
+
+```
+</br>
+To stop the server type ``` control + ^C ```
+</br>
+
+You can enter the following commands in the terminal to run the API normally:
+```bash
+
+$ cd URL_Shortener/
+$
+$ npm start
+
+```
+</br>
+
+### Unit Testing
 You can also do some unit testing using ``` mocha ```.</br>
 If you did the ``` npm install ``` then it's already in the app, but you'll still need to install it globally on your machine to use it. </br>
 If unit testing is something you like and you don't have ``` mocha ``` installed then just run the following command in the terminal:
@@ -302,5 +324,7 @@ $ mocha
 Using this command ``` mocha ``` will look for the **' *test* '** directory and run any scripts in there. </br>
 Keep in mind that this uses port 3000 and will show a failed test if you try to use it at the same time the app is running on port 3000
 </br>
+
+At this time Unit Tests are run against all 6 API endpoints, all services under the serviceRepo directory, and all database CRUD models.
 
  Feel free to add your own unit tests!!
