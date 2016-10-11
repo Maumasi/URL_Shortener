@@ -7,9 +7,9 @@ const testKey = dummyRecord();
 
 log(null, __filename,
   'Unit Tests',
-  'Unit test executed.');
+  'API endpoint unit tests executed.');
 
-describe('Test API Endpoints...', () => {
+describe('Test API Endpoints', () => {
   beforeEach(() => {
     server = require('../server.js');
   });
@@ -46,7 +46,7 @@ describe('Test API Endpoints...', () => {
     request(server)
       .post('/v1/shorten-url')
       .send({
-        originalURL: 'https://www.google.com/search?q=sfb%20fgsb&rct=j',
+        originalURL: 'http://www.fakeWebSite.com',
       })
       .set('Accest', 'application/json')
       .expect('Content-Type', /json/)

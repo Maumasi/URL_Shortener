@@ -22,14 +22,16 @@ module.exports = () => {
       originalId = newUrlRecord.dataValues.id;
 
       maumasiFyURL.create(
+        // payload
         {
           maumasiFyKey: linkKey,
           originalURL_ID: originalId,
         },
+        // error function
         {},
+        // success function
         () => {
-          console.log('dummy record created');
-          // return data;
+          // returns nothing
         });
     });// originalURL.create
   return linkKey;

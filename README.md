@@ -7,7 +7,7 @@
 - [Installation] (#user-content-installation)
 - [Run it in the browser] (#user-content-run-it-in-the-browser)
 - [API Endpoints] (#user-content-api-endpoints)
-- [Run in DEBUG mode] (#user-content-run-in-debug-mode)
+- [Usage] (#user-content-run-in-debug-mode)
 - [Unit Testing] (#user-content-unit-testing)
 </br>
 
@@ -274,8 +274,10 @@ $submit.on('click', function() {
 </br>
 
 ___
+## Usage
+</br>
 
-## Run in **DEBUG** mode
+### Run in **DEBUG** mode
 To run this API in debug mode follow enter the commands below in the terminal:
 
 ```bash
