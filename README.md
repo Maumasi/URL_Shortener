@@ -333,7 +333,10 @@ You can also do some unit testing using ``` mocha ```.</br>
 If you did the ``` npm install ``` then it's already in the app, but you'll still need to install it globally on your machine to use it. </br>
 If unit testing is something you like and you don't have ``` mocha ``` installed then just run the following command in the terminal:
 ```bash
+
+$ cd URL_Shortener/
 $ npm i -g mocha
+
 ```
 That's it, now just call ``` mocha ``` just inside the **URL_Shortener** directory:
 ```bash
