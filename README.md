@@ -349,6 +349,16 @@ Using this command ``` mocha ``` will look for the **' *test* '** directory and 
 Keep in mind that this uses port 3000 and will show a failed test if you try to use it at the same time the app is running on port 3000
 </br>
 
+### Run Unit tests in DEBUG mode
+To run unit tests in DEBUG mode all you have to do is to define DEBUG as true before running ``` mocha ```, like so:
+```bash
+
+$ cd URL_Shortener/
+$ DEBUG=true mocha
+
+```
+Now you will get a robust output of all major functions, models, and API route endpoints involved in any particular unit test being executed.
+
 At this time Unit Tests are run against all 6 API endpoints, all services under the serviceRepo directory, and all database CRUD models.
 
  Feel free to add your own unit tests!!

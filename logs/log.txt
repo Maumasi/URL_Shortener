@@ -1,3 +1,343 @@
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Service: shortKeyExtractor
+custom description: shortKeyExtractor executed
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/services/serviceRepo/shortKeyExtractor.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Service: rootUrlExists
+custom description: rootUrlExists executed
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/services/serviceRepo/rootUrlExists.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Service: randomKeyMaker
+custom description: randomKeyMaker executed
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/services/serviceRepo/randomKeyMaker.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Service: randomKeyMaker
+custom description: randomKeyMaker executed
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/services/serviceRepo/randomKeyMaker.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Service: randomKeyMaker
+custom description: randomKeyMaker executed
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/services/serviceRepo/randomKeyMaker.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Service: pingPreper
+custom description: pingPreper executed
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/services/serviceRepo/pingPreper.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Service: pingPreper
+custom description: Prep: https://www.google.com/#safe=active&q=testing
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/services/serviceRepo/pingPreper.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Deleted a record
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Deleted a record
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Deleted a record
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Deleted a record
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Full update using DB relationships
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Search by original URL ID
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Find all records
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Search by link key
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Search by link key
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Record created
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Find all records
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Search by URL
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Search by URL
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Record created
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Route: /v1/remove-url/:linkKey
+custom description: Records deleted at:
+originalURL_ID: 291 and
+ link key ID: 329
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/deleteUrl.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Deleted a record
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Deleted a record
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Route: /v1/remove-url/:linkKey
+custom description: Link key removed by ID: 329
+
+          URL delete by ID: 291
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/deleteUrl.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Search by link key
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Service: shortKeyExtractor
+custom description: shortKeyExtractor executed
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/services/serviceRepo/shortKeyExtractor.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Route: /v1/update-url
+custom description: Updated short key: ${update.maumasiFyKey}
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/updateUrl.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:03 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Full update using DB relationships
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:02 GMT-0400 (EDT)
+report type: Info
+custom message: Service: rootUrlExists
+custom description: rootUrlExists executed
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/services/serviceRepo/rootUrlExists.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:02 GMT-0400 (EDT)
+report type: Info
+custom message: Service: shortKeyExtractor
+custom description: shortKeyExtractor executed
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/services/serviceRepo/shortKeyExtractor.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:02 GMT-0400 (EDT)
+report type: Info
+custom message: Route: /v1/shorten-url
+custom description: URL created in DB.
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:02 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Record created
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:02 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Record created
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:02 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Search by URL
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:02 GMT-0400 (EDT)
+report type: Info
+custom message: Route: /v1/shorten-url
+custom description: URL is reachable: true
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:02 GMT-0400 (EDT)
+report type: Info
+custom message: Service: rootUrlExists
+custom description: rootUrlExists executed
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/services/serviceRepo/rootUrlExists.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:02 GMT-0400 (EDT)
+report type: Info
+custom message: Service: randomKeyMaker
+custom description: randomKeyMaker executed
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/services/serviceRepo/randomKeyMaker.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:02 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Search by link key
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:02 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Record created
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:02 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Find all records
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:02 GMT-0400 (EDT)
+report type: Info
+custom message: Route: /v1/status
+custom description: Status route reached.
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:02 GMT-0400 (EDT)
+report type: Info
+custom message: Unit Tests
+custom description: Unit test executed.
+file path: /Users/liumaumasi/Desktop/url-shortener-main/test/_api_services.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:02 GMT-0400 (EDT)
+report type: Info
+custom message: Unit Tests
+custom description: Unit test executed.
+file path: /Users/liumaumasi/Desktop/url-shortener-main/test/_api_models.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:02 GMT-0400 (EDT)
+report type: Info
+custom message: Service: randomKeyMaker
+custom description: randomKeyMaker executed
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/services/serviceRepo/randomKeyMaker.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:02 GMT-0400 (EDT)
+report type: Info
+custom message: Unit Tests
+custom description: API endpoint unit tests executed.
+file path: /Users/liumaumasi/Desktop/url-shortener-main/test/_api_endpoints.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:02 GMT-0400 (EDT)
+report type: Info
+custom message: Model CRUD
+custom description: Record created
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+stack trace: null
+
+created at: Mon Oct 10 2016 23:37:02 GMT-0400 (EDT)
+report type: Info
+custom message: Service: randomKeyMaker
+custom description: randomKeyMaker executed
+file path: /Users/liumaumasi/Desktop/url-shortener-main/src/services/serviceRepo/randomKeyMaker.js
+stack trace: null
+
 created at: Mon Oct 10 2016 23:29:27 GMT-0400 (EDT)
 report type: Info
 custom message: Service: shortKeyExtractor
