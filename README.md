@@ -19,8 +19,10 @@ ___
 Open your terminal if you're on a Unix or Linus machine if you've not done so already after doing the ``` git pull ``` request. </br>
 Install all the **dependancies** and **dev dependancies** for the app with the all important **npm install**:
 ```bash
-$ cd URL_Shortener
+
+$ cd URL_Shortener/
 $ npm install
+
 ```
 </br>
 
@@ -31,7 +33,24 @@ $ cd URL_Shortener/
 $  npm start
 
 ```
+</br>
+### Troubleshooting install
+If you are get an error in the terminal stating ``` Error: Cannot find module 'request' ```, run the following command in the terminal:
+```bash
 
+$ cd URL_Shortener/
+$ npm install request
+
+```
+Then try starting the server again:
+```bash
+
+$ cd URL_Shortener/
+$  npm start
+
+```
+
+</br>
 By default the port is set to 3000, you should also see ``` Server running on port 3000 ``` stated in the terminal </br>
 after you have the server running, if you don't see that, then something failed and the server should be re-started or you may have
 forgotten to run the ``` $ npm install ``` command. </br>
@@ -43,8 +62,10 @@ To stop the server press: ``` control + ^C ``` </br>
 
 If you have **nodemon** installed, ``` npm i -g nodemon```, you can simply use:
 ```bash
+
 $ cd URL_Shortener/
 $ nodemon server.js
+
 ```
 Using ``` nodemon ``` will do a live reload for you every time you save a file in the project... *most of the time*.
 If you do have to manually reload the server just use the ``` $ rs ``` command to 'restart server'. It's kinda awesome.
@@ -301,7 +322,6 @@ You can enter the following commands in the terminal to run the API normally:
 ```bash
 
 $ cd URL_Shortener/
-$
 $ npm start
 
 ```
