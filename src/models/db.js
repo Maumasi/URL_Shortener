@@ -1,11 +1,9 @@
 
-console.log('DB script reached');
-
+// console.log('DB script reached');
 const Sequelize = require('sequelize');
 
-// only used in the dev environment
-// require('../../.env');
-require('dotenv').config({ path: '../.env' });
+// access environmental variables
+require('dotenv').config();
 
 // connect to the db
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW, {
@@ -33,15 +31,16 @@ const originalURL = require('./tables/originalURL')(Sequelize, sequelize);
 const maumasiFyURL = require('./tables/maumasiFyURL')(Sequelize, sequelize);
 
 // ==========================   relationships
-
 // connect the two tables
 maumasiFyURL.belongsTo(originalURL, {
   foreignKey: 'originalURL_ID',
 });
 
-// The following line should only be ran when changes to the DB are made and DB
+// The following "sequelize.sync({ force: true });" line
+// should only be ran when changes to the DB are made and DB
 // records are safely stored some where because this will truncate all tables
 // every time the server is started up!!!
+// Use to update tables EXACLY as they're defined
 
 // sequelize.sync({ force: true });
 

@@ -1,6 +1,6 @@
 
 const db = require('./db');
-
+const log = require('../../utility/util');
 
 // obj of tables in the DB
 const tables = {
@@ -8,17 +8,20 @@ const tables = {
   originalURL: db.originalURL,
 };
 
-
 exports.table = (table) => {
   const dbInteractions = {
 
-// ==========================================   CREATE
-    // same as create: () => {...}
+    // ==========================================   CREATE
+    // same as create: () => {...} this is short hand for annonimus functions in an object
     create(payload, err, success) {
       tables[table].create(payload).then(success).catch(err);
+
+      log(null, __filename,
+        'Model CRUD',
+        'Record created');
     },
 
-  // ==========================================   READ: find by short link key
+    // ==========================================   READ: find by short link key
     findByLinkKey(payload, err, success) {
       tables[table].find({
         where: {
@@ -29,9 +32,13 @@ exports.table = (table) => {
           nested: true,
         }],
       }).then(success).catch(err);
+
+      log(null, __filename,
+        'Model CRUD',
+        'Search by link key');
     },
 
-  // ==========================================   READ: find by full URL
+    // ==========================================   READ: find by full original URL
     findByUrl(payload, err, success) {
       tables[table].find({
         where: {
@@ -42,9 +49,13 @@ exports.table = (table) => {
           nested: true,
         }],
       }).then(success).catch(err);
+
+      log(null, __filename,
+        'Model CRUD',
+        'Search by URL');
     },
 
-  // ==========================================   READ: find by originalURL ID
+    // ==========================================   READ: find by originalURL table ID
     findByOriginalUrlId(payload, err, success) {
       tables[table].find({
         where: {
@@ -55,9 +66,13 @@ exports.table = (table) => {
           nested: true,
         }],
       }).then(success).catch(err);
+
+      log(null, __filename,
+        'Model CRUD',
+        'Search by original URL ID');
     },
 
-  // ==========================================   READ: find all records in DB
+    // ==========================================   READ: find all records in DB
     findAllRecords(err, success) {
       tables[table].findAll({
         include: [{
@@ -65,9 +80,13 @@ exports.table = (table) => {
           nested: true,
         }],
       }).then(success).catch(err);
+
+      log(null, __filename,
+        'Model CRUD',
+        'Find all records');
     },
 
-  // ==========================================   UPDATE
+    // ==========================================   UPDATE
     updateUrlByShortKey(payload, err, success) {
       tables[table].find({
         where: {
@@ -75,25 +94,34 @@ exports.table = (table) => {
         },
       })
       .then((shortKeyJoinUrl) => {
+        // if success, update the URL in DB
+        // console.log(__dirname + 'Line 78');
+        // console.log(shortKeyJoinUrl);
         tables.originalURL.find({
           where: {
             id: shortKeyJoinUrl.originalURL_ID,
           },
         }).then((currentUrl) => {
-          // console.log(payload.urlUpdate);
           currentUrl.updateAttributes(payload.urlUpdate).then(success).catch(err);
-          // console.log('pass');
-        }).catch(err);
-      }).catch(err);
+        }).catch(err);// tables.originalURL.find
+      }).catch(err);// tables[table].find
+
+      log(null, __filename,
+        'Model CRUD',
+        'Full update using DB relationships');
     },
 
-  // ==========================================   DELETE
+    // ==========================================   DELETE
     destroy(payload, err, success) {
       tables[table].destroy({
         where: {
           id: payload.id,
         },
       }).then(success).catch(err);
+
+      log(null, __filename,
+        'Model CRUD',
+        'Deleted a record');
     },
   };// dbInteractions obj
 

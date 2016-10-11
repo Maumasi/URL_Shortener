@@ -1,11 +1,17 @@
+const log = require('../../../utility/util');
 
 module.exports = (shortLink) => {
     // remove chars before short link
-  const beforeShortLink = shortLink.search('.fy/') + 4;
+  const beforeShortLink = shortLink.search('go/') + 3;
+
+  // console.log(beforeShortLink);
 
   const beginExtra = shortLink.slice(0, beforeShortLink);
   const key = shortLink.replace(beginExtra, '');
-  // console.log(key);
+
+  log(null, __filename,
+    'Service: shortKeyExtractor',
+    'shortKeyExtractor executed');
 
   return key;
 };

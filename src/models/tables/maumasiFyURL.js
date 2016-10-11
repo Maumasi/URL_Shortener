@@ -6,7 +6,6 @@ module.exports = (Sequelize, sequelize) => {
       unique: true,
       validate: {},
     },
-
   });
 
   return maumasiFyURL;

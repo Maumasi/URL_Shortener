@@ -1,60 +1,65 @@
 const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
-// const originalURL = require('../../models/db_crud').table('originalURL');
+const log = require('../../../utility/util');
 
 const services = require('../../services/services').services;
-const urlChecker = services.checkUrlInput;
 const shortKeyExtractor = services.shortKeyExtractor;
+const rootUrlExists = services.rootUrlExists;
 
 module.exports = (express) => {
   const router = express.Router();
 
-  // Route: /maumasi.fy/v1.1.0/update-url
+  // Route: /v1/update-url
   // Method: get
   // Use: retrevie link from the DB
   router.post('/', (req, res) => {
     const update = req.body;
 
-    // console.log(update);
-
-    var key = {
+    // build object with keys that the update method will be looking for
+    const key = {
       maumasiFyKey: shortKeyExtractor(update.maumasiFyKey),
       urlUpdate: {
         originalURL: update.updatelURL,
       },
     };
 
-    console.log('url update check: ' + update.updatelURL);
-    // pingTest is a promise func;
-    const pingTest = urlChecker(req, res, update.updatelURL);
-
-    pingTest.then((pingResponse) => {
-      if (pingResponse.alive) {
+    rootUrlExists(key.urlUpdate, (isReachable) => {
+      if (isReachable) {
         maumasiFyURL.updateUrlByShortKey(
+
+          // maumasiFyURL.updateUrlByShortKey: payload
           key,
 
+          // maumasiFyURL.updateUrlByShortKey: error function
           (err) => {
-            console.log(err);
+            res.status(500).json(err);
+
+            log(err, __filename,
+              'Route: /v1/update-url',
+              'Failed to update short key in DB.');
           },
 
+          // maumasiFyURL.updateUrlByShortKey: success function
           (updatedUrlInfo) => {
             const updateRespose = {
               originalURL: updatedUrlInfo.originalURL,
               maumasi_fied_link: update.maumasiFyKey,
             };
 
-            // console.log(updatedUrlInfo);
             res.status(200).json(updateRespose);
-            console.log('url updated');
+
+            log(null, __filename,
+              'Route: /v1/update-url',
+              'Updated short key: ${update.maumasiFyKey}');
           });// updateUrlByShortKey
       } else {
-        console.log(`${update.updatelURL} is not a live web URL`);
+        res.status(200).json({ maumasiFyKey: 'URL was unreachable.', originalURL: '' });
+
+        log(null, __filename,
+          'Route: /v1/update-url',
+          'URL to be updated to was unreachable.');
       }// if
-    }).catch(
-      (err) => {
-        console.log(err);
-      }
-    );
-  });
+    });// rootUrlExists
+  });// route
 
   return router;
 };

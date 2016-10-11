@@ -1,119 +1,166 @@
 
 const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
 const originalURL = require('../../models/db_crud').table('originalURL');
+const log = require('../../../utility/util');
+
 
 // services
 const services = require('../../services/services').services;
-const urlChecker = services.checkUrlInput;
+const rootUrlExists = services.rootUrlExists;
 const randomKey = services.randomKey;
 
 module.exports = (express) => {
   const router = express.Router();
 
 // ==========================================   API status
-  // Route: /maumasi.fy/v1.1.0/status
+  // Route: /v1/status
   // Method: get
   // Use: get current status of the API
   router.use('/status', (req, res) => {
     res.json({ stable: true });
+
+    log(null, __filename,
+      'Route: /v1/status',
+      'Status route reached.');
   });
 
 // ==========================================   submit to database
-  // Route: /maumasi.fy/v1.1.0/shorten
+  // Route: /v1/shorten
   // Method: post
   // Use: creates records in the database and returns the user input
-  //      URL and a maumasi.fy link for that link
-  // Note: ${req.protocol}:// to use http or https
+  //      URL and a short url for the original URL
   router.post('/shorten-url', (req, res) => {
-    var originalId;
+    let originalId;
     const linkKey = randomKey();
 
-    const maumasiFyLink = `${req.protocol}://${req.get('host')}/maumasi.fy/${linkKey}`;
+    const maumasiFyLink = `${req.protocol}://${req.get('host')}/go/${linkKey}`;
     const submitedURL = req.body || null;
 
-    // pingTest is a promise func;
-    const pingTest = urlChecker(req, res, submitedURL);
+    rootUrlExists(submitedURL, (isReachable) => {
+      log(null, __filename,
+        'Route: /v1/shorten-url',
+        `URL is reachable: ${isReachable}`);
 
-    pingTest.then((data) => {
-      // console.log(data);
-
+      // check if URL already exists in the DB
       originalURL.findByUrl(
+
+        // originalURL.findByUrl: payload
         submitedURL,
 
+        // originalURL.findByUrl: error function
         (err) => {
           res.status(500).json(err);
-          console.log('Error ' + err);
+
+          log(err, __filename,
+            'Route: /v1/shorten-url',
+            'URL not found in DB.');
         },
+
+        // originalURL.findByUrl: success function
         (urlData) => {
-          // if the submited url already exist in DB return that short url to the user
+          // if the submited url already exist in DB return the associated short url to the user
           if (urlData) {
             maumasiFyURL.findByOriginalUrlId(
+
+              // maumasiFyURL.findByOriginalUrlId: payload
               urlData.dataValues,
 
+              // maumasiFyURL.findByOriginalUrlId: error function
               (err) => {
                 res.status(500).json(err);
-                console.log('Error ' + err);
+
+                log(err, __filename,
+                  'Route: /v1/shorten-url',
+                  'originalURL_ID was not found.');
               },
 
+              // maumasiFyURL.findByOriginalUrlId: success function
               (shortenKey) => {
-                console.log('key for url:');
-                console.log(shortenKey.dataValues.maumasiFyKey);
-
                 if (shortenKey) {
                   const key = shortenKey.maumasiFyKey;
-                  const existingShortLink = `${req.protocol}://${req.get('host')}/maumasi.fy/${key}`;
+                  const existingShortLink = `${req.protocol}://${req.get('host')}/go/${key}`;
                   submitedURL.maumasi_fied_link = existingShortLink;
                   res.status(200).json(submitedURL);
                 }
               });
+          // if url is not found in DB create a record for it
           } else {
-            // if the submitted url returns a ping responce create a short link to it
-            if (data.alive) {
-              // submit to DB
+            // check if the url is reachable first
+            if (isReachable) {
               originalURL.create(
+
+                // originalURL.create: payload
                 submitedURL,
 
+                // originalURL.create: error function
                 (err) => {
                   res.status(500).json(err);
-                  console.log('Error ' + err);
+
+                  log(err, __filename,
+                    'Route: /v1/shorten-url',
+                    'Failed to create a new record in DB.');
                 },
 
-                (submitedURL) => {
+                // originalURL.create: success function
+                (newUrlRecord) => {
                   // add maumasi.fy link to obj before sending back a response
-                  submitedURL.dataValues.maumasi_fied_link = maumasiFyLink;
-
-                  res.status(200).json(submitedURL);
-                  originalId = submitedURL.dataValues.id;
+                  const newUrlInfo = {
+                    maumasi_fied_link: maumasiFyLink,
+                    originalURL: newUrlRecord.dataValues.originalURL,
+                  };
+                  res.status(200).json(newUrlInfo);
+                  originalId = newUrlRecord.dataValues.id;
                 });// originalURL.create
 
-              // wait for the code above to finish before try to create a maumasiFyURL record
+              // wait for the code above to finish before trying to
+              // create a maumasiFyURL record so the ID can be found
               res.on('finish', () => {
                 maumasiFyURL.create(
+
+                  // maumasiFyURL.create: payload
                   {
                     maumasiFyKey: linkKey,
                     originalURL_ID: originalId,
                   },
 
+                  // maumasiFyURL.create: error function
                   (err) => {
                     res.status(500).json(err);
-                    console.log('Error ' + err);
+
+                    log(null, __filename,
+                      'Route: /v1/shorten-url',
+                      'URL was not created in DB.');
                   },
+
+                  // maumasiFyURL.create: success function
                   () => {
-                    console.log('New record created');
-                  }
-                );// maumasiFyURL.create
+                    log(null, __filename,
+                      'Route: /v1/shorten-url',
+                      'URL created in DB.');
+                  });// maumasiFyURL.create
               });// res.finish
+
+            // if url is not reachable then respond with an error
             } else {
               // how to handle errors and what to respond with
-              console.log('link failed: ' + req.body.originalURL);
-            }// if
+              log(null, __filename,
+                'Route: /v1/shorten-url',
+                'URL was not reachable.');
+
+              const unreachable = {
+                originalURL: 'URL was unreachable',
+                maumasi_fied_link: '',
+              };
+
+              res.status(200).json(unreachable);
+            }// child if
           }// parnt if
         });// originalURL table search
-    });// then
+    });
   });// router.post
 
 
-  // Routes also under the '/maumasi.fy/v1.1.0' prefixed route
+  // NOTE: Routes also under the '/v1' prefixed route:
 
   // update existing URL from using short link key
   router.use('/all-urls', require('./findAllUrls')(express));

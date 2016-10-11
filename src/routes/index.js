@@ -4,27 +4,24 @@ module.exports = (express) => {
 
 // Route sources
 
-  // create or retreave existing short link
-  router.use('/maumasi.fy/v1.1.1', require('./apiEndPoints/shortenUrl')(express));
+  // status / create or retreave existing short link
+  router.use('/v1', require('./apiEndPoints/shortenUrl')(express));
 
   // redirect to URL address when short link comes in
-  router.use('/maumasi.fy', require('./apiEndPoints/keyRedirect')(express));
+  router.use('/go', require('./apiEndPoints/keyRedirect')(express));
 
   // IMORTANT NOTE:
   // the following routes are now being called in the
   // short link create route: './apiEndPoints/shortenUrl'
 
-  // return all records from DB
-  // router.use('/maumasi.fy/v1.1.0/remove-url', require('./apiEndPoints/deleteUrl')(express));
-
-  // delete short link and URL from DB
-  // router.use('/maumasi.fy/v1.1.0/remove-url', require('./apiEndPoints/deleteUrl')(express));
-
-  // delete short link and URL from DB
-  // router.use('/maumasi.fy/v1.1.0/remove-url', require('./apiEndPoints/deleteUrl')(express));
+  // update existing URL from using short link key
+  // router.use('/all-urls', require('./findAllUrls')(express));
 
   // update existing URL from using short link key
-  // router.use('/maumasi.fy/v1.1.0', require('./apiEndPoints/updateUrl')(express));
+  // router.use('/update-url', require('./updateUrl')(express));
+
+  // delete a record
+  // router.use('/remove-url', require('./deleteUrl')(express));
 
   return router;
 };

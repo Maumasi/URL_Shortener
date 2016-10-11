@@ -36,7 +36,7 @@ $(function(){
 // AJAX call to our API
 		$.ajax({
 			type: 'POST',
-			url: 'http://localhost:3000/maumasi.fy/v1.1.1/shorten-url',
+			url: 'http://localhost:3000/v1/shorten-url',
 			data: url,
 			success: function (newData) {
 				// console.log(this.data);
@@ -46,8 +46,7 @@ $(function(){
 				$newUrl.html(newData.maumasi_fied_link);
 
 				// make link active
-
-				console.log($oldUrl.attr('href'));
+				console.log(newData);
 				$oldUrl.attr('href', newData.originalURL);
 				$newUrl.attr('href', newData.maumasi_fied_link);
 
@@ -77,7 +76,7 @@ $(function(){
 // AJAX call to our API
 		$.ajax({
 			type: 'POST',
-			url: 'http://localhost:3000/maumasi.fy/v1.1.1/update-url',
+			url: 'http://localhost:3000/v1/update-url',
 			data: editUrl,
 			success: function (updatedData) {
 				console.log(this.data);
@@ -117,7 +116,7 @@ $(function(){
 // AJAX call to our API
 		$.ajax({
 			type: 'POST',
-			url: 'http://localhost:3000/maumasi.fy/v1.1.1/remove-url',
+			url: 'http://localhost:3000/v1/remove-url',
 			data: deleteShortLink,
 			success: function (deleteReturn) {
 
@@ -139,17 +138,17 @@ $(function(){
 // show all DB records
 	$.ajax({
 		type: 'GET',
-		url: 'http://localhost:3000/maumasi.fy/v1.1.1/all-urls',
+		url: 'http://localhost:3000/v1/all-urls',
 		// data: url,
 		success: function (AllShortLinkRecords) {
 
 			AllShortLinkRecords.forEach(function(urlData){
-
+				// console.log(urlData);
 				$urlRepoWrapper
 					.append(
 						"<div class='panel panel-default'>" +
 						  "<div class='panel-heading'>" +
-						    "<h3 class='panel-title'><a href='http://localhost:3000/maumasi.fy/" + urlData.maumasiFyKey + "'>Short link: http://localhost:3000/maumasi.fy/" + urlData.maumasiFyKey + "</a></h3>" +
+						    "<h3 class='panel-title'><a href='http://localhost:3000/go/" + urlData.maumasiFyKey + "'>Short link: http://localhost:3000/go/" + urlData.maumasiFyKey + "</a></h3>" +
 						  "</div>" +
 						  "<div class='panel-body'>" +
 						    "Mapped URL: <a href='"+ urlData.originalURL.originalURL +"'>" + urlData.originalURL.originalURL + "</a>" +
@@ -157,8 +156,6 @@ $(function(){
 						"</div>"
 					);
 			});// forEach
-
-			console.log(AllShortLinkRecords);
 		},
 		// *** This is causing errors!!! ***
 		// error: function() {

@@ -1,8 +1,12 @@
-// const ping = require('ping');
+const log = require('../../../utility/util');
 
 module.exports = (url) => {
-    // remove chars before host
-  var beforeHost = url.search('www.') + 4;
+  // remove chars before host
+  log(null, __filename,
+    'Service: pingPreper',
+    `Prep: ${url}`);
+
+  let beforeHost = url.search('www.') + 4;
 
   if (beforeHost >= 4 || beforeHost < 13) {
     beforeHost = url.search('/') + 2;
@@ -17,6 +21,9 @@ module.exports = (url) => {
   const endExtra = newUrl.slice(afterHost);
   const host = newUrl.replace(endExtra, '');
 
-  // console.log(host);
+  log(null, __filename,
+    'Service: pingPreper',
+    'pingPreper executed');
+
   return host;
 };
