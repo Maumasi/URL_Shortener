@@ -278,7 +278,7 @@ ___
 </br>
 
 ### Run in **DEBUG** mode
-To run this API in debug mode follow enter the commands below in the terminal:
+To run this API in debug mode enter the commands below in the terminal:
 
 ```bash
 
@@ -296,8 +296,7 @@ To exit DEBUG mode you'll have to stop the server and start up normally, without
 $ cd URL_Shortener/
 
 ```
-</br>
-To stop the server type ``` control + ^C ```
+Stop the server type ``` control + ^C ```
 </br>
 
 You can enter the following commands in the terminal to run the API normally:
