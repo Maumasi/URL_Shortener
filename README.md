@@ -7,7 +7,7 @@
 - [Installation] (#user-content-installation)
 - [Run it in the browser] (#user-content-run-it-in-the-browser)
 - [API Endpoints] (#user-content-api-endpoints)
-- [Run in DEBUG mode] (#user-content-run-in-debug-mode)
+- [Usage] (#user-content-usage)
 - [Unit Testing] (#user-content-unit-testing)
 </br>
 
@@ -30,7 +30,7 @@ To get the node.js server up and running just navigate into the root directory `
 ```bash
 
 $ cd URL_Shortener/
-$  npm start
+$ npm start
 
 ```
 </br>
@@ -46,7 +46,7 @@ Then try starting the server again:
 ```bash
 
 $ cd URL_Shortener/
-$  npm start
+$ npm start
 
 ```
 
@@ -157,7 +157,7 @@ After you have the app up and running there are 6 endpoints for the API. The fir
 2. **/v1/update-url**
   - Updates a short link.
 
-  - This uses the **POST** method to receive the new URL and set a relationship to the **maumasi.fy** short link to be reassigned that should be submited with the new URL.
+  - This uses the **POST** method to receive the new URL and set a relationship to the **maumasi.fy** short link to be reassigned that should be submitted with the new URL.
 
   - This endpoint expects JSON:
   ```javaScript
@@ -295,8 +295,9 @@ $submit.on('click', function() {
 </br>
 
 ___
+## Usage
 
-## Run in **DEBUG** mode
+### Run in **DEBUG** mode
 To run this API in debug mode follow enter the commands below in the terminal:
 
 ```bash
