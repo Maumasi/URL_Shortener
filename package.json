@@ -20,17 +20,14 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "cli-color": "^1.1.0",
-    "console.table": "^0.7.0",
     "dotenv": "^2.0.0",
     "express": "^4.14.0",
-    "express-session": "^1.14.1",
     "mysql": "^2.11.1",
-    "ping": "^0.2.0",
+    "request": "^2.75.0",
     "sequelize": "^3.24.3"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "dotenv": "^2.0.0",
     "eslint": "^2.11.1",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-plugin-import": "^1.8.1",
