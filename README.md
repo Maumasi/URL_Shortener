@@ -357,7 +357,7 @@ $ cd URL_Shortener/
 $ DEBUG=true mocha
 
 ```
-Now you will get a robust output of all major functions, models, and API route endpoints involved in any particular unit test being executed.
+Now you will get a robust output log of all major functions, models, and API route endpoints involved in any particular unit test being executed.
 
 At this time Unit Tests are run against all 6 API endpoints, all services under the serviceRepo directory, and all database CRUD models.
 
