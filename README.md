@@ -296,7 +296,7 @@ To exit DEBUG mode you'll have to stop the server and start up normally, without
 $ cd URL_Shortener/
 
 ```
-Stop the server type ``` control + ^C ```
+Stop the server by typing ``` control + ^C ```
 </br>
 
 You can enter the following commands in the terminal to run the API normally:
