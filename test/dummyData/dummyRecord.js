@@ -1,17 +1,14 @@
 const maumasiFyURL = require('../../src/models/db_crud').table('maumasiFyURL');
 const originalURL = require('../../src/models/db_crud').table('originalURL');
-
+const log = require('../../utility/util');
 // services
 const services = require('../../src/services/services').services;
 const randomKey = services.randomKey;
-
-let originalId;
 const linkKey = randomKey();
-
 const testURL = {
   originalURL: 'https://www.yahoo.com/',
 };
-
+let originalId;
 
 module.exports = () => {
   originalURL.create(
@@ -27,8 +24,10 @@ module.exports = () => {
           maumasiFyKey: linkKey,
           originalURL_ID: originalId,
         },
-        // error function
-        {},
+        // error
+        (err) => {
+          log(err, __filename, 'Dummy: create data failed');
+        },
         // success function
         () => {
           // returns nothing

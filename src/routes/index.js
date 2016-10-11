@@ -1,12 +1,8 @@
 
 module.exports = (express) => {
   const router = express.Router();
-
-// Route sources
-
   // status / create or retreave existing short link
   router.use('/v1', require('./apiEndPoints/shortenUrl')(express));
-
   // redirect to URL address when short link comes in
   router.use('/go', require('./apiEndPoints/keyRedirect')(express));
 

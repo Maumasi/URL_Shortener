@@ -4,11 +4,9 @@ const express = require('express');
 const sessions = require('express-session');
 const routes = require('./src/routes/');
 const log = require('./utility/util');
-
-require('dotenv').config();
-
 const app = express();
 const PORT = process.env.PORT || 3000;
+require('dotenv').config();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

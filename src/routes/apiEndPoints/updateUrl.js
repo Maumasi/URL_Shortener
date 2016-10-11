@@ -1,6 +1,6 @@
 const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
 const log = require('../../../utility/util');
-
+// sevices
 const services = require('../../services/services').services;
 const shortKeyExtractor = services.shortKeyExtractor;
 const rootUrlExists = services.rootUrlExists;
