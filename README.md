@@ -34,23 +34,6 @@ $ npm start
 
 ```
 </br>
-### Troubleshooting install
-If you are get an error in the terminal stating ``` Error: Cannot find module 'request' ```, run the following command in the terminal:
-```bash
-
-$ cd URL_Shortener/
-$ npm install request
-
-```
-Then try starting the server again:
-```bash
-
-$ cd URL_Shortener/
-$ npm start
-
-```
-
-</br>
 By default the port is set to 3000, you should also see ``` Server running on port 3000 ``` stated in the terminal </br>
 after you have the server running, if you don't see that, then something failed and the server should be re-started or you may have
 forgotten to run the ``` $ npm install ``` command. </br>
