@@ -71,8 +71,8 @@ describe('Test Model CRUD', () => {
         if (data) {
           trailingUrl = data.dataValues.id;
           expect(data.dataValues).to.include.keys('id', 'originalURL', 'createdAt', 'updatedAt');
-          done();
         }
+        done();
       });
   });
 
