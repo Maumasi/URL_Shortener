@@ -1,6 +1,6 @@
 
 # Maumasi's Awesome URL Shortener!
-`version: 1.3.1`
+`version: 1.3.2`
 </br>
 
 ## Table of contents
