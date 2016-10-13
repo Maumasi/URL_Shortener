@@ -280,37 +280,6 @@ $submit.on('click', function() {
 ___
 ## Usage
 
-### Run in **DEBUG** mode
-To run this API in debug mode enter the commands below in the terminal:
-
-```bash
-
-$ cd URL_Shortener/
-$ DEBUG=true node server.js
-
-```
-</br>
-
-To exit DEBUG mode you'll have to stop the server and start up normally, without setting the environmental variable ``` DEBUG ```.
-</br>
-```bash
-
-$ cd URL_Shortener/
-
-```
-</br>
-To stop the server type ``` control + ^C ```
-</br>
-
-You can enter the following commands in the terminal to run the API normally:
-```bash
-
-$ cd URL_Shortener/
-$ npm start
-
-```
-</br>
-
 ### Unit Testing
 You can also do some unit testing using ``` mocha ```.</br>
 If you did the ``` npm install ``` then it's already in the app, but you'll still need to install it globally on your machine to use it. </br>

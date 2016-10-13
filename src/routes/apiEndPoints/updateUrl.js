@@ -1,5 +1,5 @@
 const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
-const log = require('../../../utility/util');
+const log = require('log-me');
 // sevices
 const services = require('../../services/services').services;
 const shortKeyExtractor = services.shortKeyExtractor;

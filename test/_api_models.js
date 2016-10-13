@@ -1,6 +1,6 @@
 
 const expect = require('chai').expect;
-const log = require('../utility/util');
+const log = require('log-me');
 const originalURL = require('../src/models/db_crud').table('originalURL');
 const maumasiFyURL = require('../src/models/db_crud').table('maumasiFyURL');
 

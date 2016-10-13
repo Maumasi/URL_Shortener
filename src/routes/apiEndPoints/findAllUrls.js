@@ -1,6 +1,6 @@
 
 const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
-const log = require('../../../utility/util');
+const log = require('log-me');
 
 module.exports = (express) => {
   const router = express.Router();

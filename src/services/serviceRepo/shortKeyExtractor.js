@@ -1,4 +1,4 @@
-const log = require('../../../utility/util');
+const log = require('log-me');
 
 module.exports = (shortLink) => {
     // remove chars before short link

@@ -1,7 +1,7 @@
 
 let server = require('../server.js');
 const request = require('supertest');
-const log = require('../utility/util');
+const log = require('log-me');
 const dummyRecord = require('./dummyData/dummyRecord');
 const testKey = dummyRecord();
 

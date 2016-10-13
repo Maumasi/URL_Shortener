@@ -1,4 +1,4 @@
-const log = require('../../../utility/util');
+const log = require('log-me');
 
 module.exports = (url) => {
   // remove chars before host

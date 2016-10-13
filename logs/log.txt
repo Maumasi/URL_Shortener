@@ -1,3 +1,10 @@
+created at: Wed Oct 12 2016 21:42:28 GMT-0400 (EDT)
+  report type: Info
+  custom message: Server Active
+  custom description: Server running on port 3000
+  file path: /Users/liumaumasi/Desktop/url-shortener-main/server.js
+  stack trace: null
+  
 created at: Wed Oct 12 2016 01:22:49 GMT-0400 (EDT)
 report type: Info
 custom message: Service: shortKeyExtractor

@@ -1,7 +1,7 @@
 
 const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
 const originalURL = require('../../models/db_crud').table('originalURL');
-const log = require('../../../utility/util');
+const log = require('log-me');
 // services
 const services = require('../../services/services').services;
 const rootUrlExists = services.rootUrlExists;

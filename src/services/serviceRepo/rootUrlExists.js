@@ -1,4 +1,4 @@
-const log = require('../../../utility/util');
+const log = require('log-me');
 const request = require('request');
 
 module.exports = (url, callback) => {
