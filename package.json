@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch": "nodemon server.js"
+  },
+  "engines": {
+    "node": "6.7.0",
+    "npm": "3.10.3"
   },
   "repository": {
     "type": "git",
@@ -26,7 +31,7 @@
     "mysql": "^2.11.1",
     "request": "^2.75.0",
     "sequelize": "^3.24.3",
-    "log-me": "^1.0.4"
+    "log-me": "^1.0.9"
   },
   "devDependencies": {
     "chai": "^3.5.0",
