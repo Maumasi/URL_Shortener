@@ -36,7 +36,7 @@ $(function(){
 // AJAX call to our API
 		$.ajax({
 			type: 'POST',
-			url: 'http://162.243.53.145:3000/v1/shorten-url',
+			url: 'http://162.243.53.145/v1/shorten-url',
 			data: url,
 			success: function (newData) {
 				// console.log(this.data);
@@ -76,7 +76,7 @@ $(function(){
 // AJAX call to our API
 		$.ajax({
 			type: 'POST',
-			url: 'http://162.243.53.145:3000/v1/update-url',
+			url: 'http://162.243.53.145/v1/update-url',
 			data: editUrl,
 			success: function (updatedData) {
 				console.log(this.data);
@@ -116,7 +116,7 @@ $(function(){
 // AJAX call to our API
 		$.ajax({
 			type: 'POST',
-			url: 'http://162.243.53.145:3000/v1/remove-url',
+			url: 'http://162.243.53.145/v1/remove-url',
 			data: deleteShortLink,
 			success: function (deleteReturn) {
 
@@ -138,7 +138,7 @@ $(function(){
 // show all DB records
 	$.ajax({
 		type: 'GET',
-		url: 'http://162.243.53.145:3000/v1/all-urls',
+		url: 'http://162.243.53.145/v1/all-urls',
 		// data: url,
 		success: function (AllShortLinkRecords) {
 

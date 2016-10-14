@@ -31,7 +31,7 @@ module.exports = (express) => {
     let originalId;
     const linkKey = randomKey();
 
-    const maumasiFyLink = `${req.protocol}://${req.get('host')}/go/${linkKey}`;
+    const maumasiFyLink = `${req.protocol}://162.243.53.145:3000/go/${linkKey}`;
     const submitedURL = req.body || null;
 
     rootUrlExists(submitedURL, (isReachable) => {
