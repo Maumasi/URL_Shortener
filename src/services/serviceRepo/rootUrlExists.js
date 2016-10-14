@@ -3,7 +3,7 @@ const request = require('request');
 
 module.exports = (url, callback) => {
   const options = {
-    url: url.originalURL,
+    uri: url.originalURL,
   };
 
   // function evaluateUrl(error, response) {
