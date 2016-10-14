@@ -11,6 +11,10 @@ module.exports = (url, callback) => {
     const status = response.statusCode;
     if (!error && status <= 308) {
       isActive = true;
+    } else if (error) {
+      log(null, __filename,
+        'Service: rootUrlExists',
+        'rootUrlExists ran into an error');
     } else {
       log(error, __filename,
         'Service: rootUrlExists',
