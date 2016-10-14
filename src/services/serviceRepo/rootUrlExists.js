@@ -24,14 +24,14 @@ module.exports = (url, callback) => {
     'Service: rootUrlExists',
     'rootUrlExists executed');
 
-  request(options, (error, response) => {
+  request(options, (response) => {
     let isActive;
     const status = response.statusCode;
     console.log(status);
-    if (!error && status <= 308) {
+    if (status <= 308) {
       isActive = true;
     } else {
-      log(error, __filename,
+      log(null, __filename,
         'Service: rootUrlExists',
         `URL is unreachable with status code of: ${status}`);
       isActive = false;
