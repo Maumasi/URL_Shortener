@@ -3,13 +3,13 @@
 const Sequelize = require('sequelize');
 
 // access environmental variables
-require('dotenv').config();
+// require('dotenv').config();
 
 // connect to the db
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW, {
   host: process.env.DB_HOST,
   dialect: process.env.DB_SCHEMA,
-  port: 3306,
+  port: process.env.DB_PORT || 3306,
   pool: {
     min: 5,
     max: 0,
