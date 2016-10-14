@@ -36,7 +36,7 @@ $(function(){
 // AJAX call to our API
 		$.ajax({
 			type: 'POST',
-			url: 'http://localhost:3000/v1/shorten-url',
+			url: 'http://162.243.53.145:3000/v1/shorten-url',
 			data: url,
 			success: function (newData) {
 				// console.log(this.data);
