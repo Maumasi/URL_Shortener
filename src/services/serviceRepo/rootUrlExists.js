@@ -34,7 +34,7 @@ module.exports = (url, callback) => {
     } else {
       log(null, __filename,
         'Service: rootUrlExists',
-        `URL is unreachable with status code of: ${status}`);
+        'URL is unreachable');
       isActive = false;
     }
     callback(isActive);
