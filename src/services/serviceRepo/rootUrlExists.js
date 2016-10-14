@@ -24,12 +24,12 @@ module.exports = (url, callback) => {
     'Service: rootUrlExists',
     'rootUrlExists executed');
 
-  request(options, (err, response) => {
+  request(options, (err, response, body) => {
     let isActive;
-    const status = response.statusCode;
-    log(null, __filename, response);
-    log(null, __filename, status);
-    if (status <= 308) {
+    // const status = response.statusCode;
+    log(null, __filename, body);
+    // log(null, __filename, status);
+    if (body) {
       isActive = true;
     } else {
       log(null, __filename,
