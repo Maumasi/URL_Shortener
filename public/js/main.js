@@ -138,7 +138,7 @@ $(function(){
 // show all DB records
 	$.ajax({
 		type: 'GET',
-		url: 'http://162.243.53.145/v1/all-urls',
+		url: 'http://162.243.53.145:3000/v1/all-urls',
 		// data: url,
 		success: function (AllShortLinkRecords) {
 
