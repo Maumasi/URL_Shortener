@@ -3,7 +3,7 @@ const request = require('request');
 
 module.exports = (url, callback) => {
   const options = {
-    uri: url.originalURL,
+    url: url.originalURL,
   };
 
   // function evaluateUrl(error, response) {
@@ -24,7 +24,7 @@ module.exports = (url, callback) => {
     'Service: rootUrlExists',
     'rootUrlExists executed');
 
-  request(options, (response) => {
+  request(options, (err, response) => {
     let isActive;
     const status = response.statusCode;
     log(null, __filename, response);
