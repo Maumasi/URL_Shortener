@@ -27,7 +27,7 @@ module.exports = (url, callback) => {
   request(options, (response) => {
     let isActive;
     const status = response.statusCode;
-    console.log(status);
+    console.log(response);
     if (status <= 308) {
       isActive = true;
     } else {
