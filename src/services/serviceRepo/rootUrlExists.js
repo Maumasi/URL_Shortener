@@ -1,22 +1,18 @@
 const log = require('log-me');
 const request = require('request');
 
-module.exports = (url, callback) => {
+module.exports = (url, res, callback) => {
   const options = {
     url: url.originalURL,
   };
 
-  function evaluateUrl(error, response) {
+  function evaluateUrl(response) {
     let isActive;
     const status = response.statusCode;
-    if (!error && status <= 308) {
+    if (status <= 308) {
       isActive = true;
-    } else if (error) {
-      log(null, __filename,
-        'Service: rootUrlExists',
-        'rootUrlExists ran into an error');
     } else {
-      log(error, __filename,
+      log(null, __filename,
         'Service: rootUrlExists',
         `URL is unreachable with status code of: ${status}`);
       isActive = false;
@@ -28,5 +24,5 @@ module.exports = (url, callback) => {
     'Service: rootUrlExists',
     'rootUrlExists executed');
 
-  request(options, evaluateUrl);
+  request(options, evaluateUrl(res));
 };

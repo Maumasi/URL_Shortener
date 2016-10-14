@@ -34,7 +34,7 @@ module.exports = (express) => {
     const maumasiFyLink = `${req.protocol}://${req.get('host')}/go/${linkKey}`;
     const submitedURL = req.body || null;
 
-    rootUrlExists(submitedURL, (isReachable) => {
+    rootUrlExists(submitedURL, res, (isReachable) => {
       log(null, __filename,
         'Route: /v1/shorten-url',
         `URL is reachable: ${isReachable}`);
