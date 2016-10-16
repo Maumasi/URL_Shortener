@@ -432,6 +432,23 @@ ___
 ##### **Codeship**
 - [Create a test for the master branch on Codeship] (https://codeship.com)
 - [Set environment variables] (https://documentation.codeship.com/continuous-integration/set-environment-variables/)
+- Setup test commands:
+*Setup Commands*
+```bash
+
+nvm install 6.7.0
+nvm use 6.7.0
+npm install
+npm install -g mocha
+
+```
+
+*Configur Test Pipelines*
+```bash
+
+npm test
+
+```
 
 ##### **Heroku**
 - [Create a pipeline] (https://devcenter.heroku.com/articles/pipelines)
