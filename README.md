@@ -12,6 +12,7 @@
 - [Usage] (#user-content-usage)
 - [Unit Testing] (#user-content-unit-testing)
 - [Workflow] (#user-content-workflow)
+- [Deployment] (#user-content-deployment)
 </br>
 
 ___
@@ -424,13 +425,42 @@ $ git push -u origin master
 A major version increase happens when the a change in the source code is not backwards compatible to previous versions. The instructions for this workflow is the same as for new feature minor version updates.
 </br>
 
-### Pushing to the release branch
-[Codeship] (https://codeship.com) is used to test the master branch. If the master branch passes all the Codeship tests then the release branch can be merged with the master branch. Follow the instructions below to merge master branch into the release branch:
+___
+## Deployment
+
+### Setup
+#### Codeship
+- [Create a test for the master branch on Codeship] (https://codeship.com)
+- [Set environment variables] (https://documentation.codeship.com/continuous-integration/set-environment-variables/)
+
+#### Heroku
+- [Create a pipeline] (https://devcenter.heroku.com/articles/pipelines)
+- [Use clearDB as the API database by creating adding it as an add-on] (https://devcenter.heroku.com/articles/cleardb)
+- [Connect GitHub to Heroku] (https://devcenter.heroku.com/articles/github-integration)
+- [Set environment variables] (https://devcenter.heroku.com/articles/config-vars)
+  - Check the box labled 'Wait for CI to pass before deploy'
+</br>
+
+### Testing
+After creating a test on Codeship for the master branch you can move on to run the test by making a push to the master branch.
 ```bash
 
 $ cd URL_Shortener/
 $ git checkout master
+$ git add .
+$ git commit -m "version stable. some changes"
 $ git push -u origin master
+
+```
+</br>
+
+### Staging with Heroku
+When adding clearDB as an add-on use the URI information as the environment variables. [Click here] (https://devcenter.heroku.com/articles/connecting-to-relational-databases-on-heroku-with-java) to see how to break apart a URI to find the database credentials.
+
+Anytime the release branch is pushed up to GitHub, the staging server on Heroku will rebuild as long as the master branch passed all the Codeship tests based on the latest master branch code. If all is well then the staging server can 'promote' the release branch code to the production server. To match the release branch to the master branch just merge master into release:
+```bash
+
+$ cd URL_Shortener/
 $ git checkout release
 $ git pull
 $ git merge master
@@ -438,7 +468,17 @@ $ git push -u origin release
 
 ```
 Note:
-To avoid merge conflicts the release branch should never be edited dirtectly as stated above under Guidelines in this section.
+To avoid merge conflicts the release branch should never be edited directly as stated above under Guidelines in this section.
 
-### Heroku
-The release branch is connected to [Heroku] (https://www.heroku.com). Anytime the release branch is pushed up to GitHub, the staging server on Heroku will rebuild based on the latest release branch code. If all is well then the staging server can 'promote' the release branch code to the production server.
+
+The staging server is used as the last filter before code is pushed over to the production server. Here we can see how the API runs on the planned server environment as well as testing functionality, looking for mis-spelled words, check that the API AJAX calls are working as expected.
+</br>
+
+### Production with Heroku
+For the production server a different clearDB instance should be used as an add-on than the one used on the staging server. Make sure to use the production server's clearDB credentials in the environmental variables instead of the staging server's credentials.
+</br>
+
+**Important:**
+An extra environment variable should be added to the list for the prodution server, NODE_ENV=production.
+
+After the staging server 'promotes' code over to the production server it should also be checked to make sure everything is working. Remember, this server is live and can be found by the public so it should be exactly the way you intended it to be.
