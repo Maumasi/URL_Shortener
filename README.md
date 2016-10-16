@@ -1,7 +1,8 @@
 
 # Maumasi's Awesome URL Shortener!
-`version: 1.4.0`
+`version: 1.5.0`
 </br>
+
 
 ## Table of contents
 - [Installation] (#user-content-installation)
