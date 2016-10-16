@@ -499,6 +499,9 @@ For the production server a different clearDB instance should be used as an add-
 </br>
 
 **Important:**
-An extra environment variable should be added to the list for the prodution server, NODE_ENV=production.
+An extra environment variable should be added to the list for the prodution server:
+```
+NODE_ENV=production
+```
 
 After the staging server 'promotes' code over to the production server it should also be checked to make sure everything is working. Remember, this server is live and can be found by the public so it should be exactly the way you intended it to be.
