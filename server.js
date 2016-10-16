@@ -6,7 +6,7 @@ const routes = require('./src/routes/');
 const log = require('log-me');
 const app = express();
 const PORT = process.env.PORT || 3000;
-require('dotenv');
+require('dotenv').config();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
