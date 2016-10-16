@@ -429,17 +429,17 @@ ___
 ## Deployment
 
 ### Setup
-    #### Codeship
-    - [Create a test for the master branch on Codeship] (https://codeship.com)
-    - [Set environment variables] (https://documentation.codeship.com/continuous-integration/set-environment-variables/)
+##### **Codeship**
+- [Create a test for the master branch on Codeship] (https://codeship.com)
+- [Set environment variables] (https://documentation.codeship.com/continuous-integration/set-environment-variables/)
 
-    #### Heroku
-    - [Create a pipeline] (https://devcenter.heroku.com/articles/pipelines)
-    - [Use clearDB as the API database by creating adding it as an add-on] (https://devcenter.heroku.com/articles/cleardb)
-    - [Set environment variables] (https://devcenter.heroku.com/articles/config-vars)
-    - [Connect GitHub to Heroku] (https://devcenter.heroku.com/articles/github-integration)
-      - Check the box labled 'Wait for CI to pass before deploy'
-    </br>
+##### **Heroku**
+- [Create a pipeline] (https://devcenter.heroku.com/articles/pipelines)
+- [Use clearDB as the API database by creating adding it as an add-on] (https://devcenter.heroku.com/articles/cleardb)
+- [Set environment variables] (https://devcenter.heroku.com/articles/config-vars)
+- [Connect GitHub to Heroku] (https://devcenter.heroku.com/articles/github-integration)
+  - Check the box labled 'Wait for CI to pass before deploy'
+</br>
 
 ### Testing
 After creating a test on Codeship for the master branch you can move on to run the test by making a push to the master branch.
