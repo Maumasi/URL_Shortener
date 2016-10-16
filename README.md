@@ -432,7 +432,9 @@ ___
 ##### **Codeship**
 - [Create a test for the master branch on Codeship] (https://codeship.com)
 - [Set environment variables] (https://documentation.codeship.com/continuous-integration/set-environment-variables/)
-- Setup test commands: </br>
+- Setup test commands:
+
+</br>
 *Setup Commands*
 ```bash
 
@@ -442,6 +444,7 @@ npm install
 npm install -g mocha
 
 ```
+</br>
 
 *Configur Test Pipelines*
 ```bash
