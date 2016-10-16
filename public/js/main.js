@@ -36,7 +36,7 @@ $(function(){
 // AJAX call to our API
 		$.ajax({
 			type: 'POST',
-			url: 'https://staging-maumasily-short-url.herokuapp.com/shorten-url',
+			url: 'https://staging-maumasily-short-url.herokuapp.com/v1/shorten-url',
 			data: url,
 			success: function (newData) {
 				// console.log(this.data);
