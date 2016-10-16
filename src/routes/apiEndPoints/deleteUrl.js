@@ -81,7 +81,10 @@ module.exports = (express) => {
                   `Records deleted at:\noriginalURL_ID: ${urlId} and\n link key ID: ${keyId}`);
 
                 // redirect back to the home page
-                res.redirect(301, '/');
+                const successfulDelete = {
+                  deleteMsg: 'Short URL was successfully deleted',
+                };
+                res.status(200).json(successfulDelete);
               });// originalURL.destroy
           });// maumasiFyURL.destroy
       });// maumasiFyURL.findByLinkKey
