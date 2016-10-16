@@ -1,6 +1,7 @@
 
 # Maumasi's Awesome URL Shortener!
-`version: 1.6.0` [ ![Codeship Status for Maumasi/URL_Shortener](https://app.codeship.com/projects/62acf700-7438-0134-4148-76a75a837005/status?branch=master)](https://app.codeship.com/projects/179118)
+`version: 1.6.0`</br>
+[ ![Codeship Status for Maumasi/URL_Shortener](https://app.codeship.com/projects/62acf700-7438-0134-4148-76a75a837005/status?branch=master)](https://app.codeship.com/projects/179118)
 </br>
 
 
