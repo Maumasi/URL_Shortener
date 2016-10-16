@@ -11,6 +11,7 @@
 - [API Endpoints] (#user-content-api-endpoints)
 - [Usage] (#user-content-usage)
 - [Unit Testing] (#user-content-unit-testing)
+- [Workflow] (#user-content-workflow)
 </br>
 
 ___
@@ -333,7 +334,7 @@ The **master** branch is the main branch to contribute code but not the branch u
 </br>
 
 ### Patches
-Lower level patch concerns such as mis-spelled words can be edited on the master branch. If many patch fixes are being made to the code functionality such as changing variable naming conventions then a feature brach should be created for that patch named after that patch such as *patch_1.1.2*. Follow the instructions below to create a feature branch for such a patch.
+Patch concerns fixes only. Lower level patches such as mis-spelled words can be edited on the master branch. If many patch fixes are being made to the code functionality such as changing variable naming conventions then a feature brach should be created for that patch and that branch should be named after that patch such as *patch_1.1.2*. Follow the instructions below to create a feature branch for such a patch.
 </br>
 
 Create a new feature branch called patch_1.1.2:
@@ -374,4 +375,70 @@ $ git push -u origin master
 ```
 </br>
 
-Now that the newly patched version of this project is on GitHub you should tag a new release named after the new version, **v1.1.2**. If you don't know how to create a new release [click here and follow GitHub's instructions] (https://help.github.com/articles/creating-releases/)
+Now that the newly patched version of this project is on GitHub you should tag a new release named after the new version, **v1.1.2**. If you don't know how to create a new release [click here and follow GitHub's instructions] (https://help.github.com/articles/creating-releases/).
+</br>
+
+### Minor version updates
+Adding a new feature to the API would be considered a minor version update. A new feature branch should be made for new features. To do this would be the same as the instructions as for making a patch feature branch except the name of the branch should be semantic to what the new feature is or does.
+</br>
+
+Create a new feature branch for the new feature:
+```bash
+
+$ cd URL_Shortener/
+$ git checkout -b makeItRain
+
+```
+
+You should see a returned log containing:
+```bash
+
+Switched to a new branch 'makeItRain'
+
+```
+</br>
+
+Inside this new branch you can start building the new makeItRain functionality, but first you should build a unit test(s) for makeItRain. Before trying to ` merge ` your patch to the **master** branch run the unit tests to make sure you're not committing broken code to the master branch.
+```bash
+
+$ cd URL_Shortener/
+$ mocha
+
+```
+</br>
+
+Only after all tests come back as 'passing' then you can merge the feature branch to the master branch.
+```bash
+
+$ cd URL_Shortener/
+$ git add .
+$ git commit -m "version stable. A brief description of what this patch fixed."
+$ git checkout master
+$ git merge makeItRain
+$ git push -u origin master
+
+```
+</br>
+
+### Major version updates
+A major version increase happens when the a change in the source code is not backwards compatible to previous versions. The instructions for this workflow is the same as for new feature minor version updates.
+</br>
+
+### Pushing to the release branch
+[Codeship] (https://codeship.com) is used to test the master branch. If the master branch passes all the Codeship tests then the release branch can be merged with the master branch. Follow the instructions below to merge master branch into the release branch:
+```bash
+
+$ cd URL_Shortener/
+$ git checkout master
+$ git push -u origin master
+$ git checkout release
+$ git pull
+$ git merge master
+$ git push -u origin release
+
+```
+Note:
+To avoid merge conflicts the release branch should never be edited dirtectly as stated above under Guidelines in this section.
+
+### Heroku
+The release branch is connected to [Heroku] (https://www.heroku.com). Anytime the release branch is pushed up to GitHub, the staging server on Heroku will rebuild based on the latest release branch code. If all is well then the staging server can 'promote' the release branch code to the production server.
