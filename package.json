@@ -7,6 +7,10 @@
     "test": "PORT=3000 DB_NAME=MaumasiFy DB_USER=root DB_PW= DB_HOST=localhost DB_SCHEMA=mariadb DB_PORT=3306 mocha",
     "start": "node server.js"
   },
+  "engimes": {
+    "node": "6.7.0",
+    "npm": "3.10.3"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Maumasi/maumasi-url-shortener.git"
