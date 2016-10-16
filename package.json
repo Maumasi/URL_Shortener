@@ -7,7 +7,7 @@
     "test": "PORT=3000 DB_NAME=MaumasiFy DB_USER=root DB_PW= DB_HOST=localhost DB_SCHEMA=mariadb DB_PORT=3306 mocha",
     "start": "node server.js"
   },
-  "engimes": {
+  "engines": {
     "node": "6.7.0",
     "npm": "3.10.3"
   },
