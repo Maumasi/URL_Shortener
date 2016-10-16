@@ -6,7 +6,6 @@ const routes = require('./src/routes/');
 const log = require('log-me');
 const app = express();
 const PORT = process.env.PORT || 3000;
-// require('dotenv').config();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -21,7 +20,6 @@ app.use('/', routes(express));
 
 app.use(express.static('./public'));
 
-// exports.server =
 const server = app.listen(PORT, () => {
   log(null, __filename,
     'Server Active',

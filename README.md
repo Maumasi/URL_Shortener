@@ -315,4 +315,63 @@ Now you will get a robust output log of all major functions, models, and API rou
 
 At this time Unit Tests are run against all 6 API endpoints, all services under the serviceRepo directory, and all database CRUD models.
 
- Feel free to add your own unit tests!!
+Feel free to add your own unit tests!!
+
+___
+## Workflow
+This section is meant for contributors.</br>
+This project utilizes Git for version control. All instructions in this sections is in reference to ` git `. If you don't have *git* installed on your machine follow the instructions [here to get ` git ` up and running] (https://www.atlassian.com/git/tutorials/install-git)
+</br>
+
+The **master** branch is the main branch to contribute code but not the branch used for releasing production code. The production branch is called **release**. From the release branch we'll push out to a staging server as the last filter to catch any mistakes and then promote to a production server.
+</br>
+
+### Guidelines
+- The **release branch** should not be edited directly
+- New features should be built on a *feature branch* and tested before merged into the master branch
+- Tag new releases using semantic versioning. Example: ` 1.1.2 ` correlates to **MAJOR.MINOR.PATCH**
+</br>
+
+### Patches
+Lower level patch concerns such as mis-spelled words can be edited on the master branch. If many patch fixes are being made to the code functionality such as changing variable naming conventions then a feature brach should be created for that patch named after that patch such as *patch_1.1.2*. Follow the instructions below to create a feature branch for such a patch.
+</br>
+
+Create a new feature branch called patch_1.1.2:
+```bash
+
+$ cd URL_Shortener/
+$ git checkout -b patch_1.1.2
+
+```
+
+You should see a returned log containing:
+```bash
+
+Switched to a new branch 'patch_1.1.2'
+
+```
+</br>
+
+Inside this new branch you can make any changes you need to. Before trying to ` merge ` your patch to the **master** branch run the unit tests to make sure you're not committing broken code to the master branch.
+```bash
+
+$ cd URL_Shortener/
+$ mocha
+
+```
+</br>
+
+Only after all tests come back as 'passing' then you can merge the feature branch to the master branch.
+```bash
+
+$ cd URL_Shortener/
+$ git add .
+$ git commit -m "version stable. A brief description of what this patch fixed."
+$ git checkout master
+$ git merge patch_1.1.2
+$ git push -u origin master
+
+```
+</br>
+
+Now that the newly patched version of this project is on GitHub you should tag a new release named after the new version, **v1.1.2**. If you don't know how to create a new release [click here and follow GitHub's instructions] (https://help.github.com/articles/creating-releases/)
