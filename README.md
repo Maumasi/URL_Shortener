@@ -436,8 +436,8 @@ ___
 #### Heroku
 - [Create a pipeline] (https://devcenter.heroku.com/articles/pipelines)
 - [Use clearDB as the API database by creating adding it as an add-on] (https://devcenter.heroku.com/articles/cleardb)
-- [Connect GitHub to Heroku] (https://devcenter.heroku.com/articles/github-integration)
 - [Set environment variables] (https://devcenter.heroku.com/articles/config-vars)
+- [Connect GitHub to Heroku] (https://devcenter.heroku.com/articles/github-integration)
   - Check the box labled 'Wait for CI to pass before deploy'
 </br>
 
