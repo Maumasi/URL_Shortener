@@ -72,6 +72,6 @@ describe('Test API Endpoints', () => {
         maumasiFyKey: 'http://localhost:3000/go/' + testKey,
       })
       .expect('Content-Type', /json/)
-      .expect(301, done);
+      .expect(200, done);
   });
 });
