@@ -1,3 +1,66 @@
+created at: Sat Oct 15 2016 21:24:59 GMT-0400 (EDT)
+  report type: Info
+  custom message: Route: /v1/shorten-url
+  custom description: URL created in DB.
+  file path: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
+  stack trace: null
+  
+created at: Sat Oct 15 2016 21:24:59 GMT-0400 (EDT)
+  report type: Info
+  custom message: Model CRUD
+  custom description: Record created
+  file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+  stack trace: null
+  
+created at: Sat Oct 15 2016 21:24:59 GMT-0400 (EDT)
+  report type: Info
+  custom message: Model CRUD
+  custom description: Record created
+  file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+  stack trace: null
+  
+created at: Sat Oct 15 2016 21:24:59 GMT-0400 (EDT)
+  report type: Info
+  custom message: Model CRUD
+  custom description: Search by URL
+  file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+  stack trace: null
+  
+created at: Sat Oct 15 2016 21:24:59 GMT-0400 (EDT)
+  report type: Info
+  custom message: Route: /v1/shorten-url
+  custom description: URL is reachable: true
+  file path: /Users/liumaumasi/Desktop/url-shortener-main/src/routes/apiEndPoints/shortenUrl.js
+  stack trace: null
+  
+created at: Sat Oct 15 2016 21:24:59 GMT-0400 (EDT)
+  report type: Info
+  custom message: Service: rootUrlExists
+  custom description: rootUrlExists executed
+  file path: /Users/liumaumasi/Desktop/url-shortener-main/src/services/serviceRepo/rootUrlExists.js
+  stack trace: null
+  
+created at: Sat Oct 15 2016 21:24:59 GMT-0400 (EDT)
+  report type: Info
+  custom message: Service: randomKeyMaker
+  custom description: randomKeyMaker executed
+  file path: /Users/liumaumasi/Desktop/url-shortener-main/src/services/serviceRepo/randomKeyMaker.js
+  stack trace: null
+  
+created at: Sat Oct 15 2016 21:24:51 GMT-0400 (EDT)
+  report type: Info
+  custom message: Model CRUD
+  custom description: Find all records
+  file path: /Users/liumaumasi/Desktop/url-shortener-main/src/models/db_crud.js
+  stack trace: null
+  
+created at: Sat Oct 15 2016 21:24:23 GMT-0400 (EDT)
+  report type: Info
+  custom message: Server Active
+  custom description: Server running on port 3000
+  file path: /Users/liumaumasi/Desktop/url-shortener-main/server.js
+  stack trace: null
+  
 created at: Sat Oct 15 2016 21:14:49 GMT-0400 (EDT)
   report type: Info
   custom message: Server Active
