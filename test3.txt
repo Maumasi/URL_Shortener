@@ -1,4 +1,4 @@
-test edit
+test
 {
   "name": "url-shortener",
   "version": "1.7.0",
