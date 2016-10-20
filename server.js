@@ -18,7 +18,6 @@ app.use(sessions({
   resave: false,
 }));
 
-
 // from here all routes will start with '/api'
 app.use('/', routes(express));
 
