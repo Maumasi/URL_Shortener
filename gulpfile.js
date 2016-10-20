@@ -9,6 +9,11 @@ const version = require('./hold-package.json').version;
 
 const versionBump = require('./utility/index').bump;
 
+// The main gulp calls are at the very bottom of this file. Those main calls being:
+// * gulp patch
+// * gulp minor
+// * gulp major
+
 // Run git add with options
 gulp.task('add', () => {
   return gulp.src('./*')
@@ -52,6 +57,7 @@ gulp.task('majorBump', () => {
     .pipe(gulp.dest('./'));
 });
 
+// gulp calls to
 gulp.task('patch', ['patchBump', 'add', 'commit', 'push'], () => {
 
 });
