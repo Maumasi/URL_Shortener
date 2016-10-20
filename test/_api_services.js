@@ -1,6 +1,7 @@
 
 const expect = require('chai').expect;
-const log = require('log-me');
+// const log = require('log-me');
+const log = require('../utility/index').print;
 
 const services = require('../src/services/services').services;
 const pingPreper = services.pingPreper;
