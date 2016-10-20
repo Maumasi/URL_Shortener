@@ -1,5 +1,6 @@
 
-const log = require('log-me');
+// const log = require('log-me');
+const log = require('../../../utility/index').print;
 
 // private func that produces a random letter or number charactor
 function randomChar() {

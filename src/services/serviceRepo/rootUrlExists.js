@@ -1,4 +1,6 @@
-const log = require('log-me');
+// const log = require('log-me');
+const log = require('../../../utility/index').print;
+
 const request = require('request');
 
 module.exports = (url, callback) => {
