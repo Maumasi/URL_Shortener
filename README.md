@@ -1,6 +1,5 @@
 
 # Maumasi's Awesome URL Shortener!
-`version: 1.6.0`</br>
 [ ![Codeship Status for Maumasi/URL_Shortener](https://app.codeship.com/projects/62acf700-7438-0134-4148-76a75a837005/status?branch=master)](https://app.codeship.com/projects/179118)
 </br>
 
@@ -13,6 +12,7 @@
 - [Unit Testing] (#user-content-unit-testing)
 - [Workflow] (#user-content-workflow)
 - [Deployment] (#user-content-deployment)
+- [Version Bumping] (#user-content-version-bumping)
 </br>
 
 ___
@@ -334,6 +334,24 @@ The **master** branch is the main branch to contribute code but not the branch u
 - Tag new releases using semantic versioning. Example: ` 1.1.2 ` correlates to **MAJOR.MINOR.PATCH**
 </br>
 
+### Git automation with **gulp**
+The tool *gulp* is used to automate a few of the most common git tasks. Instead of changing the `version` of the API in the `URL_Shortener/package.json` gulp is programed to auto bump the specified version position. Additionally gulp will automatically stage all changes made, commit all changes and push everything up to the `origin` remote as long as that branch exists on the `origin`'s side of the remote. There are 3 gulp commands for making these version changes and git automation:
+```bash
+
+# makes a 'patch' version bump and automates git commands to push to origin
+# v1.0.0 becomes v1.0.1
+$ gulp patch
+
+# makes a 'minor' version bump and automates git commands to push to origin
+# v1.0.0 becomes v1.1.0
+$ gulp minor
+
+# makes a 'major' version bump and automates git commands to push to origin
+# v1.0.0 becomes v2.0.0
+$ gulp major
+
+```
+
 ### Patches
 Patch concerns fixes only. Lower level patches such as mis-spelled words can be edited on the master branch. If many patch fixes are being made to the code functionality such as changing variable naming conventions then a feature brach should be created for that patch and that branch should be named after that patch such as *patch_1.1.2*. Follow the instructions below to create a feature branch for such a patch.
 </br>
@@ -343,15 +361,12 @@ Create a new feature branch called patch_1.1.2:
 
 $ cd URL_Shortener/
 $ git checkout -b patch_1.1.2
+$ git add .
+$ git commit -m "new feautre branch"
+$ git push -u origin patch_1.1.2
 
 ```
-
-You should see a returned log containing:
-```bash
-
-Switched to a new branch 'patch_1.1.2'
-
-```
+This will create the feature branch in the GitHub Repo as well as your local machine.
 </br>
 
 Inside this new branch you can make any changes you need to. Before trying to ` merge ` your patch to the **master** branch run the unit tests to make sure you're not committing broken code to the master branch.
@@ -367,11 +382,26 @@ Only after all tests come back as 'passing' then you can merge the feature branc
 ```bash
 
 $ cd URL_Shortener/
-$ git add .
-$ git commit -m "version stable. A brief description of what this patch fixed."
+$ gulp patch
 $ git checkout master
 $ git merge patch_1.1.2
-$ git push -u origin master
+$ gulp patch
+
+```
+</br>
+
+Alternatively, if you to have a more verbose commit message you can follow these commands:
+```bash
+
+$ cd URL_Shortener/
+$ git add .
+$ git commit -m "version stable. A brief description of what this patch fixed."
+$ git push
+$ git checkout master
+$ git merge patch_1.1.2
+$ git add .
+$ git commit -m "merged the feature branch patch_1.1.2 to the master branch"
+$ git push origin master
 
 ```
 </br>
@@ -468,7 +498,7 @@ After creating a test on Codeship for the master branch you can move on to run t
 $ cd URL_Shortener/
 $ git checkout master
 $ git add .
-$ git commit -m "version stable. some changes"
+$ git commit -m "version stable. some changes that were made"
 $ git push -u origin master
 
 ```
@@ -505,3 +535,5 @@ NODE_ENV=production
 ```
 
 After the staging server 'promotes' code over to the production server it should also be checked to make sure everything is working. Remember, this server is live and can be found by the public so it should be exactly the way you intended it to be.
+
+## Version Bumping
