@@ -1,5 +1,4 @@
 const log = require('log-me').print;
-// const log = require('../../../utility/index').print;
 
 const request = require('request');
 
@@ -14,15 +13,7 @@ module.exports = (url, callback) => {
 
   request(options, () => {
     const isActive = true;
-    // const status = response.statusCode;
-    // if (!error && status <= 308) {
-    //   isActive = true;
-    // } else {
-    //   log(error, __filename,
-    //     'Service: rootUrlExists',
-    //     `URL is unreachable with status code of: ${status}`);
-    //   isActive = false;
-    // }
+    
     callback(isActive);
   });
 };

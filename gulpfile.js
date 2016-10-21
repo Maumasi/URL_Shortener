@@ -8,7 +8,7 @@ const argv = require('yargs').argv;
 const version = require('./hold-package.json').version;
 
 
-const versionBump = require('./utility/index').bump;
+const versionBump = require('log-me').bump;
 
 // The main gulp calls are at the very bottom of this file. Those main calls being:
 // * gulp patch
@@ -58,18 +58,18 @@ gulp.task('majorBump', () => {
     .pipe(gulp.dest('./'));
 });
 
-// gulp calls to
-gulp.task('patch', ['patchBump', 'add', 'commit', 'push'], () => {
-
-});
-
-gulp.task('minor', ['minorBump', 'add', 'commit', 'push'], () => {
-
-});
-
-gulp.task('major', ['majorBump', 'add', 'commit', 'push'], () => {
-
-});
+// // gulp calls to
+// gulp.task('patch', ['patchBump', 'add', 'commit', 'push'], () => {
+//
+// });
+//
+// gulp.task('minor', ['minorBump', 'add', 'commit', 'push'], () => {
+//
+// });
+//
+// gulp.task('major', ['majorBump', 'add', 'commit', 'push'], () => {
+//
+// });
 
 // make version bumps by just calling the position bump as the flag
 let bump = '';

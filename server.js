@@ -3,8 +3,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const sessions = require('express-session');
 const routes = require('./src/routes/');
-// const log = require('log-me');
-const log = require('./utility/index').print;
+const log = require('log-me').print;
 require('dotenv').config();
 
 const app = express();
