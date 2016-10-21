@@ -382,10 +382,10 @@ Only after all tests come back as 'passing' then you can merge the feature branc
 ```bash
 
 $ cd URL_Shortener/
-$ gulp patch
+$ gulp push
 $ git checkout master
 $ git merge patch_1.1.2
-$ gulp patch
+$ gulp --patch
 
 ```
 </br>
@@ -442,17 +442,21 @@ Only after all tests come back as 'passing' then you can merge the feature branc
 ```bash
 
 $ cd URL_Shortener/
-$ git add .
-$ git commit -m "version stable. A brief description of what this patch fixed."
+$ gulp push
 $ git checkout master
 $ git merge makeItRain
-$ git push -u origin master
-
+$ gulp --minor
 ```
 </br>
 
 ### Major version updates
-A major version increase happens when the a change in the source code is not backwards compatible to previous versions. The instructions for this workflow is the same as for new feature minor version updates.
+A major version increase happens when the a change in the source code is not backwards compatible to previous versions. The instructions for this workflow is the same as for new feature minor version updates except to version bump up to a major version position the commands would look like this:
+```bash
+
+$ cd URL_Shortener/
+$ gulp --major
+
+```
 </br>
 
 ___
@@ -535,5 +539,3 @@ NODE_ENV=production
 ```
 
 After the staging server 'promotes' code over to the production server it should also be checked to make sure everything is working. Remember, this server is live and can be found by the public so it should be exactly the way you intended it to be.
-
-## Version Bumping
