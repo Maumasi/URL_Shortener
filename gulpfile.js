@@ -68,6 +68,6 @@ if (argv.patch) {
   bump = 'major';
 }
 
-gulp.task('test', [`${bump}Bump`, 'add', 'commit', 'push'], () => {
+gulp.task('default', [`${bump}Bump`, 'add', 'commit', 'push'], () => {
 
 });
