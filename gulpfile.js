@@ -5,7 +5,7 @@ const replace = require('gulp-replace');
 const gitignore = require('gulp-gitignore');
 const argv = require('yargs').argv;
 
-const version = require('./hold-package.json').version;
+const version = require('./package.json').version;
 
 
 const versionBump = require('log-me').bump;
@@ -42,19 +42,19 @@ gulp.task('push', () => {
 // bump up the version according to 'patch', 'minor', 'major'
 gulp.task('patchBump', () => {
   console.log(versionBump(version, 'patch'));
-  gulp.src(['./hold-package.json'])
+  gulp.src(['./package.json'])
     .pipe(replace(version, versionBump(version, 'patch')))
     .pipe(gulp.dest('./'));
 });
 
 gulp.task('minorBump', () => {
-  gulp.src(['./hold-package.json'])
+  gulp.src(['./package.json'])
     .pipe(replace(`"version": "${version}"`, `"version": "${versionBump(version, 'minor')}"`))
     .pipe(gulp.dest('./'));
 });
 
 gulp.task('majorBump', () => {
-  gulp.src(['./hold-package.json'])
+  gulp.src(['./package.json'])
     .pipe(replace(`"version": "${version}"`, `"version": "${versionBump(version, 'major')}"`))
     .pipe(gulp.dest('./'));
 });
