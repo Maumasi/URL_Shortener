@@ -41,6 +41,8 @@ gulp.task('push', () => {
   });
 });
 
+
+
 // bump up the version according to 'patch', 'minor', 'major'
 gulp.task('patchBump', () => {
   console.log(testit);
@@ -71,6 +73,14 @@ if (argv.patch) {
   bump = 'major';
 }
 
-gulp.task('t', [`${bump}Bump`, 'add', 'commit', 'push'], () => {
-console.log(version);
+gulp.task('default', [`${bump}Bump`, 'add', 'commit', 'push'], () => {
+
+  const newVersion = require('./package.json').version;
+
+  // Tag the repo with a version
+  git.tag(`v${newVersion}`, `Version ${newVersion}`, (err) => {
+    if (err) {
+      throw err;
+    }
+  });
 });
