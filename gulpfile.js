@@ -68,6 +68,6 @@ if (argv.patch) {
   bump = 'major';
 }
 
-gulp.task('t', [`${bump}Bump`, 'add', 'commit', 'push'], () => {
+gulp.task('tt', [`${bump}Bump`, 'add', 'commit', 'push'], () => {
 console.log(version);
 });
