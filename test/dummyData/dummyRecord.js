@@ -1,6 +1,7 @@
 const maumasiFyURL = require('../../src/models/db_crud').table('maumasiFyURL');
 const originalURL = require('../../src/models/db_crud').table('originalURL');
-const log = require('log-me');
+const log = require('log-me').print;
+
 // services
 const services = require('../../src/services/services').services;
 const randomKey = services.randomKey;

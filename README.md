@@ -1,6 +1,6 @@
 
 # Maumasi's Awesome URL Shortener!
-`version: 1.5.0`
+[ ![Codeship Status for Maumasi/URL_Shortener](https://app.codeship.com/projects/62acf700-7438-0134-4148-76a75a837005/status?branch=master)](https://app.codeship.com/projects/179118)
 </br>
 
 
@@ -10,6 +10,9 @@
 - [API Endpoints] (#user-content-api-endpoints)
 - [Usage] (#user-content-usage)
 - [Unit Testing] (#user-content-unit-testing)
+- [Workflow] (#user-content-workflow)
+- [Deployment] (#user-content-deployment)
+- [Version Bumping] (#user-content-version-bumping)
 </br>
 
 ___
@@ -314,4 +317,225 @@ Now you will get a robust output log of all major functions, models, and API rou
 
 At this time Unit Tests are run against all 6 API endpoints, all services under the serviceRepo directory, and all database CRUD models.
 
- Feel free to add your own unit tests!!
+Feel free to add your own unit tests!!
+
+___
+## Workflow
+This section is meant for contributors.</br>
+This project utilizes Git for version control. All instructions in this sections is in reference to ` git `. If you don't have *git* installed on your machine follow the instructions [here to get ` git ` up and running] (https://www.atlassian.com/git/tutorials/install-git)
+</br>
+
+The **master** branch is the main branch to contribute code but not the branch used for releasing production code. The production branch is called **release**. From the release branch we'll push out to a staging server as the last filter to catch any mistakes and then promote to a production server.
+</br>
+
+### Guidelines
+- The **release branch** should not be edited directly
+- New features should be built on a *feature branch* and tested before merged into the master branch
+- Tag new releases using semantic versioning. Example: ` 1.1.2 ` correlates to **MAJOR.MINOR.PATCH**
+</br>
+
+### Git automation with **gulp**
+The tool *gulp* is used to automate a few of the most common git tasks. Instead of changing the `version` of the API in the `URL_Shortener/package.json` gulp is programed to auto bump the specified version position. Additionally gulp will automatically stage all changes made, commit all changes and push everything up to the `origin` remote as long as that branch exists on the `origin`'s side of the remote. There are 3 gulp commands for making these version changes and git automation:
+```bash
+
+# makes a 'patch' version bump and automates git commands to push to origin
+# v1.0.0 becomes v1.0.1
+$ gulp patch
+
+# makes a 'minor' version bump and automates git commands to push to origin
+# v1.0.0 becomes v1.1.0
+$ gulp minor
+
+# makes a 'major' version bump and automates git commands to push to origin
+# v1.0.0 becomes v2.0.0
+$ gulp major
+
+```
+
+### Patches
+Patch concerns fixes only. Lower level patches such as mis-spelled words can be edited on the master branch. If many patch fixes are being made to the code functionality such as changing variable naming conventions then a feature brach should be created for that patch and that branch should be named after that patch such as *patch_1.1.2*. Follow the instructions below to create a feature branch for such a patch.
+</br>
+
+Create a new feature branch called patch_1.1.2:
+```bash
+
+$ cd URL_Shortener/
+$ git checkout -b patch_1.1.2
+$ git add .
+$ git commit -m "new feautre branch"
+$ git push -u origin patch_1.1.2
+
+```
+This will create the feature branch in the GitHub Repo as well as your local machine.
+</br>
+
+Inside this new branch you can make any changes you need to. Before trying to ` merge ` your patch to the **master** branch run the unit tests to make sure you're not committing broken code to the master branch.
+```bash
+
+$ cd URL_Shortener/
+$ mocha
+
+```
+</br>
+
+Only after all tests come back as 'passing' then you can merge the feature branch to the master branch.
+```bash
+
+$ cd URL_Shortener/
+$ gulp push
+$ git checkout master
+$ git merge patch_1.1.2
+$ gulp --patch
+
+```
+</br>
+
+Alternatively, if you to have a more verbose commit message you can follow these commands:
+```bash
+
+$ cd URL_Shortener/
+$ git add .
+$ git commit -m "version stable. A brief description of what this patch fixed."
+$ git push
+$ git checkout master
+$ git merge patch_1.1.2
+$ git add .
+$ git commit -m "merged the feature branch patch_1.1.2 to the master branch"
+$ git push origin master
+
+```
+</br>
+
+Now that the newly patched version of this project is on GitHub you should tag a new release named after the new version, **v1.1.2**. If you don't know how to create a new release [click here and follow GitHub's instructions] (https://help.github.com/articles/creating-releases/).
+</br>
+
+### Minor version updates
+Adding a new feature to the API would be considered a minor version update. A new feature branch should be made for new features. To do this would be the same as the instructions as for making a patch feature branch except the name of the branch should be semantic to what the new feature is or does.
+</br>
+
+Create a new feature branch for the new feature:
+```bash
+
+$ cd URL_Shortener/
+$ git checkout -b makeItRain
+
+```
+
+You should see a returned log containing:
+```bash
+
+Switched to a new branch 'makeItRain'
+
+```
+</br>
+
+Inside this new branch you can start building the new makeItRain functionality, but first you should build a unit test(s) for makeItRain. Before trying to ` merge ` your patch to the **master** branch run the unit tests to make sure you're not committing broken code to the master branch.
+```bash
+
+$ cd URL_Shortener/
+$ mocha
+
+```
+</br>
+
+Only after all tests come back as 'passing' then you can merge the feature branch to the master branch.
+```bash
+
+$ cd URL_Shortener/
+$ gulp push
+$ git checkout master
+$ git merge makeItRain
+$ gulp --minor
+```
+</br>
+
+### Major version updates
+A major version increase happens when the a change in the source code is not backwards compatible to previous versions. The instructions for this workflow is the same as for new feature minor version updates except to version bump up to a major version position the commands would look like this:
+```bash
+
+$ cd URL_Shortener/
+$ gulp --major
+
+```
+</br>
+
+___
+## Deployment
+
+### Setup
+##### **Codeship**
+- [Create a test for the master branch on Codeship] (https://codeship.com)
+- [Set environment variables] (https://documentation.codeship.com/continuous-integration/set-environment-variables/)
+- Setup test commands:
+
+</br>
+*Setup Commands*
+```bash
+
+nvm install 6.7.0
+nvm use 6.7.0
+npm install
+npm install -g mocha
+
+```
+</br>
+
+*Configur Test Pipelines*
+```bash
+
+npm test
+
+```
+
+##### **Heroku**
+- [Create a pipeline] (https://devcenter.heroku.com/articles/pipelines)
+- [Use clearDB as the API database by creating adding it as an add-on] (https://devcenter.heroku.com/articles/cleardb)
+- [Set environment variables] (https://devcenter.heroku.com/articles/config-vars)
+- [Connect GitHub to Heroku] (https://devcenter.heroku.com/articles/github-integration)
+  - Check the box labled 'Wait for CI to pass before deploy'
+</br>
+
+### Testing
+After creating a test on Codeship for the master branch you can move on to run the test by making a push to the master branch.
+```bash
+
+$ cd URL_Shortener/
+$ git checkout master
+$ git add .
+$ git commit -m "version stable. some changes that were made"
+$ git push -u origin master
+
+```
+</br>
+
+### Staging with Heroku
+When adding clearDB as an add-on use the URI information as the environment variables. [Click here] (https://devcenter.heroku.com/articles/connecting-to-relational-databases-on-heroku-with-java) to see how to break apart a URI to find the database credentials.
+
+Anytime the release branch is pushed up to GitHub, the staging server on Heroku will rebuild as long as the master branch passed all the Codeship tests based on the latest master branch code. If all is well then the staging server can 'promote' the release branch code to the production server. To match the release branch to the master branch just merge master into release:
+```bash
+
+$ cd URL_Shortener/
+$ git checkout release
+$ git pull
+$ git merge master
+$ git push -u origin release
+
+```
+Note:
+To avoid merge conflicts the release branch should never be edited directly as stated above under Guidelines in this section.
+
+
+The staging server is used as the last filter before code is pushed over to the production server. Here we can see how the API runs on the planned server environment as well as testing functionality, looking for mis-spelled words, check that the API AJAX calls are working as expected.
+</br>
+
+### Production with Heroku
+For the production server a different clearDB instance should be used as an add-on than the one used on the staging server. Make sure to use the production server's clearDB credentials in the environmental variables instead of the staging server's credentials.
+</br>
+
+**Important:**
+An extra environment variable should be added to the list for the prodution server:
+```
+NODE_ENV=production
+```
+
+After the staging server 'promotes' code over to the production server it should also be checked to make sure everything is working. Remember, this server is live and can be found by the public so it should be exactly the way you intended it to be.

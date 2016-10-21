@@ -1,6 +1,6 @@
 
 const db = require('./db');
-const log = require('log-me');
+const log = require('log-me').print;
 
 // obj of tables in the DB
 const tables = {

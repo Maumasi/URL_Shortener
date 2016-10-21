@@ -1,10 +1,8 @@
-const log = require('log-me');
+const log = require('log-me').print;
 
 module.exports = (shortLink) => {
     // remove chars before short link
   const beforeShortLink = shortLink.search('go/') + 3;
-
-  // console.log(beforeShortLink);
 
   const beginExtra = shortLink.slice(0, beforeShortLink);
   const key = shortLink.replace(beginExtra, '');

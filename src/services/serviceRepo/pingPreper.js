@@ -1,4 +1,4 @@
-const log = require('log-me');
+const log = require('log-me').print;
 
 module.exports = (url) => {
   // remove chars before host
@@ -12,7 +12,6 @@ module.exports = (url) => {
     beforeHost = url.search('/') + 2;
   }
 
-  // console.log(beforeHost);
   const beginExtra = url.slice(0, beforeHost);
   const newUrl = url.replace(beginExtra, '');
 

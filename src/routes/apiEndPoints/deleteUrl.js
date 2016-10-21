@@ -2,7 +2,7 @@
 const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
 const originalURL = require('../../models/db_crud').table('originalURL');
 const shortKeyExtractor = require('../../services/services').services.shortKeyExtractor;
-const log = require('log-me');
+const log = require('log-me').print;
 
 module.exports = (express) => {
   const router = express.Router();
