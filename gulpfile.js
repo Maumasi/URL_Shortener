@@ -5,7 +5,7 @@ const replace = require('gulp-replace');
 const gitignore = require('gulp-gitignore');
 const argv = require('yargs').argv;
 
-const version = require('./package.json').version;
+const version = require('./hold-package.json').version;
 
 
 const versionBump = require('log-me').bump;
@@ -41,19 +41,19 @@ gulp.task('push', () => {
 
 // bump up the version according to 'patch', 'minor', 'major'
 gulp.task('patchBump', () => {
-  gulp.src(['./package.json'])
+  gulp.src(['./hold-package.json'])
     .pipe(replace(`"version": "${version}"`, `"version": "${versionBump(version, 'patch')}"`))
     .pipe(gulp.dest('./'));
 });
 
 gulp.task('minorBump', () => {
-  gulp.src(['./package.json'])
+  gulp.src(['./hold-package.json'])
     .pipe(replace(`"version": "${version}"`, `"version": "${versionBump(version, 'minor')}"`))
     .pipe(gulp.dest('./'));
 });
 
 gulp.task('majorBump', () => {
-  gulp.src(['./package.json'])
+  gulp.src(['./hold-package.json'])
     .pipe(replace(`"version": "${version}"`, `"version": "${versionBump(version, 'major')}"`))
     .pipe(gulp.dest('./'));
 });
@@ -68,6 +68,6 @@ if (argv.patch) {
   bump = 'major';
 }
 
-gulp.task('default', [`${bump}Bump`, 'add', 'commit', 'push'], () => {
+gulp.task('test', [`${bump}Bump`, 'add', 'commit', 'push'], () => {
 
 });
