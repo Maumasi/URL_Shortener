@@ -71,14 +71,17 @@ gulp.task('major', ['majorBump', 'add', 'commit', 'push'], () => {
 
 });
 
+//
 let bump = '';
-if (argv.patch) {
-  bump = 'patch';
+if (argv.major) {
+  bump = 'major';
 } else if (argv.minor) {
   bump = 'minor';
-} else if (argv.major) {
-  bump = 'major';
+} else {
+  bump = 'patch';
 }
+
+console.log(argv);
 
 gulp.task('default', [`${bump}Bump`, 'add', 'commit', 'push'], () => {
 
