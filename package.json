@@ -1,6 +1,6 @@
 {
   "name": "url-shortener",
-  "version": "undefined",
+  "version": "1.6.4",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -30,7 +30,7 @@
     "mysql": "^2.11.1",
     "request": "^2.75.0",
     "sequelize": "^3.24.3",
-    "log-me": "^1.0.12"
+    "log-me": "^1.0.14"
   },
   "devDependencies": {
     "chai": "^3.5.0",

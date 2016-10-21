@@ -10,6 +10,8 @@ const version = require('./package.json').version;
 
 const versionBump = require('log-me').bump;
 
+const testit = versionBump(version, 'patch');
+
 // The main gulp calls are at the very bottom of this file. Those main calls being:
 // * gulp patch
 // * gulp minor
@@ -41,7 +43,7 @@ gulp.task('push', () => {
 
 // bump up the version according to 'patch', 'minor', 'major'
 gulp.task('patchBump', () => {
-  console.log(versionBump(version, 'patch'));
+  console.log(testit);
   gulp.src(['./package.json'])
     .pipe(replace(`"version": "${version}"`, `"version": "${versionBump(version, 'patch')}"`))
     .pipe(gulp.dest('./'));
