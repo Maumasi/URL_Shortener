@@ -43,7 +43,7 @@ gulp.task('push', () => {
 gulp.task('patchBump', () => {
   console.log(versionBump(version, 'patch'));
   gulp.src(['./package.json'])
-    .pipe(replace(version, versionBump(version, 'patch')))
+    .pipe(replace(`"version": "${version}"`, `"version": "${versionBump(version, 'patch')}"`))
     .pipe(gulp.dest('./'));
 });
 

@@ -1,6 +1,6 @@
 {
   "name": "url-shortener",
-  "version": ",",
+  "version": "undefined",
   "description": "",
   "main": "index.js",
   "scripts": {
