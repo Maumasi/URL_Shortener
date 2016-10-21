@@ -3,6 +3,7 @@ const gulp = require('gulp');
 const git = require('gulp-git');
 const replace = require('gulp-replace');
 const gitignore = require('gulp-gitignore');
+const argv = require('yargs').argv;
 
 const version = require('./hold-package.json').version;
 
@@ -67,6 +68,19 @@ gulp.task('minor', ['minorBump', 'add', 'commit', 'push'], () => {
 });
 
 gulp.task('major', ['majorBump', 'add', 'commit', 'push'], () => {
+
+});
+
+let bump = '';
+if (argv.patch) {
+  bump = 'patch';
+} else if (argv.minor) {
+  bump = 'minor';
+} else if (argv.major) {
+  bump = 'major';
+}
+
+gulp.task('default', [`${bump}Bump`, 'add', 'commit', 'push'], () => {
 
 });
 // gitignore
