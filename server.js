@@ -4,7 +4,7 @@ const express = require('express');
 const sessions = require('express-session');
 const routes = require('./src/routes/');
 const log = require('log-me').print;
-// require('dotenv').config();
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
