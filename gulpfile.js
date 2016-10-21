@@ -42,7 +42,7 @@ gulp.task('push', () => {
 // bump up the version according to 'patch', 'minor', 'major'
 gulp.task('patchBump', () => {
   gulp.src(['./hold-package.json'])
-    .pipe(replace(`"version": "${version}"`, `"version": "${versionBump(version, 'patch')}"`))
+    .pipe(replace(version, versionBump(version, 'patch')))
     .pipe(gulp.dest('./'));
 });
 
@@ -68,6 +68,6 @@ if (argv.patch) {
   bump = 'major';
 }
 
-gulp.task('tt', [`${bump}Bump`, 'add', 'commit', 'push'], () => {
+gulp.task('t', [`${bump}Bump`, 'add', 'commit', 'push'], () => {
 console.log(version);
 });
