@@ -41,6 +41,7 @@ gulp.task('push', () => {
 
 // bump up the version according to 'patch', 'minor', 'major'
 gulp.task('patchBump', () => {
+  console.log(versionBump(version, 'patch'));
   gulp.src(['./hold-package.json'])
     .pipe(replace(version, versionBump(version, 'patch')))
     .pipe(gulp.dest('./'));
