@@ -30,7 +30,7 @@
     "mysql": "^2.11.1",
     "request": "^2.75.0",
     "sequelize": "^3.24.3",
-    "log-me": "^1.0.4"
+    "log-me": "^1.0.12"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -44,6 +44,7 @@
     "gulp-git-streamed": "^1.8.0",
     "gulp-gitignore": "^0.1.0",
     "gulp-replace": "^0.5.4",
+    "log-me": "^1.0.12",
     "mocha": "^3.1.0",
     "nock": "^8.0.0",
     "supertest": "^2.0.0",

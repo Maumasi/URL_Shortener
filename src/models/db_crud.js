@@ -1,7 +1,7 @@
 
 const db = require('./db');
-// const log = require('log-me');
-const log = require('../../utility/index').print;
+const log = require('log-me').print;
+// const log = require('../../utility/index').print;
 
 // obj of tables in the DB
 const tables = {

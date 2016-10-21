@@ -71,25 +71,16 @@ gulp.task('major', ['majorBump', 'add', 'commit', 'push'], () => {
 
 });
 
-//
+// make version bumps by just calling the position bump as the flag
 let bump = '';
-if (argv.major) {
-  bump = 'major';
+if (argv.patch) {
+  bump = 'patch';
 } else if (argv.minor) {
   bump = 'minor';
-} else {
-  bump = 'patch';
+} else if (argv.major) {
+  bump = 'major';
 }
-
-console.log(argv);
 
 gulp.task('default', [`${bump}Bump`, 'add', 'commit', 'push'], () => {
 
 });
-// gitignore
-// gulp.task('default', function () {
-//     return gulp.src('src/**/*')
-//         // exclude files defined in .gitignore
-//         .pipe(gitignore())
-//         .pipe(gulp.dest('dist'));
-// });

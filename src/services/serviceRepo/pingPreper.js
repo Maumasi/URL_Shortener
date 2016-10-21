@@ -1,5 +1,5 @@
-// const log = require('log-me');
-const log = require('../../../utility/index').print;
+const log = require('log-me').print;
+// const log = require('../../../utility/index').print;
 
 module.exports = (url) => {
   // remove chars before host

@@ -1,6 +1,6 @@
 const maumasiFyURL = require('../../models/db_crud').table('maumasiFyURL');
-// const log = require('log-me');
-const log = require('../../../utility/index').print;
+const log = require('log-me').print;
+// const log = require('../../../utility/index').print;
 
 
 // sevices
