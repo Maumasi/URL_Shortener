@@ -36,10 +36,12 @@ gulp.task('commit', () => {
 // remote is the remote repo
 // branch is the remote branch to push to
 gulp.task('push', () => {
-  git.push('origin', 'newLogger', (err) => {
+  git.push('origin', 'master', (err) => {
     if (err) throw err;
   });
 });
+
+
 
 // bump up the version according to 'patch', 'minor', 'major'
 gulp.task('patchBump', () => {
@@ -72,5 +74,13 @@ if (argv.patch) {
 }
 
 gulp.task('default', [`${bump}Bump`, 'add', 'commit', 'push'], () => {
-console.log(version);
+
+  const newVersion = require('./package.json').version;
+
+  // Tag the repo with a version
+  git.tag(`v${newVersion}`, `Version ${newVersion}`, (err) => {
+    if (err) {
+      throw err;
+    }
+  });
 });
